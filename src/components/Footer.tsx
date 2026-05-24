@@ -174,6 +174,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
+          className="footer-bottom"
           style={{
             borderTop: '1px solid rgba(255,255,255,0.1)',
             paddingTop: 32,

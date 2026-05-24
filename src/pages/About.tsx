@@ -35,10 +35,10 @@ export default function About() {
     <>
       {/* Hero */}
       <section
+        className="about-hero-pad"
         style={{
           background: 'var(--ink)',
           color: 'white',
-          padding: '120px 32px 80px',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -88,7 +88,7 @@ export default function About() {
       </section>
 
       {/* About section */}
-      <section style={{ background: 'var(--paper)', padding: '80px 32px' }}>
+      <section className="section-pad-md" style={{ background: 'var(--paper)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -134,7 +134,7 @@ export default function About() {
       </section>
 
       {/* What We Offer */}
-      <section style={{ background: 'var(--paper-warm)', padding: '80px 32px' }}>
+      <section className="section-pad-md" style={{ background: 'var(--paper-warm)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -198,7 +198,7 @@ export default function About() {
       </section>
 
       {/* National ColorStack */}
-      <section style={{ background: 'var(--paper)', padding: '80px 32px' }}>
+      <section className="section-pad-md" style={{ background: 'var(--paper)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +209,7 @@ export default function About() {
               background: 'var(--paper-warm)',
               border: '1px solid var(--line)',
               borderRadius: 20,
-              padding: '48px 40px',
+              padding: 'clamp(28px, 5vw, 48px) clamp(20px, 5vw, 40px)',
               display: 'flex',
               flexDirection: 'column',
               gap: 20,
@@ -236,7 +236,7 @@ export default function About() {
               href="https://www.colorstack.org/member-application-requirements"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary about-cta-btn"
               style={{ alignSelf: 'flex-start' }}
             >
               Join ColorStack National →
@@ -246,7 +246,7 @@ export default function About() {
       </section>
 
       {/* Contact */}
-      <section style={{ background: 'var(--ink)', color: 'white', padding: '80px 32px' }}>
+      <section className="section-pad-md" style={{ background: 'var(--ink)', color: 'white' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

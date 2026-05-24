@@ -15,8 +15,9 @@ export default function Navbar() {
   return (
     <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
       <nav
+        className="nav-bar"
         style={{
-          padding: '18px 32px',
+          padding: '14px 20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -36,12 +37,13 @@ export default function Navbar() {
           <img
             src="/images/colorstack-gsu-logo.png"
             alt="ColorStack GSU"
-            style={{ height: 44, width: 44, display: 'block', borderRadius: '50%' }}
+            className="nav-logo-img"
+            style={{ display: 'block', borderRadius: '50%' }}
           />
           <span
+            className="nav-brand-text"
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 15,
               fontWeight: 700,
               letterSpacing: '-0.01em',
               color: 'var(--gsu-blue)',
@@ -52,7 +54,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden md:flex">
+        <div style={{ gap: 4, alignItems: 'center' }} className="hidden md:flex">
           {links.map((l) => (
             <NavLink
               key={l.to}

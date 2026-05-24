@@ -385,12 +385,9 @@ export default function Students() {
 
       {/* Hero */}
       <section
+        className="students-hero-pad"
         style={{
           position: 'relative',
-          paddingTop: 160,
-          paddingBottom: 80,
-          paddingLeft: 32,
-          paddingRight: 32,
           background: 'var(--ink)',
           color: 'white',
           overflow: 'hidden',
@@ -476,8 +473,8 @@ export default function Students() {
 
       {/* Board grid */}
       <section
+        className="board-grid-pad"
         style={{
-          padding: '80px 32px 120px',
           background: 'var(--paper)',
           position: 'relative',
           zIndex: 1,

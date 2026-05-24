@@ -37,14 +37,12 @@ export default function Hero() {
 
         {/* Text overlaid at bottom of image */}
         <div
+          className="hero-text-wrap"
           style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
             right: 0,
-            padding: '0 40px 56px',
-            maxWidth: 1400,
-            margin: '0 auto',
           }}
         >
           <motion.div

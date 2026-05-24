@@ -38,9 +38,9 @@ const cardAnim = {
 export default function GetInvolved() {
   return (
     <section
+      className="section-pad-lg"
       style={{
         background: 'var(--paper-warm)',
-        padding: '100px 32px',
         position: 'relative',
         zIndex: 1,
       }}

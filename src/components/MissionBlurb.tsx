@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 export default function MissionBlurb() {
   return (
     <section
+      className="section-pad-lg"
       style={{
         position: 'relative',
-        padding: '100px 32px',
         zIndex: 1,
         background: 'var(--paper)',
         textAlign: 'center',

@@ -36,10 +36,10 @@ const card = {
 export default function FeatureColumns() {
   return (
     <section
+      className="section-pad-xl"
       style={{
         background: 'var(--paper-warm)',
         position: 'relative',
-        padding: '120px 32px',
         zIndex: 1,
       }}
     >
