@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gsu-blue-steel font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-gsu-blue;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-container px-6 lg:px-10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gsu-blue px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-gsu-cool-blue focus:outline-none focus:ring-2 focus:ring-gsu-vibrant focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-gsu-blue px-6 py-3 font-semibold text-gsu-blue transition hover:bg-gsu-blue hover:text-white;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-gsu-red px-6 py-3 font-semibold text-white transition hover:opacity-90;
+  }
+}
