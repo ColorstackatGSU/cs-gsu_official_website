@@ -1,23 +1,49 @@
-import { sponsors } from '../data/sponsors';
+const ITEMS = [
+  'Workshops',
+  'Hackathons',
+  'Mentorship',
+  'Internships',
+  'Community',
+  'Career Prep',
+  'Workshops',
+  'Hackathons',
+  'Mentorship',
+  'Internships',
+  'Community',
+  'Career Prep',
+];
 
 export default function SponsorStrip() {
   return (
-    <section className="border-y border-gsu-light-gray bg-gsu-light-gray/40 py-10">
-      <div className="container-wide">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-gsu-dark-gray">
-          Backed by industry leaders
-        </p>
-        <div className="mt-6 grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {sponsors.map((s) => (
-            <div
-              key={s.name}
-              className="flex h-14 items-center justify-center rounded-md bg-white px-4 text-center font-semibold text-gsu-blue-steel shadow-sm"
-            >
-              {s.name}
-            </div>
-          ))}
-        </div>
+    <div
+      style={{
+        background: 'var(--gsu-blue)',
+        color: 'white',
+        padding: '24px 0',
+        overflow: 'hidden',
+        position: 'relative',
+        zIndex: 2,
+        borderTop: '1px solid var(--gsu-blue-dim)',
+        borderBottom: '1px solid var(--gsu-blue-dim)',
+      }}
+    >
+      <div className="marquee-track">
+        {ITEMS.map((item, i) => (
+          <div
+            key={i}
+            className="marquee-item"
+            style={{
+              fontFamily: 'var(--display)',
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 600,
+              letterSpacing: '-0.02em',
+              display: 'inline-block',
+            }}
+          >
+            {item}
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

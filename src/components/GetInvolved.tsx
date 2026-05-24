@@ -1,72 +1,80 @@
 import { Link } from 'react-router-dom';
 
-type Card = {
-  title: string;
-  body: string;
-  cta: string;
-  to: string;
-  accent: string;
-  external?: boolean;
-};
-
-const cards: Card[] = [
-  {
-    title: 'Become a Member',
-    body: 'Open to all GSU students who want a community in tech.',
-    cta: 'Apply',
-    to: '/become-a-member',
-    accent: 'bg-gsu-blue text-white',
-  },
-  {
-    title: 'Sponsor Us',
-    body: 'Partner with us to reach top underrepresented talent at GSU.',
-    cta: 'Get in touch',
-    to: '/sponsors',
-    accent: 'bg-gsu-red text-white',
-  },
-  {
-    title: 'Join the Slack',
-    body: 'Real-time conversation, opportunities, and study sessions.',
-    cta: 'Request invite',
-    to: '/become-a-member',
-    accent: 'bg-gsu-cool-blue text-white',
-  },
-  {
-    title: 'Contact Us',
-    body: "Questions, collab ideas, or speaking opportunities — we're listening.",
-    cta: 'Email',
-    to: 'mailto:colorstackgsu@gmail.com',
-    accent: 'bg-gsu-blue-steel text-white',
-    external: true,
-  },
-];
-
 export default function GetInvolved() {
   return (
-    <section className="bg-gsu-light-gray/40 py-20">
-      <div className="container-wide">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl sm:text-4xl">Get involved</h2>
-          <p className="mt-3 text-gsu-blue-steel">Pick a door — they all lead into the community.</p>
+    <section
+      style={{
+        background: 'var(--ink)',
+        color: 'white',
+        position: 'relative',
+        padding: '120px 32px',
+        overflow: 'hidden',
+        zIndex: 1,
+      }}
+    >
+      <div
+        className="grid-bg dark"
+        style={{ position: 'absolute', inset: 0, zIndex: 0, opacity: 0.6 }}
+        aria-hidden
+      />
+      <div className="cta-glow" aria-hidden />
+
+      <div
+        style={{
+          maxWidth: 1400,
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 2,
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 32,
+        }}
+      >
+        <div className="section-eyebrow" style={{ color: 'var(--gsu-blue-bright)' }}>
+          <span
+            className="num"
+            style={{ background: 'var(--gsu-blue-bright)' }}
+          >
+            04
+          </span>
+          Ready?
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
-            <div key={c.title} className={`flex flex-col rounded-2xl p-6 shadow-sm ${c.accent}`}>
-              <h3 className="text-xl text-white">{c.title}</h3>
-              <p className="mt-3 flex-1 text-sm text-white/90">{c.body}</p>
-              {c.external ? (
-                <a href={c.to} className="mt-6 inline-flex items-center font-semibold text-white underline-offset-4 hover:underline">
-                  {c.cta} →
-                </a>
-              ) : (
-                <Link to={c.to} className="mt-6 inline-flex items-center font-semibold text-white underline-offset-4 hover:underline">
-                  {c.cta} →
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
+        <h2
+          style={{
+            fontFamily: 'var(--display)',
+            fontSize: 'clamp(48px, 8vw, 120px)',
+            fontWeight: 600,
+            letterSpacing: '-0.04em',
+            lineHeight: 0.95,
+            maxWidth: '14ch',
+          }}
+        >
+          Your{' '}
+          <span style={{ color: 'var(--gsu-blue-bright)' }}>people</span> are
+          <br />
+          already{' '}
+          <span
+            style={{ WebkitTextStroke: '2px white', color: 'transparent' }}
+          >
+            here.
+          </span>
+        </h2>
+
+        <p style={{ opacity: 0.7, maxWidth: '50ch', fontSize: 18, lineHeight: 1.5 }}>
+          Membership is free. Open to all GSU students with an interest in
+          technology. Apply once — you're in for the year.
+        </p>
+
+        <Link
+          to="/become-a-member"
+          className="btn-primary"
+          style={{ padding: '20px 36px', fontSize: 14 }}
+        >
+          Join ColorStack GSU →
+        </Link>
       </div>
     </section>
   );

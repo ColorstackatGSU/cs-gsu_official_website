@@ -1,50 +1,184 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-gsu-blue text-white">
-      <div
-        className="absolute inset-0 opacity-25"
-        style={{
-          backgroundImage: "url('/images/homepage_img.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-gsu-blue/95 via-gsu-blue/80 to-gsu-cool-blue/60" aria-hidden />
+  const glowRef = useRef<HTMLDivElement>(null);
 
-      <div className="container-wide relative grid gap-10 py-24 md:grid-cols-2 md:py-32">
-        <div className="flex flex-col justify-center">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-gsu-light-blue">
-            ColorStack · Georgia State Chapter
+  useEffect(() => {
+    const el = glowRef.current;
+    if (!el) return;
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          el.style.transform = `translate3d(0, ${window.scrollY * -0.15}px, 0)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '100px 32px 80px',
+        overflow: 'hidden',
+        background: 'var(--paper)',
+      }}
+    >
+      {/* Animated glow */}
+      <div ref={glowRef} className="hero-glow" />
+
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          maxWidth: 1400,
+          margin: '0 auto',
+          width: '100%',
+        }}
+      >
+        {/* Top meta row */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginBottom: 60,
+            flexWrap: 'wrap',
+            gap: 24,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              opacity: 0.6,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+            }}
+          >
+            <span
+              style={{
+                width: 24,
+                height: 1,
+                background: 'currentColor',
+                display: 'inline-block',
+              }}
+            />
+            ColorStack Chapter — Est. 2024 / Atlanta
+          </div>
+          <div
+            style={{
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              opacity: 0.6,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 4,
+              textAlign: 'right',
+            }}
+          >
+            <span>Active Members</span>
+            <b
+              style={{
+                fontSize: 24,
+                opacity: 1,
+                color: 'var(--gsu-blue)',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              120+
+            </b>
+          </div>
+        </div>
+
+        {/* Mega headline */}
+        <h1
+          style={{
+            fontFamily: 'var(--display)',
+            fontSize: 'clamp(64px, 13vw, 220px)',
+            fontWeight: 600,
+            letterSpacing: '-0.05em',
+            lineHeight: 0.85,
+            marginBottom: 40,
+            position: 'relative',
+          }}
+        >
+          Black &amp; Latinx
+          <br />
+          <span
+            style={{
+              WebkitTextStroke: '2px var(--gsu-blue)',
+              color: 'transparent',
+            }}
+          >
+            computing
+          </span>
+          <br />
+          at <span style={{ color: 'var(--gsu-blue)' }}>GSU</span>
+          <span className="cursor-blink" aria-hidden />
+        </h1>
+
+        {/* Bottom row: sub + actions */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: 40,
+            marginTop: 60,
+          }}
+        >
+          <p
+            style={{
+              fontSize: 'clamp(16px, 1.4vw, 20px)',
+              maxWidth: 540,
+              opacity: 0.7,
+              lineHeight: 1.5,
+            }}
+          >
+            A community for underrepresented students in technology at Georgia
+            State University — where we build careers, projects, and lifelong
+            friendships.
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
-            Welcome to ColorStack at <span className="text-gsu-vibrant">Georgia State</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/85">
-            A community of Black, Latinx, and underrepresented students in computing — built to launch careers,
-            spark mentorship, and grow Atlanta's next generation of tech leaders.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link to="/become-a-member" className="btn-accent">
-              Become a Member
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+            <Link to="/become-a-member" className="btn-primary">
+              Join the chapter →
             </Link>
-            <Link to="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-gsu-blue">
-              Learn More
+            <Link to="/about" className="btn-secondary">
+              Our story
             </Link>
           </div>
         </div>
 
-        <div className="relative hidden md:block">
-          <div className="absolute -right-10 top-1/2 h-80 w-80 -translate-y-1/2 rounded-3xl bg-white/10 backdrop-blur" />
-          <img
-            src="/images/hp-2.png"
-            alt="ColorStack at GSU students"
-            className="relative ml-auto w-full max-w-md rounded-2xl object-cover shadow-2xl"
-            onError={(e) => ((e.currentTarget.style.display = 'none'))}
-          />
+        {/* Float tags */}
+        <div className="float-tag" style={{ top: '22%', right: '8%' }}>
+          Now recruiting
         </div>
+        <div className="float-tag" style={{ bottom: '18%', left: '42%' }}>
+          CS · CIS · DATA · MATH
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="scroll-indicator">
+        Scroll
+        <div className="scroll-indicator-bar" />
       </div>
     </section>
   );

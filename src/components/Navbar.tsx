@@ -2,87 +2,172 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const links = [
+  { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
-  { to: '/involvement', label: 'Involvement' },
-  { to: '/students', label: 'Students' },
-  { to: '/sponsors', label: 'Sponsors' },
+  { to: '/involvement', label: 'Events' },
+  { to: '/students', label: 'Team' },
+  { to: '/sponsors', label: 'Resources' },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gsu-light-gray bg-white/90 backdrop-blur">
-      <nav className="container-wide flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img
-            src="/images/blue_logo.png.svg"
-            alt="ColorStack at GSU"
-            className="h-10 w-auto"
-          />
-          <span className="hidden text-lg font-display font-bold text-gsu-blue sm:inline">
-            ColorStack <span className="text-gsu-red">@</span> GSU
-          </span>
+    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
+      <nav
+        style={{
+          padding: '18px 32px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          background: 'rgba(255,255,255,0.75)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: '1px solid var(--line)',
+          transition: 'all 0.3s ease',
+        }}
+      >
+        {/* Logo */}
+        <Link
+          to="/"
+          onClick={() => setOpen(false)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            fontFamily: 'var(--mono)',
+            fontSize: 13,
+            fontWeight: 600,
+            letterSpacing: '0.02em',
+            textTransform: 'uppercase',
+            color: 'var(--ink)',
+          }}
+        >
+          <div
+            className="nav-logo-mark"
+            style={{
+              width: 28,
+              height: 28,
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gridTemplateRows: '1fr 1fr',
+              gap: 2,
+            }}
+          >
+            <span /><span /><span /><span />
+          </div>
+          <span>ColorStack&nbsp;·&nbsp;GSU</span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        {/* Desktop links */}
+        <div style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden md:flex">
           {links.map((l) => (
-            <li key={l.to}>
-              <NavLink
-                to={l.to}
-                className={({ isActive }) =>
-                  `text-sm font-semibold transition ${
-                    isActive ? 'text-gsu-blue' : 'text-gsu-blue-steel hover:text-gsu-blue'
-                  }`
-                }
-              >
-                {l.label}
-              </NavLink>
-            </li>
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.end}
+              style={({ isActive }) => ({
+                fontFamily: 'var(--mono)',
+                fontSize: 12,
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                padding: '8px 14px',
+                borderRadius: 6,
+                transition: 'all 0.2s',
+                color: isActive ? 'var(--gsu-blue)' : 'var(--ink)',
+                position: 'relative',
+              })}
+            >
+              {l.label}
+            </NavLink>
           ))}
-          <li>
-            <Link to="/become-a-member" className="btn-primary px-5 py-2 text-sm">
-              Become a Member
-            </Link>
-          </li>
-        </ul>
+          <Link
+            to="/become-a-member"
+            style={{
+              fontFamily: 'var(--mono)',
+              fontSize: 12,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              padding: '10px 18px',
+              background: 'var(--gsu-blue)',
+              color: 'white',
+              borderRadius: 6,
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              marginLeft: 8,
+            }}
+          >
+            Join Us
+          </Link>
+        </div>
 
+        {/* Mobile burger */}
         <button
+          className="md:hidden"
           type="button"
-          className="md:hidden rounded-md p-2 text-gsu-blue"
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
+          style={{ padding: 8, color: 'var(--gsu-blue)' }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? <path d="M6 6l12 12M6 18L18 6" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            {open
+              ? <path d="M6 6l12 12M6 18L18 6" />
+              : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
       </nav>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gsu-light-gray bg-white">
-          <ul className="container-wide flex flex-col gap-1 py-3">
-            {links.map((l) => (
-              <li key={l.to}>
-                <NavLink
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `block rounded px-3 py-2 text-base font-semibold ${
-                      isActive ? 'bg-gsu-light-gray text-gsu-blue' : 'text-gsu-blue-steel'
-                    }`
-                  }
-                >
-                  {l.label}
-                </NavLink>
-              </li>
-            ))}
-            <li className="pt-2">
-              <Link to="/become-a-member" onClick={() => setOpen(false)} className="btn-primary w-full">
-                Become a Member
-              </Link>
-            </li>
-          </ul>
+        <div
+          style={{
+            background: 'rgba(255,255,255,0.97)',
+            backdropFilter: 'blur(20px)',
+            borderBottom: '1px solid var(--line)',
+            padding: '12px 24px 20px',
+          }}
+        >
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.end}
+              onClick={() => setOpen(false)}
+              style={({ isActive }) => ({
+                display: 'block',
+                fontFamily: 'var(--mono)',
+                fontSize: 13,
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                padding: '12px 0',
+                borderBottom: '1px solid var(--line)',
+                color: isActive ? 'var(--gsu-blue)' : 'var(--ink)',
+              })}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+          <Link
+            to="/become-a-member"
+            onClick={() => setOpen(false)}
+            style={{
+              display: 'block',
+              marginTop: 16,
+              fontFamily: 'var(--mono)',
+              fontSize: 13,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              padding: '14px 20px',
+              background: 'var(--gsu-blue)',
+              color: 'white',
+              borderRadius: 8,
+              textAlign: 'center',
+            }}
+          >
+            Join Us
+          </Link>
         </div>
       )}
     </header>

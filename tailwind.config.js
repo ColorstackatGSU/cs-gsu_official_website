@@ -18,11 +18,12 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'sans-serif'],
+        sans: ["'Space Grotesk'", 'system-ui', 'sans-serif'],
+        display: ["'Space Grotesk'", 'system-ui', 'sans-serif'],
+        mono: ["'JetBrains Mono'", 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       maxWidth: {
-        container: '1200px',
+        container: '1400px',
       },
     },
   },
