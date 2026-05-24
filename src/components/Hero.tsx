@@ -1,184 +1,164 @@
-import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
-  const glowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = glowRef.current;
-    if (!el) return;
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          el.style.transform = `translate3d(0, ${window.scrollY * -0.15}px, 0)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section
-      style={{
-        position: 'relative',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '100px 32px 80px',
-        overflow: 'hidden',
-        background: 'var(--paper)',
-      }}
-    >
-      {/* Animated glow */}
-      <div ref={glowRef} className="hero-glow" />
-
+    <section style={{ position: 'relative', background: 'var(--ink)', color: 'white' }}>
+      {/* Full-bleed hero image */}
       <div
         style={{
           position: 'relative',
-          zIndex: 2,
-          maxWidth: 1400,
-          margin: '0 auto',
           width: '100%',
+          height: '88vh',
+          minHeight: 520,
+          overflow: 'hidden',
         }}
       >
-        {/* Top meta row */}
+        <img
+          src="https://static.wixstatic.com/media/407346_c8a8fb1fc33447ffa4a0864437a8de34~mv2.png"
+          alt="ColorStack GSU community members"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+            display: 'block',
+          }}
+        />
+        {/* Gradient overlay — dark at bottom for text legibility */}
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            marginBottom: 60,
-            flexWrap: 'wrap',
-            gap: 24,
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(to bottom, rgba(10,14,26,0.25) 0%, rgba(10,14,26,0.1) 40%, rgba(10,14,26,0.75) 75%, rgba(10,14,26,0.92) 100%)',
+          }}
+        />
+
+        {/* Text overlaid at bottom of image */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            padding: '0 40px 56px',
+            maxWidth: 1400,
+            margin: '0 auto',
           }}
         >
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             style={{
               fontFamily: 'var(--mono)',
               fontSize: 11,
-              letterSpacing: '0.1em',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              opacity: 0.6,
+              color: 'rgba(255,255,255,0.65)',
               display: 'flex',
               alignItems: 'center',
-              gap: 8,
+              gap: 10,
+              marginBottom: 20,
             }}
           >
-            <span
-              style={{
-                width: 24,
-                height: 1,
-                background: 'currentColor',
-                display: 'inline-block',
-              }}
-            />
-            ColorStack Chapter — Est. 2024 / Atlanta
-          </div>
-          <div
+            <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.5)', display: 'inline-block' }} />
+            ColorStack Chapter — Georgia State University
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             style={{
-              fontFamily: 'var(--mono)',
-              fontSize: 11,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              opacity: 0.6,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 4,
-              textAlign: 'right',
+              fontFamily: 'var(--display)',
+              fontSize: 'clamp(36px, 5.5vw, 80px)',
+              fontWeight: 700,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.05,
+              color: 'white',
+              marginBottom: 24,
+              maxWidth: '14ch',
             }}
           >
-            <span>Active Members</span>
-            <b
+            Welcome to ColorStack at GSU
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
+            style={{
+              fontSize: 'clamp(15px, 1.2vw, 18px)',
+              color: 'rgba(255,255,255,0.75)',
+              lineHeight: 1.6,
+              maxWidth: 500,
+              marginBottom: 36,
+            }}
+          >
+            A community for Black and Latinx students in computing at Georgia State University
+            — building careers, friendships, and a better industry.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.44 }}
+            style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}
+          >
+            <Link
+              to="/become-a-member"
               style={{
-                fontSize: 24,
-                opacity: 1,
-                color: 'var(--gsu-blue)',
-                fontWeight: 600,
-                letterSpacing: '-0.02em',
+                fontFamily: 'var(--mono)',
+                fontSize: 13,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                padding: '16px 32px',
+                background: 'var(--gsu-blue)',
+                color: 'white',
+                borderRadius: 8,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                transition: 'background 0.2s, transform 0.2s',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.background = 'var(--gsu-blue-bright)';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.background = 'var(--gsu-blue)';
+                (e.currentTarget as HTMLElement).style.transform = '';
               }}
             >
-              120+
-            </b>
-          </div>
-        </div>
-
-        {/* Mega headline */}
-        <h1
-          style={{
-            fontFamily: 'var(--display)',
-            fontSize: 'clamp(64px, 13vw, 220px)',
-            fontWeight: 600,
-            letterSpacing: '-0.05em',
-            lineHeight: 0.85,
-            marginBottom: 40,
-            position: 'relative',
-          }}
-        >
-          Black &amp; Latinx
-          <br />
-          <span
-            style={{
-              WebkitTextStroke: '2px var(--gsu-blue)',
-              color: 'transparent',
-            }}
-          >
-            computing
-          </span>
-          <br />
-          at <span style={{ color: 'var(--gsu-blue)' }}>GSU</span>
-          <span className="cursor-blink" aria-hidden />
-        </h1>
-
-        {/* Bottom row: sub + actions */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            flexWrap: 'wrap',
-            gap: 40,
-            marginTop: 60,
-          }}
-        >
-          <p
-            style={{
-              fontSize: 'clamp(16px, 1.4vw, 20px)',
-              maxWidth: 540,
-              opacity: 0.7,
-              lineHeight: 1.5,
-            }}
-          >
-            A community for underrepresented students in technology at Georgia
-            State University — where we build careers, projects, and lifelong
-            friendships.
-          </p>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <Link to="/become-a-member" className="btn-primary">
-              Join the chapter →
+              Become a Member →
             </Link>
-            <Link to="/about" className="btn-secondary">
-              Our story
+            <Link
+              to="/about"
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: 13,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                padding: '16px 32px',
+                background: 'rgba(255,255,255,0.12)',
+                color: 'white',
+                borderRadius: 8,
+                border: '1px solid rgba(255,255,255,0.25)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                transition: 'background 0.2s',
+                backdropFilter: 'blur(8px)',
+              }}
+              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.2)')}
+              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.12)')}
+            >
+              Learn More
             </Link>
-          </div>
+          </motion.div>
         </div>
-
-        {/* Float tags */}
-        <div className="float-tag" style={{ top: '22%', right: '8%' }}>
-          Now recruiting
-        </div>
-        <div className="float-tag" style={{ bottom: '18%', left: '42%' }}>
-          CS · CIS · DATA · MATH
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="scroll-indicator">
-        Scroll
-        <div className="scroll-indicator-bar" />
       </div>
     </section>
   );

@@ -277,6 +277,7 @@
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .mission-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .get-involved-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 768px) {
@@ -285,6 +286,7 @@
   .event-row .event-tag,
   .event-row .event-arrow { display: none; }
   .footer-grid { grid-template-columns: 1fr; }
+  .get-involved-grid { grid-template-columns: 1fr !important; }
 }
 
 @layer components {

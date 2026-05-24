@@ -191,7 +191,7 @@ export default function Footer() {
           }}
         >
           <span>© {new Date().getFullYear()} ColorStack GSU Chapter</span>
-          <span>Not affiliated with ColorStack national org</span>
+          <span>A chartered chapter of ColorStack National</span>
           <span>v1.0.0 / Atlanta</span>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import FeatureColumns from '../components/FeatureColumns';
 import GetInvolved from '../components/GetInvolved';
 
 export default function Involvement() {
@@ -13,8 +12,6 @@ export default function Involvement() {
           </p>
         </div>
       </section>
-
-      <FeatureColumns />
 
       <section className="bg-white py-20">
         <div className="container-wide grid items-center gap-12 md:grid-cols-2">

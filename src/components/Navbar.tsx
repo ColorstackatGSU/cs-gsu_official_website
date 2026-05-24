@@ -31,32 +31,24 @@ export default function Navbar() {
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            fontFamily: 'var(--mono)',
-            fontSize: 13,
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            textTransform: 'uppercase',
-            color: 'var(--ink)',
-          }}
+          style={{ display: 'flex', alignItems: 'center', gap: 10 }}
         >
-          <div
-            className="nav-logo-mark"
+          <img
+            src="/images/colorstack-gsu-logo.png"
+            alt="ColorStack GSU"
+            style={{ height: 44, width: 44, display: 'block', borderRadius: '50%' }}
+          />
+          <span
             style={{
-              width: 28,
-              height: 28,
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gridTemplateRows: '1fr 1fr',
-              gap: 2,
+              fontFamily: 'var(--display)',
+              fontSize: 15,
+              fontWeight: 700,
+              letterSpacing: '-0.01em',
+              color: 'var(--gsu-blue)',
             }}
           >
-            <span /><span /><span /><span />
-          </div>
-          <span>ColorStack&nbsp;·&nbsp;GSU</span>
+            ColorStack at GSU
+          </span>
         </Link>
 
         {/* Desktop links */}

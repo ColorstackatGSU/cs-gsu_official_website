@@ -31,13 +31,24 @@ export default function BecomeAMember() {
           </div>
 
           <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
-            <h3 className="text-2xl">Membership form</h3>
+            <h3 className="text-2xl">Register on PantherConnect</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
-              The official member form will live here. For now, email us and we'll add you to the list.
+              Join our official organization on GSU's PantherConnect (PIN) to get added to the roster and receive event updates.
             </p>
-            <a href="mailto:colorstackgsu@gmail.com?subject=ColorStack%20GSU%20Membership" className="btn-primary mt-6 w-full">
-              Email us to join
+            <a
+              href="https://pin.gsu.edu/organization/colorstack"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-6 inline-flex w-full justify-center"
+            >
+              Join on PantherConnect →
             </a>
+            <p className="mt-4 text-sm text-gsu-blue-steel">
+              Questions? Email us at{' '}
+              <a href="mailto:colorstackgsu@gmail.com" className="underline">
+                colorstackgsu@gmail.com
+              </a>
+            </p>
           </div>
         </div>
       </section>

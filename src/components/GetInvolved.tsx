@@ -1,80 +1,167 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const cards = [
+  {
+    heading: 'Collaborate With Us',
+    sub: 'Sponsorship',
+    desc: 'Partner with us to connect your brand with driven Black and Latinx students in tech at GSU.',
+    href: '/sponsors',
+    external: false,
+  },
+  {
+    heading: 'Join Us',
+    sub: 'Join the Community',
+    desc: "Membership is free and open to all GSU students interested in tech. Apply once, you're in for the year.",
+    href: '/become-a-member',
+    external: false,
+  },
+  {
+    heading: 'Get In Touch',
+    sub: 'Contact Us',
+    desc: "Have questions? Reach out to our e-board directly — we'd love to hear from you.",
+    href: '/about',
+    external: false,
+  },
+];
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardAnim = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
 
 export default function GetInvolved() {
   return (
     <section
       style={{
-        background: 'var(--ink)',
-        color: 'white',
+        background: 'var(--paper-warm)',
+        padding: '100px 32px',
         position: 'relative',
-        padding: '120px 32px',
-        overflow: 'hidden',
         zIndex: 1,
       }}
     >
-      <div
-        className="grid-bg dark"
-        style={{ position: 'absolute', inset: 0, zIndex: 0, opacity: 0.6 }}
-        aria-hidden
-      />
-      <div className="cta-glow" aria-hidden />
-
-      <div
-        style={{
-          maxWidth: 1400,
-          margin: '0 auto',
-          position: 'relative',
-          zIndex: 2,
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 32,
-        }}
-      >
-        <div className="section-eyebrow" style={{ color: 'var(--gsu-blue-bright)' }}>
-          <span
-            className="num"
-            style={{ background: 'var(--gsu-blue-bright)' }}
+      <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55 }}
+          style={{ textAlign: 'center', marginBottom: 56 }}
+        >
+          <p
+            style={{
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: 'var(--gsu-blue)',
+              marginBottom: 16,
+            }}
           >
-            04
-          </span>
-          Ready?
-        </div>
+            Ready to get started?
+          </p>
+          <h2
+            style={{
+              fontFamily: 'var(--display)',
+              fontSize: 'clamp(32px, 4vw, 60px)',
+              fontWeight: 700,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.05,
+            }}
+          >
+            Get Involved
+          </h2>
+        </motion.div>
 
-        <h2
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
           style={{
-            fontFamily: 'var(--display)',
-            fontSize: 'clamp(48px, 8vw, 120px)',
-            fontWeight: 600,
-            letterSpacing: '-0.04em',
-            lineHeight: 0.95,
-            maxWidth: '14ch',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 24,
           }}
+          className="get-involved-grid"
         >
-          Your{' '}
-          <span style={{ color: 'var(--gsu-blue-bright)' }}>people</span> are
-          <br />
-          already{' '}
-          <span
-            style={{ WebkitTextStroke: '2px white', color: 'transparent' }}
-          >
-            here.
-          </span>
-        </h2>
-
-        <p style={{ opacity: 0.7, maxWidth: '50ch', fontSize: 18, lineHeight: 1.5 }}>
-          Membership is free. Open to all GSU students with an interest in
-          technology. Apply once — you're in for the year.
-        </p>
-
-        <Link
-          to="/become-a-member"
-          className="btn-primary"
-          style={{ padding: '20px 36px', fontSize: 14 }}
-        >
-          Join ColorStack GSU →
-        </Link>
+          {cards.map((c) => (
+            <motion.div key={c.heading} variants={cardAnim}>
+              <Link
+                to={c.href}
+                style={{
+                  display: 'block',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--line)',
+                  borderRadius: 20,
+                  padding: '40px 36px',
+                  textDecoration: 'none',
+                  color: 'var(--ink)',
+                  transition: 'border-color 0.25s, transform 0.25s, box-shadow 0.25s',
+                  height: '100%',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = 'var(--gsu-blue)';
+                  el.style.transform = 'translateY(-6px)';
+                  el.style.boxShadow = '0 24px 48px -16px rgba(0,57,166,0.18)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = 'var(--line)';
+                  el.style.transform = '';
+                  el.style.boxShadow = '';
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontSize: 28,
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
+                    marginBottom: 8,
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {c.heading}
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: 11,
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gsu-blue)',
+                    marginBottom: 20,
+                  }}
+                >
+                  {c.sub}
+                </div>
+                <p style={{ opacity: 0.65, fontSize: 15, lineHeight: 1.65 }}>{c.desc}</p>
+                <div
+                  style={{
+                    marginTop: 32,
+                    fontFamily: 'var(--mono)',
+                    fontSize: 12,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gsu-blue)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                  }}
+                >
+                  Learn more →
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

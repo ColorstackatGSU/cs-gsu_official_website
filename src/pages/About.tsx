@@ -1,60 +1,299 @@
-import { eboard } from '../data/eboard';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
+const offerings = [
+  {
+    title: 'Technical Workshops',
+    desc: 'Hands-on sessions covering software engineering, data science, AI, and more — designed to sharpen your technical skills at every level.',
+  },
+  {
+    title: 'Professional Development',
+    desc: 'Resume reviews, mock interviews, LinkedIn optimization, and career coaching to help you land the internship or full-time role you want.',
+  },
+  {
+    title: 'Career Opportunities',
+    desc: 'Direct connections to recruiting events, sponsor info sessions, and job postings from companies actively seeking diverse tech talent.',
+  },
+  {
+    title: 'Community Building',
+    desc: "A welcoming space to find your people — study groups, social events, and a network that lasts beyond graduation.",
+  },
+];
+
+const cardAnim = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+};
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
 
 export default function About() {
   return (
     <>
-      <section className="bg-gsu-blue py-20 text-white">
-        <div className="container-wide max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">About us</p>
-          <h1 className="mt-3 text-4xl text-white sm:text-5xl">Who we are</h1>
-          <p className="mt-6 text-lg text-white/85">
-            ColorStack at Georgia State is a chapter of the national ColorStack organization — a community of
-            Black, Latinx, and underrepresented students pursuing degrees and careers in computing.
-          </p>
+      {/* Hero */}
+      <section
+        style={{
+          background: 'var(--ink)',
+          color: 'white',
+          padding: '120px 32px 80px',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div className="grid-bg dark" style={{ position: 'absolute', inset: 0, opacity: 0.4, zIndex: 0 }} aria-hidden />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.5)',
+              marginBottom: 20,
+            }}
+          >
+            About Us
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              fontFamily: 'var(--display)',
+              fontSize: 'clamp(36px, 5vw, 72px)',
+              fontWeight: 700,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.05,
+              marginBottom: 28,
+            }}
+          >
+            Who We Are
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ fontSize: 18, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', maxWidth: 640, margin: '0 auto' }}
+          >
+            ColorStack's mission is to increase the number of Black, Latinx, and Indigenous
+            technologists who graduate and launch rewarding technical careers.
+          </motion.p>
         </div>
       </section>
 
-      <section className="bg-white py-20">
-        <div className="container-wide max-w-4xl">
-          <h2 className="text-3xl">Our story</h2>
-          <p className="mt-6 leading-relaxed text-gsu-blue-steel">
-            Founded by GSU students who saw a gap in community and opportunity for students of color in the
-            College of Arts & Sciences computing programs, ColorStack at GSU grew quickly into a hub for
-            mentorship, technical growth, and lifelong friendships. We partner with Georgia State faculty,
-            alumni, and a growing network of corporate sponsors to put real opportunities in front of our members.
-          </p>
+      {/* About section */}
+      <section style={{ background: 'var(--paper)', padding: '80px 32px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="section-eyebrow">Our Story</p>
+            <p
+              style={{
+                fontSize: 'clamp(17px, 1.4vw, 20px)',
+                lineHeight: 1.75,
+                color: 'var(--ink)',
+                opacity: 0.8,
+                marginBottom: 24,
+              }}
+            >
+              ColorStack at Georgia State University is a chartered chapter of the national ColorStack
+              organization — a community for Black, Latinx, and underrepresented students pursuing
+              degrees and careers in computing.
+            </p>
+            <p
+              style={{
+                fontSize: 'clamp(17px, 1.4vw, 20px)',
+                lineHeight: 1.75,
+                color: 'var(--ink)',
+                opacity: 0.8,
+                marginBottom: 24,
+              }}
+            >
+              Founded by GSU students who saw a gap in community and opportunity, ColorStack at GSU
+              leverages Atlanta's thriving tech scene and Georgia State's diverse campus to drive
+              real change across the industry. We partner with faculty, alumni, and corporate sponsors
+              to put meaningful opportunities in front of our members.
+            </p>
+            <p style={{ fontSize: 'clamp(17px, 1.4vw, 20px)', lineHeight: 1.75, color: 'var(--ink)', opacity: 0.8 }}>
+              Membership is free and open to all GSU students regardless of major, background, or
+              experience. Thank you for taking the time to learn about us — we'd love to have you
+              join our community!
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="bg-gsu-light-gray/40 py-20">
-        <div className="container-wide">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl sm:text-4xl">Meet the E-Board</h2>
-            <p className="mt-3 text-gsu-blue-steel">The students keeping the lights on this year.</p>
-          </div>
+      {/* What We Offer */}
+      <section style={{ background: 'var(--paper-warm)', padding: '80px 32px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55 }}
+            style={{ marginBottom: 48 }}
+          >
+            <p className="section-eyebrow">What We Offer</p>
+            <h2
+              style={{
+                fontFamily: 'var(--display)',
+                fontSize: 'clamp(28px, 3vw, 48px)',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 1.1,
+              }}
+            >
+              Everything you need to grow.
+            </h2>
+          </motion.div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {eboard.map((m) => (
-              <article key={m.name} className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div className="aspect-square overflow-hidden bg-gsu-light-blue/30">
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl">{m.name}</h3>
-                  <p className="text-sm font-semibold text-gsu-red">{m.role}</p>
-                  <a href={`mailto:${m.email}`} className="mt-2 inline-block text-sm text-gsu-cool-blue hover:underline">
-                    {m.email}
-                  </a>
-                  <p className="mt-4 text-sm leading-relaxed text-gsu-blue-steel">{m.bio}</p>
-                </div>
-              </article>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 24,
+            }}
+          >
+            {offerings.map((o) => (
+              <motion.div
+                key={o.title}
+                variants={cardAnim}
+                style={{
+                  background: 'var(--paper)',
+                  border: '1px solid var(--line)',
+                  borderRadius: 16,
+                  padding: '32px 28px',
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: 'var(--display)',
+                    fontSize: 20,
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
+                    marginBottom: 12,
+                  }}
+                >
+                  {o.title}
+                </h3>
+                <p style={{ fontSize: 15, lineHeight: 1.65, opacity: 0.65 }}>{o.desc}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* National ColorStack */}
+      <section style={{ background: 'var(--paper)', padding: '80px 32px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55 }}
+            style={{
+              background: 'var(--paper-warm)',
+              border: '1px solid var(--line)',
+              borderRadius: 20,
+              padding: '48px 40px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 20,
+            }}
+          >
+            <p className="section-eyebrow" style={{ marginBottom: 0 }}>National Organization</p>
+            <h2
+              style={{
+                fontFamily: 'var(--display)',
+                fontSize: 'clamp(24px, 2.5vw, 38px)',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 1.15,
+              }}
+            >
+              Part of something bigger.
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.7, opacity: 0.75, maxWidth: 580 }}>
+              As a chartered chapter, we are proud members of ColorStack National — one of the
+              largest communities for Black and Latinx students in tech. Becoming a national member
+              unlocks access to even more resources, scholarships, and a nationwide network.
+            </p>
+            <a
+              href="https://www.colorstack.org/member-application-requirements"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ alignSelf: 'flex-start' }}
+            >
+              Join ColorStack National →
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section style={{ background: 'var(--ink)', color: 'white', padding: '80px 32px' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55 }}
+          >
+            <p
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                opacity: 0.5,
+                marginBottom: 20,
+              }}
+            >
+              Contact Us
+            </p>
+            <h2
+              style={{
+                fontFamily: 'var(--display)',
+                fontSize: 'clamp(28px, 3.5vw, 52px)',
+                fontWeight: 700,
+                letterSpacing: '-0.04em',
+                lineHeight: 1.1,
+                marginBottom: 24,
+              }}
+            >
+              Want to collaborate or connect?
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.7, opacity: 0.7, marginBottom: 36 }}>
+              Want to collaborate on a tech talk or event with our community? We're here for it!
+              For any questions or opportunities, drop us a line.
+            </p>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a
+                href="mailto:colorstackgsu@gmail.com"
+                className="btn-primary"
+              >
+                colorstackgsu@gmail.com →
+              </a>
+              <Link to="/become-a-member" className="btn-secondary" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.25)' }}>
+                Join the Community
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>
