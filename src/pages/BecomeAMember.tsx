@@ -31,7 +31,7 @@ export default function BecomeAMember() {
           </div>
 
           <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
-            <h3 className="text-2xl">Register on PantherConnect</h3>
+            <h3 className="text-2xl">Register on PIN</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
               Join our official organization on GSU's PantherConnect (PIN) to get added to the roster and receive event updates.
             </p>
@@ -41,7 +41,7 @@ export default function BecomeAMember() {
               rel="noopener noreferrer"
               className="btn-primary mt-6 inline-flex w-full justify-center"
             >
-              Join on PantherConnect →
+              Join on PIN →
             </a>
 
             <div className="mt-6 border-t border-gsu-light-gray pt-6">
