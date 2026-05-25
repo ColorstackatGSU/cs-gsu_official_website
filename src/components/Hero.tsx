@@ -25,7 +25,7 @@ export default function Hero() {
             display: 'block',
           }}
         />
-        {/* Gradient overlay — dark at bottom for text legibility */}
+        {/* Gradient overlay: dark at bottom for text legibility */}
         <div
           style={{
             position: 'absolute',
@@ -62,7 +62,7 @@ export default function Hero() {
             }}
           >
             <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.5)', display: 'inline-block' }} />
-            ColorStack Chapter — Georgia State University
+            ColorStack Chapter · Georgia State University
           </motion.div>
 
           <motion.h1
@@ -95,8 +95,8 @@ export default function Hero() {
               marginBottom: 36,
             }}
           >
-            A community for Black and Latinx students in computing at Georgia State University
-            — building careers, friendships, and a better industry.
+            A community for Black and Latinx students in computing at Georgia State University.
+            Building careers, friendships, and a better industry.
           </motion.p>
 
           <motion.div

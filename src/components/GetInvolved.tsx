@@ -19,7 +19,7 @@ const cards = [
   {
     heading: 'Get In Touch',
     sub: 'Contact Us',
-    desc: "Have questions? Reach out to our e-board directly — we'd love to hear from you.",
+    desc: "Have questions? Reach out to our e-board directly. We'd love to hear from you.",
     href: '/about',
     external: false,
   },
@@ -32,7 +32,7 @@ const container = {
 
 const cardAnim = {
   hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
 export default function GetInvolved() {

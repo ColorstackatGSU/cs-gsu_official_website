@@ -6,7 +6,7 @@ export default function BecomeAMember() {
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">Join us</p>
           <h1 className="mt-3 text-4xl text-white sm:text-5xl">Become a Member</h1>
           <p className="mt-6 text-lg text-white/85">
-            Open to all Georgia State students interested in tech. Free to join — fill out the form and we'll
+            Open to all Georgia State students interested in tech. Free to join. Fill out the form and we'll
             get you onto the roster and into the Slack.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function BecomeAMember() {
             <ul className="mt-6 space-y-3 text-gsu-blue-steel">
               <li>• Any Georgia State undergraduate or graduate student.</li>
               <li>• Majors welcome from CS, CIS, Math, Data Science, and beyond.</li>
-              <li>• All experience levels — first-time coders to seniors with multiple internships.</li>
+              <li>• All experience levels, from first-time coders to seniors with multiple internships.</li>
             </ul>
             <h2 className="mt-10 text-3xl">What you'll get</h2>
             <ul className="mt-6 space-y-3 text-gsu-blue-steel">

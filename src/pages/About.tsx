@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const offerings = [
   {
     title: 'Technical Workshops',
-    desc: 'Hands-on sessions covering software engineering, data science, AI, and more — designed to sharpen your technical skills at every level.',
+    desc: 'Hands-on sessions covering software engineering, data science, AI, and more, designed to sharpen your technical skills at every level.',
   },
   {
     title: 'Professional Development',
@@ -16,7 +16,7 @@ const offerings = [
   },
   {
     title: 'Community Building',
-    desc: "A welcoming space to find your people — study groups, social events, and a network that lasts beyond graduation.",
+    desc: "A welcoming space to find your people: study groups, social events, and a network that lasts beyond graduation.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function About() {
               }}
             >
               ColorStack at Georgia State University is a chartered chapter of the national ColorStack
-              organization — a community for Black, Latinx, and underrepresented students pursuing
+              organization, a community for Black, Latinx, and underrepresented students pursuing
               degrees and careers in computing.
             </p>
             <p
@@ -126,7 +126,7 @@ export default function About() {
             </p>
             <p style={{ fontSize: 'clamp(17px, 1.4vw, 20px)', lineHeight: 1.75, color: 'var(--ink)', opacity: 0.8 }}>
               Membership is free and open to all GSU students regardless of major, background, or
-              experience. Thank you for taking the time to learn about us — we'd love to have you
+              experience. Thank you for taking the time to learn about us. We'd love to have you
               join our community!
             </p>
           </motion.div>
@@ -228,7 +228,7 @@ export default function About() {
               Part of something bigger.
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.7, opacity: 0.75, maxWidth: 580 }}>
-              As a chartered chapter, we are proud members of ColorStack National — one of the
+              As a chartered chapter, we are proud members of ColorStack National, one of the
               largest communities for Black and Latinx students in tech. Becoming a national member
               unlocks access to even more resources, scholarships, and a nationwide network.
             </p>

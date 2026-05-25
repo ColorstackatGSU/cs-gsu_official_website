@@ -29,41 +29,6 @@ export default function Footer() {
 
       <div style={{ position: 'relative', zIndex: 1 }}>
         <div className="footer-grid">
-          {/* Brand col */}
-          <div>
-            <div
-              style={{
-                fontFamily: 'var(--display)',
-                fontSize: 'clamp(40px, 5vw, 72px)',
-                fontWeight: 600,
-                letterSpacing: '-0.03em',
-                lineHeight: 0.95,
-                marginBottom: 24,
-              }}
-            >
-              Built by
-              <br />
-              <span
-                style={{ WebkitTextStroke: '2px white', color: 'transparent' }}
-              >
-                students,
-              </span>
-              <br />
-              for students.
-            </div>
-            <p
-              style={{
-                opacity: 0.6,
-                fontSize: 14,
-                maxWidth: '36ch',
-                lineHeight: 1.55,
-              }}
-            >
-              ColorStack at Georgia State University — a community for Black
-              &amp; Latinx students in computing at GSU.
-            </p>
-          </div>
-
           {/* Sitemap col */}
           <div>
             <h4
@@ -110,9 +75,9 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
-                ['https://www.instagram.com/colorstackgsu/', 'Instagram ↗'],
-                ['https://www.linkedin.com/company/colorstackgsu/', 'LinkedIn ↗'],
-                ['#', 'Discord ↗'],
+                ['https://www.instagram.com/colorstackatgsu/', 'Instagram ↗'],
+                ['https://www.linkedin.com/company/colorstack-gsu/', 'LinkedIn ↗'],
+                ['https://discord.gg/DZwj8b24tW', 'Discord ↗'],
                 ['mailto:colorstackgsu@gmail.com', 'Email ↗'],
               ].map(([href, label]) => (
                 <li key={label}>
@@ -157,17 +122,6 @@ export default function Footer() {
             >
               <li>Georgia State University</li>
               <li>Atlanta, GA</li>
-              <li
-                style={{
-                  marginTop: 12,
-                  fontFamily: 'var(--mono)',
-                  fontSize: 11,
-                  letterSpacing: '0.1em',
-                  opacity: 0.6,
-                }}
-              >
-                33.7530° N, 84.3863° W
-              </li>
             </ul>
           </div>
         </div>
@@ -193,7 +147,6 @@ export default function Footer() {
         >
           <span>© {new Date().getFullYear()} ColorStack GSU Chapter</span>
           <span>A chartered chapter of ColorStack National</span>
-          <span>v1.0.0 / Atlanta</span>
         </div>
       </div>
     </footer>

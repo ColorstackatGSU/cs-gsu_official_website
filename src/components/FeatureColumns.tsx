@@ -4,7 +4,7 @@ const pillars = [
   {
     num: '01',
     title: 'Career Readiness',
-    body: "Resume reviews, mock interviews, technical workshops, and a direct pipeline to ColorStack national's partner companies — Microsoft, Stripe, Roblox, and more.",
+    body: "Resume reviews, mock interviews, technical workshops, and a direct pipeline to ColorStack national's partner companies like Microsoft, Stripe, Roblox, and more.",
     img: '/images/involvement-img.jpg',
   },
   {
@@ -30,7 +30,7 @@ const container = {
 
 const card = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
 export default function FeatureColumns() {
@@ -150,7 +150,7 @@ export default function FeatureColumns() {
                     marginBottom: 12,
                   }}
                 >
-                  — Pillar {p.num}
+                  Pillar {p.num}
                 </div>
                 <h3
                   style={{

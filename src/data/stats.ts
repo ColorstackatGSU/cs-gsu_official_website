@@ -24,7 +24,7 @@ export const testimonials = [
   },
   {
     quote:
-      'I found a real home in tech here. The events, the people, the resources — it changed my college experience.',
+      'I found a real home in tech here. The events, the people, the resources. It changed my college experience.',
     name: 'Shayla James',
     year: 'CS ’25',
     image: '/images/profiles/shayla-james.jpeg',

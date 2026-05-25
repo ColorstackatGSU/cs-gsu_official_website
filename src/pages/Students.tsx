@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { eboadYears, type EBoardMember } from '../data/eboard';
+import { eboard, type EBoardMember } from '../data/eboard';
 
-/* ── Modal ─────────────────────────────────────────────────────────────── */
+/* Modal */
 function MemberModal({
   member,
   onClose,
@@ -36,16 +36,9 @@ function MemberModal({
           animation: 'modal-in 0.25s cubic-bezier(.2,.6,.2,1)',
         }}
       >
-        {/* Top band */}
-        <div
-          style={{
-            background: 'var(--gsu-blue)',
-            height: 6,
-          }}
-        />
+        <div style={{ background: 'var(--gsu-blue)', height: 6 }} />
 
         <div style={{ padding: '32px 32px 28px' }}>
-          {/* Photo + close */}
           <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', marginBottom: 24 }}>
             <div
               style={{
@@ -137,27 +130,19 @@ function MemberModal({
                 opacity: 0.6,
                 flexShrink: 0,
                 cursor: 'pointer',
+                border: 'none',
               }}
             >
               ×
             </button>
           </div>
 
-          {/* Bio */}
           {member.bio && (
-            <p
-              style={{
-                fontSize: 15,
-                lineHeight: 1.65,
-                opacity: 0.75,
-                marginBottom: 24,
-              }}
-            >
+            <p style={{ fontSize: 15, lineHeight: 1.65, opacity: 0.75, marginBottom: 24 }}>
               {member.bio}
             </p>
           )}
 
-          {/* Links */}
           {(member.email || member.linkedin || member.instagram) && (
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {member.email && (
@@ -199,21 +184,19 @@ function MemberModal({
   );
 }
 
-/* ── Member Card ────────────────────────────────────────────────────────── */
+/* Member Card */
 function MemberCard({
   member,
   onClick,
-  isPlaceholder,
 }: {
   member: EBoardMember;
   onClick: () => void;
-  isPlaceholder: boolean;
 }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <button
-      onClick={isPlaceholder ? undefined : onClick}
+      onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -223,27 +206,25 @@ function MemberCard({
         background: 'none',
         border: 'none',
         padding: 0,
-        cursor: isPlaceholder ? 'default' : 'pointer',
+        cursor: 'pointer',
       }}
     >
       <div
         style={{
-          borderRadius: 16,
+          borderRadius: 20,
           overflow: 'hidden',
-          border: `1px solid ${hovered && !isPlaceholder ? 'var(--gsu-blue)' : 'var(--line)'}`,
+          border: `1px solid ${hovered ? 'var(--gsu-blue)' : 'var(--line)'}`,
           transition: 'all 0.25s',
-          transform: hovered && !isPlaceholder ? 'translateY(-4px)' : 'none',
-          boxShadow:
-            hovered && !isPlaceholder
-              ? '0 20px 40px -20px rgba(0,57,166,0.25)'
-              : 'none',
-          background: isPlaceholder ? 'var(--paper-warm)' : 'var(--paper)',
+          transform: hovered ? 'translateY(-6px)' : 'none',
+          boxShadow: hovered
+            ? '0 28px 48px -20px rgba(0,57,166,0.3)'
+            : '0 2px 12px rgba(0,0,0,0.04)',
+          background: 'var(--paper)',
         }}
       >
-        {/* Photo */}
         <div
           style={{
-            aspectRatio: '4/4.5',
+            aspectRatio: '4/5',
             overflow: 'hidden',
             background: 'var(--paper-warm)',
             position: 'relative',
@@ -262,7 +243,6 @@ function MemberCard({
                   transform: hovered ? 'scale(1.04)' : 'scale(1)',
                 }}
               />
-              {/* Hover overlay */}
               <div
                 style={{
                   position: 'absolute',
@@ -272,13 +252,13 @@ function MemberCard({
                   transition: 'opacity 0.25s',
                   display: 'flex',
                   alignItems: 'flex-end',
-                  padding: '16px',
+                  padding: '20px',
                 }}
               >
                 <span
                   style={{
                     fontFamily: 'var(--mono)',
-                    fontSize: 11,
+                    fontSize: 12,
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     color: 'white',
@@ -289,7 +269,6 @@ function MemberCard({
               </div>
             </>
           ) : (
-            /* Striped placeholder */
             <div
               style={{
                 width: '100%',
@@ -308,10 +287,10 @@ function MemberCard({
                   border: '1px solid var(--gsu-blue)',
                   color: 'var(--gsu-blue)',
                   fontFamily: 'var(--mono)',
-                  fontSize: 10,
+                  fontSize: 11,
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  padding: '6px 12px',
+                  padding: '8px 14px',
                   borderRadius: 4,
                 }}
               >
@@ -321,17 +300,15 @@ function MemberCard({
           )}
         </div>
 
-        {/* Info */}
-        <div style={{ padding: '18px 20px 20px' }}>
+        <div style={{ padding: '22px 24px 26px', textAlign: 'center' }}>
           <div
             style={{
               fontFamily: 'var(--mono)',
-              fontSize: 10,
-              letterSpacing: '0.12em',
+              fontSize: 11,
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
               color: 'var(--gsu-blue)',
-              marginBottom: 5,
-              opacity: isPlaceholder ? 0.5 : 1,
+              marginBottom: 8,
             }}
           >
             {member.role}
@@ -339,21 +316,21 @@ function MemberCard({
           <div
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: 600,
-              letterSpacing: '-0.01em',
-              opacity: isPlaceholder ? 0.35 : 1,
+              letterSpacing: '-0.015em',
+              lineHeight: 1.2,
             }}
           >
-            {isPlaceholder ? '——' : member.name}
+            {member.name}
           </div>
           {member.major && (
             <div
               style={{
                 fontFamily: 'var(--mono)',
-                fontSize: 11,
-                opacity: 0.45,
-                marginTop: 4,
+                fontSize: 12,
+                opacity: 0.5,
+                marginTop: 6,
                 letterSpacing: '0.04em',
               }}
             >
@@ -366,13 +343,9 @@ function MemberCard({
   );
 }
 
-/* ── Page ───────────────────────────────────────────────────────────────── */
+/* Page */
 export default function Students() {
-  const [activeYear, setActiveYear] = useState(0);
   const [selected, setSelected] = useState<EBoardMember | null>(null);
-
-  const year = eboadYears[activeYear];
-  const isPlaceholderYear = activeYear === 1;
 
   return (
     <>
@@ -380,6 +353,22 @@ export default function Students() {
         @keyframes modal-in {
           from { opacity: 0; transform: translateY(20px) scale(0.97); }
           to   { opacity: 1; transform: none; }
+        }
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 28px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        @media (max-width: 1024px) {
+          .team-grid { grid-template-columns: repeat(3, 1fr); max-width: 900px; }
+        }
+        @media (max-width: 768px) {
+          .team-grid { grid-template-columns: repeat(2, 1fr); max-width: 600px; gap: 20px; }
+        }
+        @media (max-width: 480px) {
+          .team-grid { grid-template-columns: 1fr; max-width: 360px; }
         }
       `}</style>
 
@@ -391,6 +380,7 @@ export default function Students() {
           background: 'var(--ink)',
           color: 'white',
           overflow: 'hidden',
+          textAlign: 'center',
         }}
       >
         <div
@@ -405,14 +395,22 @@ export default function Students() {
             height: 600,
             background: 'radial-gradient(circle, rgba(0,57,166,0.4), transparent 70%)',
             top: -200,
-            right: -100,
+            left: '50%',
+            transform: 'translateX(-50%)',
             filter: 'blur(60px)',
             pointerEvents: 'none',
           }}
           aria-hidden
         />
-        <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div className="section-eyebrow" style={{ color: 'var(--gsu-blue-bright)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}>
+          <div
+            className="section-eyebrow"
+            style={{
+              color: 'var(--gsu-blue-bright)',
+              justifyContent: 'center',
+              display: 'flex',
+            }}
+          >
             <span className="num" style={{ background: 'var(--gsu-blue-bright)' }}>
               Team
             </span>
@@ -431,47 +429,22 @@ export default function Students() {
             Meet the{' '}
             <span style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>board.</span>
           </h1>
-          <p style={{ opacity: 0.65, maxWidth: '52ch', fontSize: 18, lineHeight: 1.5 }}>
-            The students running ColorStack at Georgia State — organizing events, building
-            partnerships, and keeping the chapter moving forward.
-          </p>
-
-          {/* Year tabs */}
-          <div
+          <p
             style={{
-              display: 'flex',
-              gap: 8,
-              marginTop: 40,
-              flexWrap: 'wrap',
+              opacity: 0.65,
+              maxWidth: '52ch',
+              fontSize: 18,
+              lineHeight: 1.5,
+              margin: '0 auto',
             }}
           >
-            {eboadYears.map((y, i) => (
-              <button
-                key={y.label}
-                onClick={() => setActiveYear(i)}
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: 12,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                  padding: '10px 20px',
-                  borderRadius: 6,
-                  border: '1px solid',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                  background: activeYear === i ? 'white' : 'transparent',
-                  color: activeYear === i ? 'var(--ink)' : 'rgba(255,255,255,0.6)',
-                  borderColor: activeYear === i ? 'white' : 'rgba(255,255,255,0.2)',
-                }}
-              >
-                {y.label}
-              </button>
-            ))}
-          </div>
+            The students running ColorStack at Georgia State. Organizing events, building
+            partnerships, and keeping the chapter moving forward.
+          </p>
         </div>
       </section>
 
-      {/* Board grid */}
+      {/* Flat centered grid */}
       <section
         className="board-grid-pad"
         style={{
@@ -480,78 +453,17 @@ export default function Students() {
           zIndex: 1,
         }}
       >
-        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-          {isPlaceholderYear && (
-            <div
-              style={{
-                border: '1px solid var(--line)',
-                borderRadius: 12,
-                padding: '16px 24px',
-                marginBottom: 60,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                background: 'var(--paper-warm)',
-                fontFamily: 'var(--mono)',
-                fontSize: 12,
-                letterSpacing: '0.06em',
-                color: 'var(--gsu-blue)',
-              }}
-            >
-              <span style={{ opacity: 0.5 }}>●</span>
-              Applications for the 2026–2027 e-board will open in Spring 2026.
-            </div>
-          )}
-
-          {year.groups.map((group) => (
-            <div key={group.title} style={{ marginBottom: 72 }}>
-              {/* Group label */}
-              <div
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: 11,
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: 'var(--gsu-blue)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 12,
-                  marginBottom: 32,
-                }}
-              >
-                <span
-                  style={{
-                    width: 32,
-                    height: 1,
-                    background: 'var(--gsu-blue)',
-                    display: 'inline-block',
-                  }}
-                />
-                {group.title}
-              </div>
-
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-                  gap: 20,
-                }}
-              >
-                {group.members.map((member, i) => (
-                  <MemberCard
-                    key={`${member.name}-${i}`}
-                    member={member}
-                    isPlaceholder={isPlaceholderYear || member.name === 'TBA'}
-                    onClick={() => setSelected(member)}
-                  />
-                ))}
-              </div>
-            </div>
+        <div className="team-grid">
+          {eboard.map((member, i) => (
+            <MemberCard
+              key={`${member.name}-${i}`}
+              member={member}
+              onClick={() => setSelected(member)}
+            />
           ))}
         </div>
       </section>
 
-      {/* Modal */}
       {selected && (
         <MemberModal member={selected} onClose={() => setSelected(null)} />
       )}
