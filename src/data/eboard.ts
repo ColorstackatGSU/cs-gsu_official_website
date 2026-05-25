@@ -24,7 +24,7 @@ export const eboadYears: EBoardYear[] = [
         members: [
           {
             name: 'Vanohra Gaspard',
-            role: 'President',
+            role: 'Founder & President',
             email: 'vanohrag@student.gsu.edu',
             image: '/images/eboard/Vanohra_Gaspard.jpeg',
             bio: 'Leading ColorStack at Georgia State and building bridges between students and industry partners. Passionate about increasing representation in tech and creating a home for underrepresented computing students at GSU.',
