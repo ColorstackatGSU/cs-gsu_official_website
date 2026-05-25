@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { testimonials } from '../data/stats';
+import { testimonials } from '../../data/testimonials';
 
 export default function Testimonials() {
   const [[i, dir], setState] = useState<[number, number]>([0, 0]);

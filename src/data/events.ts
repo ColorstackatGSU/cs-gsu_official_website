@@ -17,15 +17,6 @@ export const eventYears: EventYear[] = [
     label: '2025–2026',
     events: [
       {
-        title: 'Thrive in Tech: Duolingo Panel',
-        date: 'Sep 5, 2025',
-        semester: 'Fall 2025',
-        description:
-          "An empowering evening of storytelling, career insight, and authentic conversation designed to uplift underrepresented students in tech. Featuring voices from Duolingo in collaboration with ColorStack's Yale chapter.",
-        image: '/images/events/duolingo-panel.png',
-        tag: 'Panel',
-      },
-      {
         title: 'ColorStack ATL Social Mixer',
         date: 'Jan 31, 2025',
         semester: 'Spring 2025',
@@ -33,6 +24,15 @@ export const eventYears: EventYear[] = [
           'We brought together ColorStack chapters from Georgia Tech, Kennesaw State, Emory, and Georgia State for a vibrant evening of community, connection, and good vibes across Atlanta.',
         image: '/images/events/atl-social-mixer.png',
         tag: 'Social',
+      },
+      {
+        title: 'Thrive in Tech: Duolingo Panel',
+        date: 'Sep 5, 2025',
+        semester: 'Fall 2025',
+        description:
+          "An empowering evening of storytelling, career insight, and authentic conversation designed to uplift underrepresented students in tech. Featuring voices from Duolingo in collaboration with ColorStack's Yale chapter.",
+        image: '/images/events/duolingo-panel.png',
+        tag: 'Panel',
       },
       {
         title: 'Peach Hacks Y2K Hackathon',

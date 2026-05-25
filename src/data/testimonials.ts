@@ -1,12 +1,3 @@
-export const stats = [
-  { value: '150+', label: 'Active Members' },
-  { value: '20+', label: 'Workshops Hosted' },
-  { value: '12+', label: 'Industry Partners' },
-  { value: '40%', label: 'Identify as Women' },
-  { value: '60%', label: 'First-Gen Students' },
-  { value: '15+', label: '2026 Offers Received' },
-];
-
 export const testimonials = [
   {
     quote:

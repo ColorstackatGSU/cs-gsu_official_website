@@ -14,15 +14,34 @@ export default function Hero() {
           overflow: 'hidden',
         }}
       >
-        <img
+        <motion.img
           src="https://static.wixstatic.com/media/407346_c8a8fb1fc33447ffa4a0864437a8de34~mv2.png"
           alt="ColorStack GSU community members"
+          initial={{ scale: 1.12, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ opacity: { duration: 1.2, ease: 'easeOut' }, scale: { duration: 14, ease: [0.22, 1, 0.36, 1] } }}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center 30%',
             display: 'block',
+            transformOrigin: 'center center',
+          }}
+        />
+        {/* Animated color glow */}
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, delay: 0.3 }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            background:
+              'radial-gradient(60% 50% at 20% 80%, rgba(0,82,165,0.35) 0%, transparent 60%), radial-gradient(50% 40% at 90% 20%, rgba(255,89,0,0.18) 0%, transparent 65%)',
+            mixBlendMode: 'screen',
           }}
         />
         {/* Gradient overlay: dark at bottom for text legibility */}
@@ -66,9 +85,12 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.09, delayChildren: 0.25 } },
+            }}
             style={{
               fontFamily: 'var(--display)',
               fontSize: 'clamp(36px, 5.5vw, 80px)',
@@ -80,7 +102,20 @@ export default function Hero() {
               maxWidth: '14ch',
             }}
           >
-            Welcome to ColorStack at GSU
+            {['Welcome', 'to', 'ColorStack', 'at', 'GSU'].map((word, i) => (
+              <span key={i} style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom', marginRight: '0.25em' }}>
+                <motion.span
+                  variants={{
+                    hidden: { y: '110%', opacity: 0 },
+                    visible: { y: '0%', opacity: 1 },
+                  }}
+                  transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
           </motion.h1>
 
           <motion.p
