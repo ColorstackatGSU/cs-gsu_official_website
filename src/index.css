@@ -20,12 +20,14 @@
 
 @layer base {
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
   body {
     font-family: var(--display);
     background: var(--paper);
     color: var(--ink);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
   }
@@ -307,7 +309,13 @@
   .about-hero-pad     { padding: 88px 20px 48px; }
   .students-hero-pad  { padding: 100px 20px 56px; }
   .board-grid-pad     { padding: 56px 20px 72px; }
-  .hero-text-wrap     { padding: 0 20px 36px; }
+  .hero-text-wrap     { padding: 0 16px 28px; }
+
+  /* Hero scales down on small screens so nothing clips */
+  .hero-headline { margin-bottom: 14px !important; max-width: 100% !important; }
+  .hero-sub      { margin-bottom: 20px !important; }
+  .hero-cta-row  { gap: 10px !important; width: 100%; }
+  .hero-cta      { padding: 13px 18px !important; font-size: 12px !important; flex: 1 1 auto; justify-content: center; }
 
   /* Tailwind container override on mobile */
   .container-wide { padding-left: 20px !important; padding-right: 20px !important; }

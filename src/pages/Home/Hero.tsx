@@ -14,19 +14,15 @@ export default function Hero() {
           overflow: 'hidden',
         }}
       >
-        <motion.img
+        <img
           src="https://static.wixstatic.com/media/407346_c8a8fb1fc33447ffa4a0864437a8de34~mv2.png"
           alt="ColorStack GSU community members"
-          initial={{ scale: 1.12, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ opacity: { duration: 1.2, ease: 'easeOut' }, scale: { duration: 14, ease: [0.22, 1, 0.36, 1] } }}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center 30%',
             display: 'block',
-            transformOrigin: 'center center',
           }}
         />
         {/* Animated color glow */}
@@ -91,14 +87,15 @@ export default function Hero() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.09, delayChildren: 0.25 } },
             }}
+            className="hero-headline"
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(36px, 5.5vw, 80px)',
+              fontSize: 'clamp(30px, 8vw, 80px)',
               fontWeight: 700,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,
               color: 'white',
-              marginBottom: 24,
+              marginBottom: 20,
               maxWidth: '14ch',
             }}
           >
@@ -122,12 +119,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
+            className="hero-sub"
             style={{
-              fontSize: 'clamp(15px, 1.2vw, 18px)',
+              fontSize: 'clamp(14px, 1.2vw, 18px)',
               color: 'rgba(255,255,255,0.75)',
               lineHeight: 1.6,
               maxWidth: 500,
-              marginBottom: 36,
+              marginBottom: 28,
             }}
           >
             A community for Black and Latinx students in computing at Georgia State University.
@@ -138,10 +136,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.44 }}
-            style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}
+            className="hero-cta-row"
+            style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}
           >
             <Link
               to="/become-a-member"
+              className="hero-cta"
               style={{
                 fontFamily: 'var(--mono)',
                 fontSize: 13,
@@ -169,6 +169,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/about"
+              className="hero-cta"
               style={{
                 fontFamily: 'var(--mono)',
                 fontSize: 13,
