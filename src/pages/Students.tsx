@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { eboard, type EBoardMember } from '../data/eboard';
+import { eboadYears, type EBoardMember } from '../data/eboard';
 
 /* Modal */
 function MemberModal({
@@ -346,6 +346,12 @@ function MemberCard({
 /* Page */
 export default function Students() {
   const [selected, setSelected] = useState<EBoardMember | null>(null);
+  // Default to newest year (last in array)
+  const [activeYearIdx, setActiveYearIdx] = useState(eboadYears.length - 1);
+
+  const activeYear = eboadYears[activeYearIdx];
+  const activeMembers = activeYear.groups.flatMap((g) => g.members);
+  const cols = activeMembers.length >= 4 ? 4 : 3;
 
   return (
     <>
@@ -356,7 +362,7 @@ export default function Students() {
         }
         .team-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(var(--team-cols, 4), 1fr);
           gap: 28px;
           max-width: 1200px;
           margin: 0 auto;
@@ -369,6 +375,29 @@ export default function Students() {
         }
         @media (max-width: 480px) {
           .team-grid { grid-template-columns: 1fr; max-width: 360px; }
+        }
+        .year-tab {
+          font-family: var(--mono);
+          font-size: 13px;
+          letter-spacing: 0.08em;
+          padding: 10px 22px;
+          border-radius: 8px;
+          border: 1px solid var(--line);
+          background: none;
+          cursor: pointer;
+          transition: all 0.2s;
+          color: inherit;
+          opacity: 0.55;
+        }
+        .year-tab:hover {
+          opacity: 0.85;
+          border-color: var(--gsu-blue);
+        }
+        .year-tab.active {
+          background: var(--gsu-blue);
+          border-color: var(--gsu-blue);
+          color: white;
+          opacity: 1;
         }
       `}</style>
 
@@ -444,7 +473,7 @@ export default function Students() {
         </div>
       </section>
 
-      {/* Flat centered grid */}
+      {/* Year tabs + grid */}
       <section
         className="board-grid-pad"
         style={{
@@ -453,8 +482,32 @@ export default function Students() {
           zIndex: 1,
         }}
       >
-        <div className="team-grid">
-          {eboard.map((member, i) => (
+        {/* Year switcher */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 10,
+            marginBottom: 56,
+          }}
+        >
+          {eboadYears.map((yr, idx) => (
+            <button
+              key={yr.label}
+              className={`year-tab${idx === activeYearIdx ? ' active' : ''}`}
+              onClick={() => setActiveYearIdx(idx)}
+            >
+              {yr.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Flat grid for active year */}
+        <div
+          className="team-grid"
+          style={{ '--team-cols': cols } as React.CSSProperties}
+        >
+          {activeMembers.map((member, i) => (
             <MemberCard
               key={`${member.name}-${i}`}
               member={member}
