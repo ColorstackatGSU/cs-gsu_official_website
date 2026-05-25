@@ -43,7 +43,23 @@ export default function BecomeAMember() {
             >
               Join on PantherConnect →
             </a>
-            <p className="mt-4 text-sm text-gsu-blue-steel">
+
+            <div className="mt-6 border-t border-gsu-light-gray pt-6">
+              <h3 className="text-2xl">Join ColorStack Nationally</h3>
+              <p className="mt-3 text-sm text-gsu-blue-steel">
+                Become a member of the national ColorStack community to access scholarships, job boards, and a network of Black and Latinx engineers across the country.
+              </p>
+              <a
+                href="https://www.colorstack.org/member-application-requirements"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary mt-6 inline-flex w-full justify-center"
+              >
+                Apply to ColorStack National →
+              </a>
+            </div>
+
+            <p className="mt-6 text-sm text-gsu-blue-steel">
               Questions? Email us at{' '}
               <a href="mailto:colorstackgsu@gmail.com" className="underline">
                 colorstackgsu@gmail.com
