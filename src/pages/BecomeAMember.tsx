@@ -33,7 +33,7 @@ export default function BecomeAMember() {
           <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
             <h3 className="text-2xl">Register on PIN</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
-              Join our official organization on GSU's PantherConnect (PIN) to get added to the roster and receive event updates.
+              Join our official organization on GSU's PIN to get added to the roster and receive event updates.
             </p>
             <a
               href="https://pin.gsu.edu/organization/colorstack"
