@@ -303,7 +303,7 @@ function EmptyYear() {
         transition={{ duration: 0.6, delay: 0.4 }}
         style={{
           fontFamily: 'var(--display)',
-          fontSize: 'clamp(28px, 4vw, 42px)',
+          fontSize: 'clamp(24px, 3.2vw, 36px)',
           fontWeight: 700,
           letterSpacing: '-0.03em',
           lineHeight: 1.15,
@@ -458,7 +458,7 @@ export default function Involvement() {
           <h1
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(48px, 8vw, 100px)',
+              fontSize: 'clamp(40px, 6.5vw, 80px)',
               fontWeight: 600,
               letterSpacing: '-0.04em',
               lineHeight: 0.95,
@@ -466,7 +466,7 @@ export default function Involvement() {
             }}
           >
             Real events.{' '}
-            <span style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>
+            <span style={{ color: '#97CAEB' }}>
               Real moments.
             </span>
           </h1>
@@ -474,7 +474,7 @@ export default function Involvement() {
             style={{
               opacity: 0.65,
               maxWidth: '56ch',
-              fontSize: 18,
+              fontSize: 16,
               lineHeight: 1.5,
               margin: '0 auto',
             }}

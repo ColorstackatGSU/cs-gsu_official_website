@@ -142,7 +142,7 @@ export default function MissionBlurb() {
           <h2
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(30px, 4vw, 56px)',
+              fontSize: 'clamp(26px, 3.2vw, 46px)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
               lineHeight: 1.18,

@@ -66,7 +66,7 @@ export default function About() {
             transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(36px, 5vw, 72px)',
+              fontSize: 'clamp(30px, 4vw, 58px)',
               fontWeight: 700,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,
@@ -79,7 +79,7 @@ export default function About() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ fontSize: 18, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', maxWidth: 640, margin: '0 auto' }}
+            style={{ fontSize: 16, lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', maxWidth: 640, margin: '0 auto' }}
           >
             ColorStack's mission is to increase the number of Black, Latinx, and Indigenous
             technologists who graduate and launch rewarding technical careers.
@@ -99,7 +99,7 @@ export default function About() {
             <p className="section-eyebrow">Our Story</p>
             <p
               style={{
-                fontSize: 'clamp(17px, 1.4vw, 20px)',
+                fontSize: 'clamp(15px, 1.2vw, 17px)',
                 lineHeight: 1.75,
                 color: 'var(--ink)',
                 opacity: 0.8,
@@ -112,7 +112,7 @@ export default function About() {
             </p>
             <p
               style={{
-                fontSize: 'clamp(17px, 1.4vw, 20px)',
+                fontSize: 'clamp(15px, 1.2vw, 17px)',
                 lineHeight: 1.75,
                 color: 'var(--ink)',
                 opacity: 0.8,
@@ -124,7 +124,7 @@ export default function About() {
               real change across the industry. We partner with faculty, alumni, and corporate sponsors
               to put meaningful opportunities in front of our members.
             </p>
-            <p style={{ fontSize: 'clamp(17px, 1.4vw, 20px)', lineHeight: 1.75, color: 'var(--ink)', opacity: 0.8 }}>
+            <p style={{ fontSize: 'clamp(15px, 1.2vw, 17px)', lineHeight: 1.75, color: 'var(--ink)', opacity: 0.8 }}>
               Membership is free and open to all GSU students regardless of major, background, or
               experience. Thank you for taking the time to learn about us. We'd love to have you
               join our community!
@@ -147,7 +147,7 @@ export default function About() {
             <h2
               style={{
                 fontFamily: 'var(--display)',
-                fontSize: 'clamp(28px, 3vw, 48px)',
+                fontSize: 'clamp(24px, 2.5vw, 40px)',
                 fontWeight: 700,
                 letterSpacing: '-0.03em',
                 lineHeight: 1.1,
@@ -219,7 +219,7 @@ export default function About() {
             <h2
               style={{
                 fontFamily: 'var(--display)',
-                fontSize: 'clamp(24px, 2.5vw, 38px)',
+                fontSize: 'clamp(21px, 2vw, 32px)',
                 fontWeight: 700,
                 letterSpacing: '-0.03em',
                 lineHeight: 1.15,
@@ -269,7 +269,7 @@ export default function About() {
             <h2
               style={{
                 fontFamily: 'var(--display)',
-                fontSize: 'clamp(28px, 3.5vw, 52px)',
+                fontSize: 'clamp(24px, 2.8vw, 42px)',
                 fontWeight: 700,
                 letterSpacing: '-0.04em',
                 lineHeight: 1.1,
@@ -278,7 +278,7 @@ export default function About() {
             >
               Want to collaborate or connect?
             </h2>
-            <p style={{ fontSize: 17, lineHeight: 1.7, opacity: 0.7, marginBottom: 36 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.7, marginBottom: 36 }}>
               Want to collaborate on a tech talk or event with our community? We're here for it!
               For any questions or opportunities, drop us a line.
             </p>

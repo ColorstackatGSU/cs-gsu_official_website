@@ -230,7 +230,7 @@ function BuildingArt() {
         x="36"
         y="40"
         fontSize="32"
-        fontFamily="JetBrains Mono, monospace"
+        fontFamily="Montserrat, sans-serif"
         fontWeight="700"
         fill="white"
         fillOpacity="0.8"
@@ -246,7 +246,7 @@ function BuildingArt() {
         x="248"
         y="200"
         fontSize="24"
-        fontFamily="JetBrains Mono, monospace"
+        fontFamily="Montserrat, sans-serif"
         fontWeight="700"
         fill="white"
         fillOpacity="0.5"
@@ -344,7 +344,7 @@ export default function FeatureColumns() {
           <h2
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(36px, 5vw, 72px)',
+              fontSize: 'clamp(30px, 4vw, 58px)',
               fontWeight: 700,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,

@@ -68,7 +68,7 @@ export default function GetInvolved() {
           <h2
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(32px, 4vw, 60px)',
+              fontSize: 'clamp(27px, 3.2vw, 50px)',
               fontWeight: 700,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,

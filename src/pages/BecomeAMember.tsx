@@ -1,11 +1,11 @@
 export default function BecomeAMember() {
   return (
     <>
-      <section className="bg-gsu-blue py-20 text-white">
+      <section className="interior-hero-pad bg-gsu-blue text-white">
         <div className="container-wide max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">Join us</p>
-          <h1 className="mt-3 text-4xl text-white sm:text-5xl">Become a Member</h1>
-          <p className="mt-6 text-lg text-white/85">
+          <h1 className="mt-3 text-3xl text-white sm:text-4xl">Become a Member</h1>
+          <p className="mt-6 text-base text-white/85">
             Open to all Georgia State students interested in tech. Free to join. Fill out the form and we'll
             get you onto the roster and into the Slack.
           </p>
@@ -15,13 +15,13 @@ export default function BecomeAMember() {
       <section className="bg-white py-20">
         <div className="container-wide grid gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl">Who can join?</h2>
+            <h2 className="text-2xl">Who can join?</h2>
             <ul className="mt-6 space-y-3 text-gsu-blue-steel">
               <li>• Any Georgia State undergraduate or graduate student.</li>
               <li>• Majors welcome from CS, CIS, Math, Data Science, and beyond.</li>
               <li>• All experience levels, from first-time coders to seniors with multiple internships.</li>
             </ul>
-            <h2 className="mt-10 text-3xl">What you'll get</h2>
+            <h2 className="mt-10 text-2xl">What you'll get</h2>
             <ul className="mt-6 space-y-3 text-gsu-blue-steel">
               <li>• Access to the member Slack and event calendar.</li>
               <li>• Invitations to sponsor recruiting events and tech talks.</li>
@@ -31,7 +31,7 @@ export default function BecomeAMember() {
           </div>
 
           <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
-            <h3 className="text-2xl">Register on PIN</h3>
+            <h3 className="text-xl">Register on PIN</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
               Join our official organization on GSU's PIN to get added to the roster and receive event updates.
             </p>
@@ -45,7 +45,7 @@ export default function BecomeAMember() {
             </a>
 
             <div className="mt-6 border-t border-gsu-light-gray pt-6">
-              <h3 className="text-2xl">Join ColorStack Nationally</h3>
+              <h3 className="text-xl">Join ColorStack Nationally</h3>
               <p className="mt-3 text-sm text-gsu-blue-steel">
                 Become a member of the national ColorStack community to access scholarships, job boards, and a network of Black and Latinx engineers across the country.
               </p>

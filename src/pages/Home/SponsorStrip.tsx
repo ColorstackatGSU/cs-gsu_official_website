@@ -34,7 +34,7 @@ export default function SponsorStrip() {
             className="marquee-item"
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontSize: 'clamp(27px, 3.2vw, 40px)',
               fontWeight: 600,
               letterSpacing: '-0.02em',
               display: 'inline-block',

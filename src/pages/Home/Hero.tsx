@@ -90,7 +90,7 @@ export default function Hero() {
             className="hero-headline"
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(30px, 8vw, 80px)',
+              fontSize: 'clamp(26px, 6.5vw, 64px)',
               fontWeight: 700,
               letterSpacing: '-0.04em',
               lineHeight: 1.05,

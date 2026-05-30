@@ -14,8 +14,8 @@
   --line: rgba(10, 14, 26, 0.08);
   --line-strong: rgba(10, 14, 26, 0.18);
   --grid-line: rgba(0, 57, 166, 0.07);
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-  --display: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'Montserrat', system-ui, sans-serif;
+  --display: 'Montserrat', system-ui, sans-serif;
 }
 
 @layer base {
@@ -279,6 +279,7 @@
 .section-pad-lg     { padding: 100px 32px; }
 .section-pad-md     { padding: 80px 32px; }
 .about-hero-pad     { padding: 120px 32px 80px; }
+.interior-hero-pad  { padding: 120px 32px 80px; }
 .students-hero-pad  { padding: 160px 32px 80px; }
 .board-grid-pad     { padding: 80px 32px 120px; }
 .hero-text-wrap     { padding: 0 40px 56px; max-width: 1400px; margin: 0 auto; }
@@ -307,6 +308,7 @@
   .section-pad-lg     { padding: 56px 20px; }
   .section-pad-md     { padding: 48px 20px; }
   .about-hero-pad     { padding: 88px 20px 48px; }
+  .interior-hero-pad  { padding: 88px 20px 48px; }
   .students-hero-pad  { padding: 100px 20px 56px; }
   .board-grid-pad     { padding: 56px 20px 72px; }
   .hero-text-wrap     { padding: 0 16px 28px; }

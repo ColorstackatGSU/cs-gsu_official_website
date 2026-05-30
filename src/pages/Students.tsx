@@ -448,7 +448,7 @@ export default function Students() {
           <h1
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(48px, 8vw, 100px)',
+              fontSize: 'clamp(40px, 6.5vw, 80px)',
               fontWeight: 600,
               letterSpacing: '-0.04em',
               lineHeight: 0.95,
@@ -456,13 +456,13 @@ export default function Students() {
             }}
           >
             Meet the{' '}
-            <span style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>board.</span>
+            <span style={{ color: '#97CAEB' }}>board.</span>
           </h1>
           <p
             style={{
               opacity: 0.65,
               maxWidth: '52ch',
-              fontSize: 18,
+              fontSize: 16,
               lineHeight: 1.5,
               margin: '0 auto',
             }}
