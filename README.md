@@ -1,4 +1,4 @@
-# ColorStack at Georgia State — Website
+# ColorStack at Georgia State - Website
 
 React + Vite + TypeScript + Tailwind CSS redesign of [colorstackatgsu.com](https://colorstackatgsu.com).
 
@@ -35,4 +35,4 @@ Palette comes from GSU's official web color guidelines (https://commkit.gsu.edu/
 
 ## Deploy
 
-Targeting Vercel — the framework preset auto-detects Vite. No additional config required for an initial deployment.
+Targeting Vercel - the framework preset auto-detects Vite. No additional config required for an initial deployment.

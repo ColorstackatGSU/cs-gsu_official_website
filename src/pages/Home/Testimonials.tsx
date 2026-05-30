@@ -22,7 +22,7 @@ export default function Testimonials() {
   return (
     <section className="bg-white py-20" style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="container-wide max-w-4xl text-center" style={{ position: 'relative' }}>
-        {/* Heading entrance — slide up + stagger */}
+        {/* Heading entrance - slide up + stagger */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
