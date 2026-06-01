@@ -1,20 +1,32 @@
-# ColorStack at Georgia State - Website
+# ColorStack at Georgia State University Website
 
-React + Vite + TypeScript + Tailwind CSS redesign of [colorstackatgsu.com](https://colorstackatgsu.com).
+This repository contains the official website for **ColorStack at GSU**.
 
-## Stack
+ColorStack at GSU is a student chapter focused on building community, support, and career momentum for Black and Latinx computer science students at Georgia State University. Our chapter hosts events, shares opportunities, and helps students grow academically and professionally in tech.
+
+## About ColorStack
+
+ColorStack is a national organization whose mission is to increase the number of Black and Latinx computer science graduates entering rewarding technical careers.
+
+- National website: [colorstack.com](https://colorstack.com)
+- National platform: [colorstack.org](https://www.colorstack.org)
+
+This site represents the local GSU chapter and connects students, partners, and supporters with what we are doing on campus.
+
+## Tech stack
 
 - React 19 + TypeScript
 - Vite
-- Tailwind CSS (GSU brand palette in `tailwind.config.js`)
+- Tailwind CSS
 - React Router
 
-## Develop
+## Local development
 
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm run build    # type-check + production build → dist/
+npm run lint     # eslint
+npm run build    # type-check + production build -> dist/
 npm run preview  # serve the production build
 ```
 
@@ -22,31 +34,13 @@ npm run preview  # serve the production build
 
 ```
 src/
-  components/   # Navbar, Footer, Hero, SponsorStrip, FeatureColumns, StatsGrid, Testimonials, GetInvolved, ...
-  pages/        # Home, About, Involvement, Students, Sponsors, BecomeAMember, NotFound
-  data/         # eboard, sponsors, stats/testimonials (placeholder content)
-public/images/  # static assets migrated from the previous static site
-legacy/         # archived static HTML + CSS from the prior site
+  components/   # shared UI components
+  pages/        # route-level pages
+  data/         # chapter content/data
+public/images/  # static assets
+legacy/         # archived legacy site assets
 ```
-
-## Brand
-
-Palette comes from GSU's official web color guidelines (https://commkit.gsu.edu/website-management/web-color-guidelines/) and lives under `theme.extend.colors.gsu` in `tailwind.config.js`. Primary is GSU Blue `#0039A6` + white; red `#CC0000` for accents/CTAs.
-
-## Deploy
-
-Targeting Vercel - the framework preset auto-detects Vite. No additional config required for an initial deployment.
 
 ## License
 
 Released under the [MIT License](LICENSE).
-
-## Recent updates
-
-_2026-05-31_
-
-- **Typography:** switched the entire site to **Montserrat** (loaded in `index.html`; both `--display` and `--mono` font variables in `src/index.css` now point to it).
-- **Type scale:** reduced font sizes site-wide for a more balanced look — display headings down ~15–20%, body copy ~10%; small accent labels left as-is.
-- **Navbar overlap fix:** interior hero pages (Sponsors, Become a Member) no longer tuck their content under the fixed navbar. Added a shared `.interior-hero-pad` class with proper top padding.
-- **Heading style:** replaced the hollow/outlined ("clear") heading text on the Events and Team pages with solid GSU light-blue (`#97CAEB`).
-- **Copy cleanup:** removed all em-dashes across the site.
