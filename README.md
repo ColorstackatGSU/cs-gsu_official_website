@@ -36,3 +36,17 @@ Palette comes from GSU's official web color guidelines (https://commkit.gsu.edu/
 ## Deploy
 
 Targeting Vercel - the framework preset auto-detects Vite. No additional config required for an initial deployment.
+
+## License
+
+Released under the [MIT License](LICENSE).
+
+## Recent updates
+
+_2026-05-31_
+
+- **Typography:** switched the entire site to **Montserrat** (loaded in `index.html`; both `--display` and `--mono` font variables in `src/index.css` now point to it).
+- **Type scale:** reduced font sizes site-wide for a more balanced look — display headings down ~15–20%, body copy ~10%; small accent labels left as-is.
+- **Navbar overlap fix:** interior hero pages (Sponsors, Become a Member) no longer tuck their content under the fixed navbar. Added a shared `.interior-hero-pad` class with proper top padding.
+- **Heading style:** replaced the hollow/outlined ("clear") heading text on the Events and Team pages with solid GSU light-blue (`#97CAEB`).
+- **Copy cleanup:** removed all em-dashes across the site.
