@@ -8,8 +8,8 @@ ColorStack at GSU is a student chapter focused on building community, support, a
 
 ColorStack is a national organization whose mission is to increase the number of Black and Latinx computer science graduates entering rewarding technical careers.
 
-- National website: [colorstack.com](https://colorstack.com)
-- National platform: [colorstack.org](https://www.colorstack.org)
+- National website: [colorstack.org](https://www.colorstack.org)
+- ColorStack at GSU website: [colorstackatgsu.com](https://colorstackatgsu.com)
 
 This site represents the local GSU chapter and connects students, partners, and supporters with what we are doing on campus.
 
@@ -40,7 +40,3 @@ src/
 public/images/  # static assets
 legacy/         # archived legacy site assets
 ```
-
-## License
-
-Released under the [MIT License](LICENSE).
