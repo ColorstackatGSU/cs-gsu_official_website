@@ -77,7 +77,7 @@ export default function Footer() {
               {[
                 ['https://www.instagram.com/colorstackatgsu/', 'Instagram ↗'],
                 ['https://www.linkedin.com/company/colorstack-gsu/', 'LinkedIn ↗'],
-                ['https://discord.gg/DZwj8b24tW', 'Discord ↗'],
+                ['https://discord.gg/RdSeNwMjr4', 'Discord ↗'],
                 ['mailto:colorstackgsu@gmail.com', 'Email ↗'],
               ].map(([href, label]) => (
                 <li key={label}>
