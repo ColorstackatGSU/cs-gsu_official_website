@@ -283,6 +283,27 @@
 .students-hero-pad  { padding: 160px 32px 80px; }
 .board-grid-pad     { padding: 80px 32px 120px; }
 .hero-text-wrap     { padding: 0 40px 56px; max-width: 1400px; margin: 0 auto; }
+/* Extra room at the bottom for the carousel dots so they sit below the CTAs */
+.hero-text-wrap.with-dots { padding-bottom: 80px; }
+
+/* Time-elapsed fill that sweeps across the active carousel dot.
+   No border-radius — the parent pill clips it, giving a clean flat leading edge. */
+.dot-progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background: #ffffff;
+  animation-name: dotFill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes dotFill { from { width: 0; } to { width: 100%; } }
+
+/* Responsive form embeds (Google Forms etc.) */
+.form-embed-wrap { width: 100%; max-width: 680px; margin: 0 auto; }
+.form-embed { width: 100%; max-width: 640px; border: 0; display: block; margin: 0 auto; }
 
 /* ============ NAV ============ */
 .nav-logo-img { height: 36px; width: 36px; }
@@ -312,6 +333,9 @@
   .students-hero-pad  { padding: 100px 20px 56px; }
   .board-grid-pad     { padding: 56px 20px 72px; }
   .hero-text-wrap     { padding: 0 16px 28px; }
+  .hero-text-wrap.with-dots { padding-bottom: 60px; }
+  /* Arrows are hidden on mobile — dots + tap are enough */
+  .carousel-arrow { display: none !important; }
 
   /* Hero scales down on small screens so nothing clips */
   .hero-headline { margin-bottom: 14px !important; max-width: 100% !important; }
