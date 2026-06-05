@@ -33,7 +33,34 @@ export default function ApplyLanding() {
           </div>
 
           <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
-            <h3 className="text-xl">Register on PIN</h3>
+            <h3 className="text-xl">Become a Member</h3>
+            <p className="mt-3 text-sm text-gsu-blue-steel">
+              Fill out our membership form to get onto the roster and into the Slack. It's free and open to all
+              GSU students.
+            </p>
+            <Link
+              to="/apply/member"
+              className="btn-primary mt-6 inline-flex w-full justify-center"
+            >
+              Fill Out Membership Form →
+            </Link>
+
+            <div className="mt-6 border-t border-gsu-light-gray pt-6">
+              <h3 className="text-xl">Interested in leadership?</h3>
+              <p className="mt-3 text-sm text-gsu-blue-steel">
+                Applications for executive board positions are open. Help shape events, partnerships, and the
+                community that supports underrepresented technologists at GSU.
+              </p>
+              <Link
+                to="/apply/e-board"
+                className="btn-secondary mt-6 inline-flex w-full justify-center"
+              >
+                Apply for E-Board →
+              </Link>
+            </div>
+
+            <div className="mt-6 border-t border-gsu-light-gray pt-6">
+              <h3 className="text-xl">Register on PIN</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
               Join our official organization on GSU's PIN to get added to the roster and receive event updates.
             </p>
@@ -45,6 +72,7 @@ export default function ApplyLanding() {
             >
               Join on PIN →
             </a>
+            </div>
 
             <div className="mt-6 border-t border-gsu-light-gray pt-6">
               <h3 className="text-xl">Join ColorStack Nationally</h3>
@@ -59,21 +87,6 @@ export default function ApplyLanding() {
               >
                 Apply to ColorStack National →
               </a>
-            </div>
-
-            <div className="mt-6 border-t border-gsu-light-gray pt-6">
-              <h3 className="text-xl">Interested in leadership?</h3>
-              <p className="mt-3 text-sm text-gsu-blue-steel">
-                Applications for executive board positions are open. Help shape events, partnerships, and the
-                community that supports underrepresented technologists at GSU.
-              </p>
-              <Link
-                to="/apply/e-board"
-                style={{ fontFamily: 'var(--mono)' }}
-                className="mt-5 inline-flex items-center gap-2 rounded-lg border border-gsu-blue bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.04em] text-gsu-blue transition hover:bg-gsu-blue hover:text-white"
-              >
-                Apply for E-Board →
-              </Link>
             </div>
 
             <p className="mt-6 text-sm text-gsu-blue-steel">
