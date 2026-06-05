@@ -4,7 +4,7 @@ export default function ApplyLanding() {
   return (
     <>
       <section className="interior-hero-pad bg-gsu-blue text-white">
-        <div className="container-wide max-w-3xl text-center">
+        <div className="container-wide max-w-3xl text-center fade-in-up">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">Join us</p>
           <h1 className="mt-3 text-3xl text-white sm:text-4xl">Become a Member</h1>
           <p className="mt-6 text-base text-white/85">
@@ -16,7 +16,7 @@ export default function ApplyLanding() {
 
       <section className="bg-white py-20">
         <div className="container-wide grid gap-12 md:grid-cols-2">
-          <div>
+          <div className="fade-in-up fade-delay-1">
             <h2 className="text-2xl">Who can join?</h2>
             <ul className="mt-6 space-y-3 text-gsu-blue-steel">
               <li>• Any Georgia State undergraduate or graduate student.</li>
@@ -32,7 +32,7 @@ export default function ApplyLanding() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8">
+          <div className="rounded-2xl border border-gsu-light-gray bg-gsu-light-gray/30 p-8 fade-in-up fade-delay-2">
             <h3 className="text-xl">Become a Member</h3>
             <p className="mt-3 text-sm text-gsu-blue-steel">
               Fill out our membership form to get onto the roster and into the Slack. It's free and open to all

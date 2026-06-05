@@ -182,9 +182,11 @@ function MemberModal({
 function MemberCard({
   member,
   onClick,
+  index = 0,
 }: {
   member: EBoardMember;
   onClick: () => void;
+  index?: number;
 }) {
   const [hovered, setHovered] = useState(false);
 
@@ -193,6 +195,7 @@ function MemberCard({
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="member-card"
       style={{
         display: 'block',
         width: '100%',
@@ -201,6 +204,7 @@ function MemberCard({
         border: 'none',
         padding: 0,
         cursor: 'pointer',
+        animationDelay: `${index * 80}ms`,
       }}
     >
       <div
@@ -354,6 +358,20 @@ export default function Students() {
           from { opacity: 0; transform: translateY(20px) scale(0.97); }
           to   { opacity: 1; transform: none; }
         }
+        @keyframes card-fade-in {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: none; }
+        }
+        .member-card {
+          opacity: 0;
+          animation: card-fade-in 0.55s cubic-bezier(.2,.6,.2,1) both;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .member-card {
+            opacity: 1;
+            animation: none;
+          }
+        }
         .team-grid {
           display: grid;
           grid-template-columns: repeat(var(--team-cols, 4), 1fr);
@@ -503,8 +521,9 @@ export default function Students() {
         >
           {activeMembers.map((member, i) => (
             <MemberCard
-              key={`${member.name}-${i}`}
+              key={`${activeYearIdx}-${member.name}-${i}`}
               member={member}
+              index={i}
               onClick={() => setSelected(member)}
             />
           ))}

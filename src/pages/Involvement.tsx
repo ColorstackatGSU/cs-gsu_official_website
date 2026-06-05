@@ -465,9 +465,9 @@ export default function Involvement() {
               marginBottom: 24,
             }}
           >
-            Real events.{' '}
+            Look what we&apos;ve{' '}
             <span style={{ color: '#97CAEB' }}>
-              Real moments.
+              gotten into.
             </span>
           </h1>
           <p

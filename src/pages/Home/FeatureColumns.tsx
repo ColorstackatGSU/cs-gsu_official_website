@@ -351,9 +351,9 @@ export default function FeatureColumns() {
               marginBottom: 60,
             }}
           >
-            Three pillars,
+            What you actually
             <br />
-            one chapter.
+            get out of it.
           </h2>
         </motion.div>
 

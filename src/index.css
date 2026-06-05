@@ -90,6 +90,25 @@
   transform: none;
 }
 
+/* ============ PAGE FADE-IN ============ */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.6s cubic-bezier(.2,.6,.2,1) both;
+}
+.fade-delay-1 { animation-delay: 0.1s; }
+.fade-delay-2 { animation-delay: 0.2s; }
+.fade-delay-3 { animation-delay: 0.3s; }
+.fade-delay-4 { animation-delay: 0.4s; }
+.fade-delay-5 { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up { opacity: 1; animation: none; }
+}
+
 /* ============ NAV LOGO MARK ============ */
 .nav-logo-mark span {
   background: var(--gsu-blue);
