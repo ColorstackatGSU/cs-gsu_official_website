@@ -28,24 +28,4 @@ export const heroSlides: HeroSlide[] = [
     cta: { label: 'Become a Member →', to: '/apply/member' },
     secondaryCta: { label: 'Learn More', to: '/about' },
   },
-  {
-    id: 'member',
-    eyebrow: 'Membership · Open to all GSU students',
-    headline: ['Become', 'a', 'Member'],
-    subtitle:
-      'Free to join. Get into the Slack, the event calendar, mentorship, and recruiting events with our sponsors.',
-    image: '/images/memeber-img.jpg',
-    objectPosition: 'center 35%',
-    cta: { label: 'Apply Now →', to: '/apply/member' },
-  },
-  {
-    id: 'eboard',
-    eyebrow: "Leadership · We're hiring",
-    headline: ['Join', 'the', 'E-Board'],
-    subtitle:
-      'Help lead the chapter. Apply for an executive board position and shape events, partnerships, and the community.',
-    image: '/images/involvement-img.jpg',
-    objectPosition: 'center 40%',
-    cta: { label: 'Apply for E-Board →', to: '/apply/e-board' },
-  },
 ];
