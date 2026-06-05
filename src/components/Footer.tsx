@@ -6,7 +6,7 @@ const sitemap: [string, string][] = [
   ['/involvement', 'Events'],
   ['/students', 'Team'],
   ['/sponsors', 'Resources'],
-  ['/become-a-member', 'Join'],
+  ['/apply', 'Join'],
 ];
 
 export default function Footer() {
