@@ -289,7 +289,7 @@ export default function About() {
               >
                 colorstackgsu@gmail.com →
               </a>
-              <Link to="/become-a-member" className="btn-secondary" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.25)' }}>
+              <Link to="/apply" className="btn-secondary" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.25)' }}>
                 Join the Community
               </Link>
             </div>

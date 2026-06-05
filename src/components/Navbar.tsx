@@ -76,7 +76,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/become-a-member"
+            to="/apply"
             style={{
               fontFamily: 'var(--mono)',
               fontSize: 12,
@@ -144,7 +144,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/become-a-member"
+            to="/apply"
             onClick={() => setOpen(false)}
             style={{
               display: 'block',

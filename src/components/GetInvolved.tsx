@@ -5,7 +5,7 @@ const cards = [
   {
     heading: 'Collaborate With Us',
     sub: 'Sponsorship',
-    desc: 'Partner with us to connect your brand with driven Black and Latinx students in tech at GSU.',
+    desc: 'Partner with us to connect your brand with driven, underrepresented students in tech at GSU.',
     href: '/sponsors',
     external: false,
   },
@@ -13,7 +13,7 @@ const cards = [
     heading: 'Join Us',
     sub: 'Join the Community',
     desc: "Membership is free and open to all GSU students interested in tech. Apply once, you're in for the year.",
-    href: '/become-a-member',
+    href: '/apply',
     external: false,
   },
   {
