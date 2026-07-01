@@ -30,7 +30,7 @@ export const eventYears: EventYear[] = [
         date: 'Sep 5, 2025',
         semester: 'Fall 2025',
         description:
-          "An empowering evening of storytelling, career insight, and authentic conversation designed to uplift underrepresented students in tech. Featuring voices from Duolingo in collaboration with ColorStack's Yale chapter.",
+          "An empowering evening of storytelling, career insight, and authentic conversation designed to uplift Black and Latinx students in tech. Featuring voices from Duolingo in collaboration with ColorStack's Yale chapter.",
         image: '/images/events/duolingo-panel.png',
         tag: 'Panel',
       },

@@ -5,7 +5,7 @@ const cards = [
   {
     heading: 'Collaborate With Us',
     sub: 'Sponsorship',
-    desc: 'Partner with us to connect your brand with driven, underrepresented students in tech at GSU.',
+    desc: 'Partner with us to connect your brand with driven Black and Latinx students in tech at GSU.',
     href: '/sponsors',
     external: false,
   },

@@ -107,7 +107,7 @@ export default function About() {
               }}
             >
               ColorStack at Georgia State University is a chartered chapter of the national ColorStack
-              organization, a community for Black, Latinx, and underrepresented students pursuing
+              organization, a community for Black and Latinx students pursuing
               degrees and careers in computing.
             </p>
             <p

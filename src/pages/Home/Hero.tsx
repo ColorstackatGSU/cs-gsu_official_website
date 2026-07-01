@@ -147,17 +147,21 @@ export default function Hero() {
                 }}
               >
                 {slide.headline.map((word, i) => (
-                  <span key={i} style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom', marginRight: '0.25em' }}>
-                    <motion.span
-                      variants={{
-                        hidden: { y: '110%', opacity: 0 },
-                        visible: { y: '0%', opacity: 1 },
-                      }}
-                      transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                      style={{ display: 'inline-block' }}
-                    >
-                      {word}
-                    </motion.span>
+                  <span key={i}>
+                    <span style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom' }}>
+                      <motion.span
+                        variants={{
+                          hidden: { y: '110%', opacity: 0 },
+                          visible: { y: '0%', opacity: 1 },
+                        }}
+                        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                        style={{ display: 'inline-block' }}
+                      >
+                        {word}
+                      </motion.span>
+                    </span>
+                    {/* Real space so the headline extracts as words (SEO/screen readers) */}
+                    {i < slide.headline.length - 1 ? ' ' : ''}
                   </span>
                 ))}
               </motion.h1>

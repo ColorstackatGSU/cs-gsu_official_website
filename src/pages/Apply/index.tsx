@@ -49,7 +49,7 @@ export default function ApplyLanding() {
               <h3 className="text-xl">Interested in leadership?</h3>
               <p className="mt-3 text-sm text-gsu-blue-steel">
                 Applications for executive board positions are open. Help shape events, partnerships, and the
-                community that supports underrepresented technologists at GSU.
+                community that supports Black and Latinx technologists at GSU.
               </p>
               <Link
                 to="/apply/e-board"
