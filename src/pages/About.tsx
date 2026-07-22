@@ -284,10 +284,10 @@ export default function About() {
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
-                href="mailto:colorstackgsu@gmail.com"
+                href="mailto:colorstackatgsu@gmail.com"
                 className="btn-primary"
               >
-                colorstackgsu@gmail.com →
+                colorstackatgsu@gmail.com →
               </a>
               <Link to="/apply" className="btn-secondary" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.25)' }}>
                 Join the Community

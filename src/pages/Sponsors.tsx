@@ -8,7 +8,7 @@ export default function Sponsors() {
           <p className="mt-6 text-base text-white/85">
             Reach a pipeline of motivated Black and Latinx computing students in Atlanta and shape the future of the industry.
           </p>
-          <a href="mailto:colorstackgsu@gmail.com" className="btn-accent mt-8">
+          <a href="mailto:colorstackatgsu@gmail.com" className="btn-accent mt-8">
             Become a sponsor
           </a>
         </div>
