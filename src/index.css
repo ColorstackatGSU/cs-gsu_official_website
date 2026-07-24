@@ -439,3 +439,9 @@
   font-size: clamp(48px, 8vw, 96px);
   line-height: 1.1;
 }
+
+/* New class to make the "at Georgia State University" text smaller */
+.hero-sub {
+  font-size: 0.7em;
+  line-height: 1;
+}

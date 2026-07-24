@@ -102,7 +102,7 @@ export default function Hero() {
             >
               {/* Enlarged, Important Looking Title */}
               <h1 className="hero-headline">
-                ColorStack at Georgia State University
+                ColorStack <span className="hero-sub">at Georgia State University</span>
               </h1>
             </motion.div>
           </AnimatePresence>
@@ -282,31 +282,22 @@ function CarouselArrow({ direction, onClick }: { direction: 'prev' | 'next'; onC
       className="carousel-arrow"
       aria-label={isPrev ? 'Previous banner' : 'Next banner'}
       onClick={onClick}
-      onMouseEnter={() => ref.current && (ref.current.style.background = 'rgba(0,0,0,0.55)')}
-      onMouseLeave={() => ref.current && (ref.current.style.background = 'rgba(0,0,0,0.3)')}
-      style={{
-        position: 'absolute',
-        top: '50%',
-        [isPrev ? 'left' : 'right']: 24,
-        transform: 'translateY(-50%)',
-        zIndex: 3,
-        width: 44,
-        height: 44,
-        borderRadius: '50%',
-        border: '1px solid rgba(255,255,255,0.25)',
-        background: 'rgba(0,0,0,0.3)',
-        backdropFilter: 'blur(8px)',
-        color: 'white',
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        transition: 'background 0.2s',
-      }}
-    >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        {isPrev ? <path d="M15 18l-6-6 6-6" /> : <path d="M9 18l6-6-6-6" />}
-      </svg>
-    </button>
-  );
-}
+      onMouseEnter={() => ref.current && (ref.current.style.background = 'rgba(0, 0, 0, 0.1)')}
+      <span style={{ fontSize: '0.875rem', lineHeight: '1.5' }}>
+        <svg
+          width="1"
+          height="1"
+          fill="currentColor"
+          class="sr-only"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 0H10"
+            width="1"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            className="sr-only"
+          />
+        }
+</style>
