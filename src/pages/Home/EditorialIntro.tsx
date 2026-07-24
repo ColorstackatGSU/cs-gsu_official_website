@@ -22,7 +22,7 @@ export default function EditorialIntro() {
           }}
         >
           Where community meets{' '}
-          <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+          <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#97CAEB' }}>
             opportunity.
           </span>
         </motion.h2>

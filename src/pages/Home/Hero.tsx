@@ -101,9 +101,11 @@ export default function Hero() {
               style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
               {/* Enlarged, Important Looking Title */}
-              <h1 className="hero-headline">
-                <span style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>ColorStack</span> <br></br><span className="hero-sub" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic' }}>at Georgia State University</span>
-              </h1>
+              <h1 className="hero-headline">ColorStack</h1>
+              <div className="hero-gsu-lockup">
+                <span className="hero-at">at</span>
+                <img className="hero-gsu-logo" src="/images/gsu-logo-white.png" alt="Georgia State University" />
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -158,8 +160,8 @@ export default function Hero() {
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 padding: '15px 36px',
-                background: '#FDB532',
-                color: '#091024',
+                background: '#CC0000',
+                color: '#ffffff',
                 borderRadius: 999,
                 fontWeight: 600,
                 display: 'inline-flex',
@@ -168,11 +170,11 @@ export default function Hero() {
                 transition: 'all 0.2s',
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = '#fca815';
+                (e.currentTarget as HTMLElement).style.background = '#a30000';
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = '#FDB532';
+                (e.currentTarget as HTMLElement).style.background = '#CC0000';
                 (e.currentTarget as HTMLElement).style.transform = '';
               }}
             >

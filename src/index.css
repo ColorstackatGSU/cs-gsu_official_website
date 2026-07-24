@@ -8,8 +8,9 @@
   --gsu-blue: #0039A6;
   --gsu-blue-dim: #002a7a;
   --gsu-blue-bright: #1d56c9;
-  --gsu-gold: #FDB532;
-  --gsu-teal: #3CA39B;
+  --gsu-red: #CC0000;
+  --gsu-red-dark: #a30000;
+  --gsu-sky: #97CAEB;
   --ink: #ffffff;
   --paper: #091024;
   --paper-warm: #0d152d;
@@ -191,7 +192,7 @@
 .marquee-item::after {
   content: '◆';
   font-size: 20px;
-  color: #3CA39B;
+  color: var(--gsu-blue);
   margin-left: 60px;
 }
 
@@ -421,6 +422,30 @@
     border-color: var(--gsu-blue);
     color: var(--gsu-blue);
   }
+
+  /* Accent CTA — reads clearly on the solid GSU-blue interior hero bands */
+  .btn-accent {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 16px 28px;
+    background: #ffffff;
+    color: var(--gsu-blue);
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-accent:hover {
+    background: var(--gsu-sky);
+    color: var(--gsu-blue-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @layer utilities {
@@ -432,18 +457,35 @@
 
 /* ============ HERO TEXT FONT ============ */
 .hero-headline {
-  font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-variation-settings: "wdth" 100;
-  font-size: clamp(48px, 8vw, 96px);
-  line-height: 0.6;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(64px, 12vw, 150px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
 }
 
-/* New class to make the "at Georgia State University" text smaller */
-.hero-sub {
-  font-family: var(--mono);
-  font-weight: 300;
-  font-size: 0.3em;
-  line-height: 1;
+/* "at [GSU logo]" co-brand lockup under the ColorStack wordmark */
+.hero-gsu-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-at {
+  font-family: var(--serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.6vw, 32px);
+  color: rgba(255, 255, 255, 0.8);
+}
+.hero-gsu-logo {
+  display: block;
+  height: clamp(66px, 9vw, 120px);
+  width: auto;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+@media (max-width: 768px) {
+  .hero-gsu-lockup { gap: 12px; }
 }

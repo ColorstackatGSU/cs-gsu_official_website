@@ -59,7 +59,7 @@ export default function GetInvolved() {
               fontSize: 11,
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: '#3CA39B',
+              color: '#0039A6',
               marginBottom: 16,
               fontWeight: 600,
             }}
@@ -77,7 +77,7 @@ export default function GetInvolved() {
             }}
           >
             Get Involved{' '}
-            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#0039A6' }}>
               (join our community).
             </span>
           </h2>
@@ -140,7 +140,7 @@ export default function GetInvolved() {
                       fontSize: 11,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
-                      color: '#3CA39B',
+                      color: '#0039A6',
                       marginBottom: 16,
                       fontWeight: 600,
                     }}
@@ -157,8 +157,8 @@ export default function GetInvolved() {
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
                       padding: '8px 20px',
-                      background: '#FDB532',
-                      color: '#091024',
+                      background: '#CC0000',
+                      color: '#ffffff',
                       borderRadius: 999,
                       fontWeight: 600,
                       display: 'inline-flex',

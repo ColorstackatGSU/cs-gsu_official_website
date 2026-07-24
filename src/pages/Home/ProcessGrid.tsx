@@ -84,7 +84,7 @@ export default function ProcessGrid() {
             }}
           >
             Empower your journey{' '}
-            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#0039A6' }}>
               (expand your network).
             </span>
           </motion.h2>

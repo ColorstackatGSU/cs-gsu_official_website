@@ -13,7 +13,7 @@ const connectLinks: [string, string][] = [
   ['https://www.instagram.com/colorstackatgsu/', 'Instagram ↗'],
   ['https://www.linkedin.com/company/colorstack-gsu/', 'LinkedIn ↗'],
   ['https://discord.gg/RdSeNwMjr4', 'Discord ↗'],
-  ['mailto:colorstackatgsu@gmail.com', 'Email ↗'],
+  ['mailto:official@colorstackatgsu.com', 'Email ↗'],
 ];
 
 export default function Footer() {

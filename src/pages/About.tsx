@@ -37,7 +37,7 @@ export default function About() {
       <section
         className="about-hero-pad"
         style={{
-          background: 'var(--ink)',
+          background: 'var(--paper)',
           color: 'white',
           position: 'relative',
           overflow: 'hidden',
@@ -246,7 +246,7 @@ export default function About() {
       </section>
 
       {/* Contact */}
-      <section className="section-pad-md" style={{ background: 'var(--ink)', color: 'white' }}>
+      <section className="section-pad-md" style={{ background: 'var(--paper)', color: 'white' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -284,10 +284,10 @@ export default function About() {
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
-                href="mailto:colorstackatgsu@gmail.com"
+                href="mailto:official@colorstackatgsu.com"
                 className="btn-primary"
               >
-                colorstackatgsu@gmail.com →
+                official@colorstackatgsu.com →
               </a>
               <Link to="/apply" className="btn-secondary" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.25)' }}>
                 Join the Community

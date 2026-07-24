@@ -48,7 +48,7 @@ export default function StatsSection() {
             }}
           >
             500+ active members & 95% placement rate{' '}
-            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#0039A6' }}>
               (that's over 100+ Black & Latinx engineers hired).
             </span>
           </h2>
@@ -61,8 +61,8 @@ export default function StatsSection() {
               gap: 10,
               padding: '14px 32px',
               borderRadius: 999,
-              background: '#FDB532',
-              color: '#091024',
+              background: '#CC0000',
+              color: '#ffffff',
               fontFamily: 'var(--mono)',
               fontSize: 12,
               letterSpacing: '0.04em',
@@ -100,7 +100,7 @@ export default function StatsSection() {
               <div style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', fontWeight: 600, color: '#091024', marginBottom: 4 }}>
                 {st.num}
               </div>
-              <div style={{ fontFamily: 'var(--mono)', fontSize: 12, color: '#3CA39B', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8, fontWeight: 600 }}>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 12, color: '#0039A6', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8, fontWeight: 600 }}>
                 {st.label}
               </div>
               <p style={{ fontSize: 13, color: '#475569', lineHeight: 1.5, margin: 0 }}>

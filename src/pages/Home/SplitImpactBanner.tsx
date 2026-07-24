@@ -32,7 +32,7 @@ export default function SplitImpactBanner() {
               }}
             >
               More than $10 million of tech offers secured{' '}
-              <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+              <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#97CAEB' }}>
                 (ColorStack GSU supports your career path).
               </span>
             </h2>
@@ -130,7 +130,7 @@ export default function SplitImpactBanner() {
               <p style={{ fontSize: 11, color: '#cbd5e1', lineHeight: 1.4, margin: 0 }}>
                 100+ offers secured at Google, Microsoft, Meta, and top startups.
               </p>
-              <span style={{ fontSize: 10, color: '#3CA39B', fontFamily: 'var(--mono)', display: 'block', marginTop: 6, fontWeight: 600 }}>
+              <span style={{ fontSize: 10, color: '#97CAEB', fontFamily: 'var(--mono)', display: 'block', marginTop: 6, fontWeight: 600 }}>
                 colorstackgsu.org
               </span>
             </div>

@@ -50,7 +50,7 @@ export default function Navbar() {
             src="/images/colorstack-gsu-logo.png"
             alt="ColorStack GSU"
             className="nav-logo-img"
-            style={{ display: 'block', width: 32, height: 32, borderRadius: '50%' }}
+            style={{ display: 'block', width: 32, height: 32, borderRadius: 8 }}
           />
           <span
             className="nav-brand-text"
@@ -98,8 +98,8 @@ export default function Navbar() {
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               padding: '9px 22px',
-              background: '#FDB532',
-              color: '#091024',
+              background: '#CC0000',
+              color: '#ffffff',
               borderRadius: 999,
               fontWeight: 600,
               transition: 'all 0.2s',
@@ -175,8 +175,8 @@ export default function Navbar() {
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               padding: '14px 20px',
-              background: '#FDB532',
-              color: '#091024',
+              background: '#CC0000',
+              color: '#ffffff',
               borderRadius: 999,
               textAlign: 'center',
               fontWeight: 600,

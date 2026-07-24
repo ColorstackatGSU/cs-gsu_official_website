@@ -68,7 +68,7 @@ export default function VisualFooterBanner() {
         >
           <span style={{ fontSize: 'clamp(13px, 1.5vw, 17px)', color: '#ffffff', fontWeight: 400 }}>
             Build your future in computing with{' '}
-            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#3CA39B' }}>
+            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#97CAEB' }}>
               ColorStack GSU.
             </span>
           </span>
@@ -77,8 +77,8 @@ export default function VisualFooterBanner() {
             style={{
               padding: '11px 24px',
               borderRadius: 999,
-              background: '#FDB532',
-              color: '#091024',
+              background: '#CC0000',
+              color: '#ffffff',
               fontFamily: 'var(--mono)',
               fontSize: 12,
               letterSpacing: '0.05em',

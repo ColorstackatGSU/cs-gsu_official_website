@@ -91,8 +91,8 @@ export default function ApplyLanding() {
 
             <p className="mt-6 text-sm text-gsu-blue-steel">
               Questions? Email us at{' '}
-              <a href="mailto:colorstackatgsu@gmail.com" className="underline">
-                colorstackatgsu@gmail.com
+              <a href="mailto:official@colorstackatgsu.com" className="underline">
+                official@colorstackatgsu.com
               </a>
             </p>
           </div>
