@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const benefits = [
   {
     title: 'Brand visibility',
-    desc: 'Info sessions, tech talks, and event sponsorship in front of 500+ engaged members.',
+    desc: 'Info sessions, tech talks, and event sponsorship in front of 80+ engaged members.',
   },
   {
     title: 'Direct recruiting',

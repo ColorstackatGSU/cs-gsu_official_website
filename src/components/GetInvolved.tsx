@@ -157,7 +157,7 @@ export default function GetInvolved() {
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
                       padding: '8px 20px',
-                      background: '#CC0000',
+                      background: '#0039A6',
                       color: '#ffffff',
                       borderRadius: 999,
                       fontWeight: 600,

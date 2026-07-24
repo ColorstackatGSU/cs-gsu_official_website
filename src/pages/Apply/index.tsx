@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function ApplyLanding() {
   return (
     <>
-      <section className="interior-hero-pad bg-gsu-blue text-white">
+      <section className="interior-hero-pad text-white" style={{ background: '#001f5c' }}>
         <div className="container-wide max-w-3xl text-center fade-in-up">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">Join us</p>
           <h1 className="mt-3 text-3xl text-white sm:text-4xl">Become a Member</h1>

@@ -53,7 +53,7 @@ export default function EditorialIntro() {
                 letterSpacing: '-0.02em',
               }}
             >
-              500+ Black and Latinx computing students connected across GSU.
+              80+ Black and Latinx computing students connected across GSU.
             </h3>
             <p style={{ fontSize: 16, color: '#94a3b8', lineHeight: 1.6, marginBottom: 28, fontWeight: 300 }}>
               Transforming collegiate talent into software engineering leadership through workshops, mentorship, and career pipelines.

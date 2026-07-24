@@ -102,10 +102,7 @@ export default function Hero() {
             >
               {/* Enlarged, Important Looking Title */}
               <h1 className="hero-headline">ColorStack</h1>
-              <div className="hero-gsu-lockup">
-                <span className="hero-at">at</span>
-                <img className="hero-gsu-logo" src="/images/gsu-logo-white.png" alt="Georgia State University" />
-              </div>
+              <p className="hero-subtitle-text">at Georgia State University</p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -160,7 +157,7 @@ export default function Hero() {
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 padding: '15px 36px',
-                background: '#CC0000',
+                background: '#0039A6',
                 color: '#ffffff',
                 borderRadius: 999,
                 fontWeight: 600,
@@ -170,11 +167,11 @@ export default function Hero() {
                 transition: 'all 0.2s',
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = '#a30000';
+                (e.currentTarget as HTMLElement).style.background = '#1d56c9';
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = '#CC0000';
+                (e.currentTarget as HTMLElement).style.background = '#0039A6';
                 (e.currentTarget as HTMLElement).style.transform = '';
               }}
             >

@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 const stats = [
   {
-    num: '500+',
+    num: '80+',
     label: 'Active Members',
     desc: 'Undergraduate & graduate students in computing.',
   },
   {
-    num: '100+',
+    num: '10+',
     label: 'Offers Landed',
     desc: 'Full-time & internship roles at top companies.',
   },
   {
-    num: '30+',
+    num: '10+',
     label: 'Annual Events',
     desc: 'Workshops, hackathons, and company sessions.',
   },
@@ -47,9 +47,9 @@ export default function StatsSection() {
               color: '#091024',
             }}
           >
-            500+ active members & 95% placement rate{' '}
+            80+ active members & 95% placement rate{' '}
             <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#0039A6' }}>
-              (that's over 100+ Black & Latinx engineers hired).
+              (that's over 50+ Black & Latinx engineers hired).
             </span>
           </h2>
 
@@ -61,7 +61,7 @@ export default function StatsSection() {
               gap: 10,
               padding: '14px 32px',
               borderRadius: 999,
-              background: '#CC0000',
+              background: '#0039A6',
               color: '#ffffff',
               fontFamily: 'var(--mono)',
               fontSize: 12,

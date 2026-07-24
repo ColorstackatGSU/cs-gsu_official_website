@@ -1,7 +1,7 @@
 export default function ApplyEBoard() {
   return (
     <>
-      <section className="interior-hero-pad bg-gsu-blue text-white">
+      <section className="interior-hero-pad text-white" style={{ background: '#001f5c' }}>
         <div className="container-wide max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-light-blue">Leadership</p>
           <h1 className="mt-3 text-3xl text-white sm:text-4xl">Apply for the E-Board</h1>
@@ -12,14 +12,19 @@ export default function ApplyEBoard() {
         </div>
       </section>
 
-      <section className="section-pad-md bg-white">
+      <section className="form-section" style={{ padding: '60px 16px 80px' }}>
         <div className="form-embed-wrap">
           <iframe
             className="form-embed"
             src="https://docs.google.com/forms/d/e/1FAIpQLScysyFeD_dgbZosYSTY9lvH51bwO2u89Z3Ebqw9cN5Rz5_zIg/viewform?embedded=true"
-            height={2014}
+            width="640"
+            height="2014"
+            frameBorder={0}
+            marginHeight={0}
+            marginWidth={0}
             title="ColorStack at GSU — E-Board Application"
-            loading="lazy"
+            style={{ minHeight: 2014, background: 'transparent' }}
+            allowFullScreen
           >
             Loading…
           </iframe>

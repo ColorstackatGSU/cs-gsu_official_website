@@ -77,7 +77,7 @@ export default function VisualFooterBanner() {
             style={{
               padding: '11px 24px',
               borderRadius: 999,
-              background: '#CC0000',
+              background: '#0039A6',
               color: '#ffffff',
               fontFamily: 'var(--mono)',
               fontSize: 12,

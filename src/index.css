@@ -455,14 +455,20 @@
   }
 }
 
+/* Form embed sections need a dark bg (matching site theme) with a working iframe */
+.form-section {
+  background-color: var(--paper) !important;
+  color: var(--ink);
+}
+
 /* ============ HERO TEXT FONT ============ */
 .hero-headline {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(64px, 12vw, 150px);
+  font-size: clamp(48px, 8vw, 100px);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  margin: 0 0 24px;
+  margin: 0 0 16px;
 }
 
 /* "at [GSU logo]" co-brand lockup under the ColorStack wordmark */
@@ -488,4 +494,15 @@
 }
 @media (max-width: 768px) {
   .hero-gsu-lockup { gap: 12px; }
+}
+
+/* "at Georgia State University" subtitle text under the ColorStack wordmark */
+.hero-subtitle-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 2.8vw, 32px);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  letter-spacing: 0.02em;
 }
