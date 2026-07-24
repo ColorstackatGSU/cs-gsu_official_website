@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { heroSlides } from '../../data/heroSlides';
@@ -247,7 +247,7 @@ export default function Hero() {
               fontWeight: 600,
             }}
           >
-            Our Vision &amp; Slogan
+            Our Mission
           </p>
           <h2
             style={{
@@ -260,11 +260,7 @@ export default function Hero() {
               margin: 0,
             }}
           >
-            &ldquo;Empowering Black &amp; Latinx students to{' '}
-            <span style={{ fontWeight: 400, color: '#ffffff' }}>
-              turn passion into opportunity
-            </span>{' '}
-            and lead in technology.&rdquo;
+            "As a chartered ColorStack chapter at Georgia State University, we leverage Atlanta's thriving tech scene to create meaningful change in diversity across the industry."
           </h2>
         </motion.div>
       </div>
