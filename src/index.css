@@ -8,12 +8,14 @@
   --gsu-blue: #0039A6;
   --gsu-blue-dim: #002a7a;
   --gsu-blue-bright: #1d56c9;
-  --ink: #0a0e1a;
-  --paper: #ffffff;
-  --paper-warm: #f6f7fb;
-  --line: rgba(10, 14, 26, 0.08);
-  --line-strong: rgba(10, 14, 26, 0.18);
-  --grid-line: rgba(0, 57, 166, 0.07);
+  --gsu-gold: #FDB532;
+  --gsu-teal: #3CA39B;
+  --ink: #ffffff;
+  --paper: #091024;
+  --paper-warm: #0d152d;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --grid-line: rgba(0, 57, 166, 0.15);
   --mono: 'Montserrat', system-ui, sans-serif;
   --display: 'Montserrat', system-ui, sans-serif;
 }
@@ -38,20 +40,7 @@
 
 /* ============ GRID BACKGROUND ============ */
 .grid-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
-}
-.grid-bg.dark {
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  display: none !important;
 }
 
 /* ============ KEYFRAMES ============ */
@@ -147,7 +136,7 @@
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: white;
+  background: var(--paper);
   border: 1px solid var(--gsu-blue);
   color: var(--gsu-blue);
   padding: 6px 10px;
@@ -195,14 +184,14 @@
 .marquee-track {
   display: flex;
   gap: 60px;
-  animation: marquee 30s linear infinite;
+  animation: marquee 60s linear infinite;
   white-space: nowrap;
   width: max-content;
 }
 .marquee-item::after {
   content: '◆';
-  font-size: 24px;
-  opacity: 0.5;
+  font-size: 20px;
+  color: #3CA39B;
   margin-left: 60px;
 }
 
@@ -329,9 +318,9 @@
 .nav-brand-text { font-size: 14px; }
 
 @media (min-width: 768px) {
-  .nav-bar { padding: 18px 32px !important; }
-  .nav-logo-img { height: 44px; width: 44px; }
-  .nav-brand-text { font-size: 15px; }
+  .nav-bar { padding: 8px 20px !important; }
+  .nav-logo-img { height: 32px; width: 32px; }
+  .nav-brand-text { font-size: 14px; }
 }
 
 /* ============ RESPONSIVE ============ */
@@ -433,3 +422,11 @@
     color: var(--gsu-blue);
   }
 }
+
+@layer utilities {
+  .bg-white, .bg-gsu-white {
+    background-color: var(--paper) !important;
+    color: var(--ink);
+  }
+}
+
