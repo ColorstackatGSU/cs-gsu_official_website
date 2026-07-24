@@ -409,7 +409,7 @@ export default function Involvement() {
       <section
         style={{
           position: 'relative',
-          background: 'var(--ink)',
+          background: 'var(--paper)',
           color: 'white',
           overflow: 'hidden',
           textAlign: 'center',

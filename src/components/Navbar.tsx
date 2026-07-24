@@ -13,18 +13,30 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
+    <header
+      style={{
+        position: 'absolute',
+        top: 30,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: 'calc(100% - 32px)',
+        maxWidth: 860,
+        zIndex: 50,
+      }}
+    >
       <nav
         className="nav-bar"
         style={{
-          padding: '14px 20px',
+          padding: '8px 20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: 'rgba(255,255,255,0.75)',
+          background: 'rgba(255, 255, 255, 0.92)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid var(--line)',
+          border: 'none',
+          borderRadius: 999,
+          boxShadow: '0 12px 36px rgba(0, 0, 0, 0.15)',
           transition: 'all 0.3s ease',
         }}
       >
@@ -38,15 +50,16 @@ export default function Navbar() {
             src="/images/colorstack-gsu-logo.png"
             alt="ColorStack GSU"
             className="nav-logo-img"
-            style={{ display: 'block', borderRadius: '50%' }}
+            style={{ display: 'block', width: 32, height: 32, borderRadius: 8 }}
           />
           <span
             className="nav-brand-text"
             style={{
               fontFamily: 'var(--display)',
-              fontWeight: 700,
+              fontWeight: 600,
+              fontSize: 15,
               letterSpacing: '-0.01em',
-              color: 'var(--gsu-blue)',
+              color: '#091024',
             }}
           >
             ColorStack at GSU
@@ -62,13 +75,15 @@ export default function Navbar() {
               end={l.end}
               style={({ isActive }) => ({
                 fontFamily: 'var(--mono)',
-                fontSize: 12,
+                fontSize: 11,
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
-                padding: '8px 14px',
-                borderRadius: 6,
+                padding: '8px 18px',
+                borderRadius: 999,
                 transition: 'all 0.2s',
-                color: isActive ? 'var(--gsu-blue)' : 'var(--ink)',
+                color: isActive ? '#091024' : 'rgba(9, 16, 36, 0.75)',
+                fontWeight: isActive ? 600 : 500,
+                background: isActive ? 'rgba(9, 16, 36, 0.08)' : 'transparent',
                 position: 'relative',
               })}
             >
@@ -79,13 +94,14 @@ export default function Navbar() {
             to="/apply"
             style={{
               fontFamily: 'var(--mono)',
-              fontSize: 12,
+              fontSize: 11,
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
-              padding: '10px 18px',
-              background: 'var(--gsu-blue)',
-              color: 'white',
-              borderRadius: 6,
+              padding: '9px 22px',
+              background: '#0039A6',
+              color: '#ffffff',
+              borderRadius: 999,
+              fontWeight: 600,
               transition: 'all 0.2s',
               display: 'flex',
               alignItems: 'center',
@@ -103,7 +119,7 @@ export default function Navbar() {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          style={{ padding: 8, color: 'var(--gsu-blue)' }}
+          style={{ padding: 6, color: '#091024' }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {open
@@ -117,10 +133,14 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            background: 'rgba(255,255,255,0.97)',
+            marginTop: 10,
+            background: 'rgba(255, 255, 255, 0.96)',
             backdropFilter: 'blur(20px)',
-            borderBottom: '1px solid var(--line)',
-            padding: '12px 24px 20px',
+            WebkitBackdropFilter: 'blur(20px)',
+            border: 'none',
+            borderRadius: 24,
+            padding: '16px 24px 24px',
+            boxShadow: '0 12px 32px rgba(0, 0, 0, 0.15)',
           }}
         >
           {links.map((l) => (
@@ -136,8 +156,9 @@ export default function Navbar() {
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 padding: '12px 0',
-                borderBottom: '1px solid var(--line)',
-                color: isActive ? 'var(--gsu-blue)' : 'var(--ink)',
+                borderBottom: '1px solid rgba(9, 16, 36, 0.08)',
+                color: isActive ? '#091024' : 'rgba(9, 16, 36, 0.75)',
+                fontWeight: isActive ? 600 : 500,
               })}
             >
               {l.label}
@@ -154,10 +175,11 @@ export default function Navbar() {
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               padding: '14px 20px',
-              background: 'var(--gsu-blue)',
-              color: 'white',
-              borderRadius: 8,
+              background: '#0039A6',
+              color: '#ffffff',
+              borderRadius: 999,
               textAlign: 'center',
+              fontWeight: 600,
             }}
           >
             Join Us

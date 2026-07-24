@@ -20,188 +20,223 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="bg-white py-20" style={{ position: 'relative', overflow: 'hidden' }}>
-      <div className="container-wide max-w-4xl text-center" style={{ position: 'relative' }}>
-        {/* Heading entrance - slide up + stagger */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    <section
+      style={{
+        position: 'relative',
+        overflow: 'hidden',
+        background: '#f0f2f5',
+        color: '#091024',
+        padding: '80px 32px 60px',
+      }}
+    >
+      <div style={{ maxWidth: 720, margin: '0 auto', position: 'relative' }}>
+        {/* Quote card */}
+        <div
+          style={{
+            position: 'relative',
+            background: '#ffffff',
+            borderRadius: 16,
+            padding: 'clamp(32px, 5vw, 56px)',
+            boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04)',
+            border: '1px solid rgba(0, 0, 0, 0.06)',
+            minHeight: 280,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden',
+          }}
         >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-red">
-            Member voices
-          </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl">From the people who live it</h2>
-        </motion.div>
-
-        {/* Card stack */}
-        <div style={{ position: 'relative', marginTop: 40 }}>
-          {/* Offset accent card behind */}
-          <motion.div
+          {/* Large decorative quote mark */}
+          <div
             aria-hidden
-            initial={{ opacity: 0, x: 0, y: 0, rotate: 0 }}
-            whileInView={{ opacity: 0.1, x: 14, y: 14, rotate: 1.5 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             style={{
               position: 'absolute',
-              inset: 0,
-              borderRadius: 20,
-              background: 'var(--gsu-blue)',
-              zIndex: 0,
-            }}
-          />
-
-          {/* Main card */}
-          <div
-            className="rounded-2xl border border-gsu-light-gray p-8 sm:p-12"
-            style={{
-              position: 'relative',
-              zIndex: 1,
-              background: 'var(--paper)',
-              overflow: 'hidden',
-              minHeight: 320,
+              top: 12,
+              left: 24,
+              fontFamily: 'Georgia, serif',
+              fontSize: 160,
+              lineHeight: 1,
+              color: '#c5cfe0',
+              userSelect: 'none',
+              pointerEvents: 'none',
+              fontWeight: 700,
+              opacity: 0.6,
             }}
           >
-            {/* Giant decorative quote mark in the corner */}
-            <motion.div
-              aria-hidden
-              initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-              whileInView={{ opacity: 0.08, scale: 1, rotate: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              style={{
-                position: 'absolute',
-                top: -30,
-                left: 20,
-                fontFamily: 'var(--display)',
-                fontSize: 220,
-                lineHeight: 1,
-                color: 'var(--gsu-blue)',
-                userSelect: 'none',
-                pointerEvents: 'none',
-                fontWeight: 700,
-              }}
-            >
-              &ldquo;
-            </motion.div>
+            &ldquo;
+          </div>
 
-            {/* Sliding quote content */}
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <AnimatePresence mode="wait" custom={dir}>
-                <motion.div
-                  key={i}
-                  custom={dir}
-                  variants={{
-                    enter: (d: number) => ({ opacity: 0, x: d * 60 }),
-                    center: { opacity: 1, x: 0 },
-                    exit: (d: number) => ({ opacity: 0, x: -d * 60 }),
+          {/* Sliding quote content */}
+          <div style={{ position: 'relative', zIndex: 2, width: '100%', textAlign: 'center' }}>
+            <AnimatePresence mode="wait" custom={dir}>
+              <motion.div
+                key={i}
+                custom={dir}
+                variants={{
+                  enter: (d: number) => ({ opacity: 0, x: d * 40 }),
+                  center: { opacity: 1, x: 0 },
+                  exit: (d: number) => ({ opacity: 0, x: -d * 40 }),
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {/* Quote text */}
+                <p
+                  style={{
+                    fontFamily: 'Georgia, serif',
+                    fontStyle: 'italic',
+                    fontSize: 'clamp(18px, 2.4vw, 24px)',
+                    color: '#1a1a2e',
+                    lineHeight: 1.55,
+                    fontWeight: 400,
+                    maxWidth: 600,
+                    margin: '0 auto 32px',
                   }}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="text-xl italic text-gsu-blue-steel sm:text-2xl">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
 
-                  <div className="mt-8 flex items-center justify-center gap-4">
-                    {/* Avatar with spring pop + rotate */}
-                    <motion.img
-                      key={`avatar-${i}`}
-                      src={t.image}
-                      alt={t.name}
-                      className="h-14 w-14 rounded-full object-cover ring-2 ring-gsu-blue"
-                      onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
-                      initial={{ scale: 0, rotate: -25 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 220,
-                        damping: 14,
-                        delay: 0.15,
+                {/* Member info row */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+                  {/* Circular Avatar */}
+                  <motion.img
+                    key={`avatar-${i}`}
+                    src={t.image}
+                    alt={t.name}
+                    style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      border: '2px solid #e8ecf1',
+                    }}
+                    onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  />
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontWeight: 700, color: '#0a0a2e', fontSize: 15 }}>{t.name}</div>
+                    <div
+                      style={{
+                        fontSize: 13,
+                        color: '#6b7280',
+                        marginTop: 1,
                       }}
-                    />
-                    <motion.div
-                      className="text-left"
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.25 }}
                     >
-                      <div className="font-semibold text-gsu-blue">{t.name}</div>
-                      <div className="text-sm text-gsu-dark-gray">{t.year}</div>
-                    </motion.div>
+                      {t.year}
+                    </div>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Prev/next controls */}
-            <button
-              aria-label="Previous testimonial"
-              onClick={() => go(i - 1)}
-              className="testimonial-arrow"
-              style={{ left: 12 }}
-            >
-              ←
-            </button>
-            <button
-              aria-label="Next testimonial"
-              onClick={() => go(i + 1)}
-              className="testimonial-arrow"
-              style={{ right: 12 }}
-            >
-              →
-            </button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 
+        {/* Arrow buttons — positioned outside the card on desktop */}
+        <button
+          aria-label="Previous testimonial"
+          onClick={() => go(i - 1)}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: -56,
+            transform: 'translateY(-50%)',
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: '#ffffff',
+            border: '1px solid #e0e0e0',
+            color: '#333',
+            fontSize: 18,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            transition: 'all 0.2s',
+            zIndex: 5,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = '#f5f5f5';
+            e.currentTarget.style.transform = 'translateY(-50%) scale(1.06)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = '#ffffff';
+            e.currentTarget.style.transform = 'translateY(-50%)';
+          }}
+        >
+          &larr;
+        </button>
+        <button
+          aria-label="Next testimonial"
+          onClick={() => go(i + 1)}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: -56,
+            transform: 'translateY(-50%)',
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: '#ffffff',
+            border: '1px solid #e0e0e0',
+            color: '#333',
+            fontSize: 18,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            transition: 'all 0.2s',
+            zIndex: 5,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = '#f5f5f5';
+            e.currentTarget.style.transform = 'translateY(-50%) scale(1.06)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = '#ffffff';
+            e.currentTarget.style.transform = 'translateY(-50%)';
+          }}
+        >
+          &rarr;
+        </button>
+
         {/* Dots */}
-        <div className="mt-6 flex justify-center gap-2">
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 28 }}>
           {testimonials.map((_, idx) => (
             <button
               key={idx}
               aria-label={`Go to testimonial ${idx + 1}`}
               onClick={() => go(idx)}
-              className={`h-2 rounded-full transition-all ${
-                idx === i ? 'w-8 bg-gsu-blue' : 'w-2 bg-gsu-med-gray hover:bg-gsu-dark-gray'
-              }`}
+              style={{
+                width: idx === i ? 28 : 10,
+                height: 10,
+                borderRadius: 999,
+                transition: 'all 0.3s',
+                background: idx === i ? '#0039A6' : '#c5cfe0',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             />
           ))}
         </div>
       </div>
 
+      {/* Responsive: move arrows inside on small screens */}
       <style>{`
-        .testimonial-arrow {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: white;
-          border: 1px solid var(--line);
-          color: var(--gsu-blue);
-          font-size: 18px;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 5;
-          transition: all 0.2s;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-        .testimonial-arrow:hover {
-          background: var(--gsu-blue);
-          color: white;
-          transform: translateY(-50%) scale(1.08);
-          box-shadow: 0 8px 20px rgba(0,57,166,0.25);
-        }
-        @media (max-width: 640px) {
-          .testimonial-arrow { width: 34px; height: 34px; font-size: 16px; }
+        @media (max-width: 860px) {
+          /* Move arrow buttons inside the container on smaller screens */
+          button[aria-label="Previous testimonial"] {
+            left: 8px !important;
+          }
+          button[aria-label="Next testimonial"] {
+            right: 8px !important;
+          }
         }
       `}</style>
     </section>

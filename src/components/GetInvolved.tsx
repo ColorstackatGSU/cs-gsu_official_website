@@ -38,14 +38,14 @@ const cardAnim = {
 export default function GetInvolved() {
   return (
     <section
-      className="section-pad-lg"
       style={{
-        background: 'var(--paper-warm)',
+        background: '#ffffff',
         position: 'relative',
         zIndex: 1,
+        padding: '100px 32px',
       }}
     >
-      <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1300, margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,10 +57,11 @@ export default function GetInvolved() {
             style={{
               fontFamily: 'var(--mono)',
               fontSize: 11,
-              letterSpacing: '0.14em',
+              letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: 'var(--gsu-blue)',
+              color: '#0039A6',
               marginBottom: 16,
+              fontWeight: 600,
             }}
           >
             Ready to get started?
@@ -68,13 +69,17 @@ export default function GetInvolved() {
           <h2
             style={{
               fontFamily: 'var(--display)',
-              fontSize: 'clamp(27px, 3.2vw, 50px)',
-              fontWeight: 700,
-              letterSpacing: '-0.04em',
-              lineHeight: 1.05,
+              fontSize: 'clamp(28px, 4vw, 48px)',
+              fontWeight: 400,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.1,
+              color: '#091024',
             }}
           >
-            Get Involved
+            Get Involved{' '}
+            <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#0039A6' }}>
+              (join our community).
+            </span>
           </h2>
         </motion.div>
 
@@ -85,78 +90,84 @@ export default function GetInvolved() {
           viewport={{ once: true, amount: 0.2 }}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 24,
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 28,
           }}
-          className="get-involved-grid"
         >
           {cards.map((c) => (
             <motion.div key={c.heading} variants={cardAnim}>
               <Link
                 to={c.href}
                 style={{
-                  display: 'block',
-                  background: 'var(--paper)',
-                  border: '1px solid var(--line)',
-                  borderRadius: 20,
-                  padding: '40px 36px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  background: '#f8fafc',
+                  borderRadius: 0,
+                  padding: '40px 32px',
                   textDecoration: 'none',
-                  color: 'var(--ink)',
-                  transition: 'border-color 0.25s, transform 0.25s, box-shadow 0.25s',
+                  color: '#091024',
+                  transition: 'all 0.25s',
                   height: '100%',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = 'var(--gsu-blue)';
-                  el.style.transform = 'translateY(-6px)';
-                  el.style.boxShadow = '0 24px 48px -16px rgba(0,57,166,0.18)';
+                  el.style.background = '#f1f5f9';
+                  el.style.transform = 'translateY(-4px)';
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = 'var(--line)';
+                  el.style.background = '#f8fafc';
                   el.style.transform = '';
-                  el.style.boxShadow = '';
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: 'var(--display)',
-                    fontSize: 28,
-                    fontWeight: 700,
-                    letterSpacing: '-0.02em',
-                    marginBottom: 8,
-                    lineHeight: 1.15,
-                  }}
-                >
-                  {c.heading}
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--display)',
+                      fontSize: 24,
+                      fontWeight: 600,
+                      letterSpacing: '-0.02em',
+                      marginBottom: 8,
+                      color: '#091024',
+                    }}
+                  >
+                    {c.heading}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 11,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: '#0039A6',
+                      marginBottom: 16,
+                      fontWeight: 600,
+                    }}
+                  >
+                    {c.sub}
+                  </div>
+                  <p style={{ color: '#475569', fontSize: 14, lineHeight: 1.6, margin: 0, fontWeight: 400 }}>{c.desc}</p>
                 </div>
-                <div
-                  style={{
-                    fontFamily: 'var(--mono)',
-                    fontSize: 11,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--gsu-blue)',
-                    marginBottom: 20,
-                  }}
-                >
-                  {c.sub}
-                </div>
-                <p style={{ opacity: 0.65, fontSize: 15, lineHeight: 1.65 }}>{c.desc}</p>
-                <div
-                  style={{
-                    marginTop: 32,
-                    fontFamily: 'var(--mono)',
-                    fontSize: 12,
-                    letterSpacing: '0.06em',
-                    textTransform: 'uppercase',
-                    color: 'var(--gsu-blue)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                  }}
-                >
-                  Learn more →
+                <div style={{ marginTop: 32 }}>
+                  <span
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 11,
+                      letterSpacing: '0.06em',
+                      textTransform: 'uppercase',
+                      padding: '8px 20px',
+                      background: '#0039A6',
+                      color: '#ffffff',
+                      borderRadius: 999,
+                      fontWeight: 600,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                    }}
+                  >
+                    Learn more &rarr;
+                  </span>
                 </div>
               </Link>
             </motion.div>

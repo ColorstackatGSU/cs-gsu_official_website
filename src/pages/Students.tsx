@@ -281,7 +281,7 @@ function MemberCard({
             >
               <span
                 style={{
-                  background: 'white',
+                  background: 'var(--paper)',
                   border: '1px solid var(--gsu-blue)',
                   color: 'var(--gsu-blue)',
                   fontFamily: 'var(--mono)',
@@ -305,7 +305,7 @@ function MemberCard({
               fontSize: 11,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--gsu-blue)',
+              color: '#ffffff',
               marginBottom: 8,
             }}
           >
@@ -418,7 +418,7 @@ export default function Students() {
         className="students-hero-pad"
         style={{
           position: 'relative',
-          background: 'var(--ink)',
+          background: 'var(--paper)',
           color: 'white',
           overflow: 'hidden',
           textAlign: 'center',
