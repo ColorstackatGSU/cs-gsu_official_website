@@ -17,14 +17,14 @@ export default function SponsorStrip() {
   return (
     <div
       style={{
-        background: 'var(--gsu-blue)',
-        color: 'white',
-        padding: '24px 0',
+        background: '#ffffff',
+        color: '#091024',
+        padding: '20px 0',
         overflow: 'hidden',
         position: 'relative',
         zIndex: 2,
-        borderTop: '1px solid var(--gsu-blue-dim)',
-        borderBottom: '1px solid var(--gsu-blue-dim)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
       }}
     >
       <div className="marquee-track">

@@ -22,10 +22,10 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: 'ColorStack Chapter · Georgia State University',
     headline: ['Welcome', 'to', 'ColorStack', 'at', 'GSU'],
     subtitle:
-      'A community for Black and Latinx students in computing at Georgia State University. Building careers, friendships, and a better industry.',
-    image: 'https://static.wixstatic.com/media/407346_c8a8fb1fc33447ffa4a0864437a8de34~mv2.png',
-    objectPosition: 'center 30%',
+      'Building careers, networks, and technical leadership for Black & Latinx students in tech.',
+    image: '/images/events/atl-social-mixer-bw.jpg',
+    objectPosition: 'center 35%',
     cta: { label: 'Become a Member →', to: '/apply/member' },
-    secondaryCta: { label: 'Learn More', to: '/about' },
+    secondaryCta: { label: 'How it works', to: '/about' },
   },
 ];

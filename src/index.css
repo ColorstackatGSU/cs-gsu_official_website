@@ -437,11 +437,13 @@
   font-weight: 400;
   font-variation-settings: "wdth" 100;
   font-size: clamp(48px, 8vw, 96px);
-  line-height: 1.1;
+  line-height: 0.6;
 }
 
 /* New class to make the "at Georgia State University" text smaller */
 .hero-sub {
-  font-size: 0.7em;
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: 0.3em;
   line-height: 1;
 }

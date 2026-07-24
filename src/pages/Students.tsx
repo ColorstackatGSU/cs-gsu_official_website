@@ -281,7 +281,7 @@ function MemberCard({
             >
               <span
                 style={{
-                  background: 'white',
+                  background: 'var(--paper)',
                   border: '1px solid var(--gsu-blue)',
                   color: 'var(--gsu-blue)',
                   fontFamily: 'var(--mono)',

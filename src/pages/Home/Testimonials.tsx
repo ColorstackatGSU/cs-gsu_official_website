@@ -20,119 +20,126 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="bg-white py-20" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section style={{ position: 'relative', overflow: 'hidden', background: '#091024', color: '#ffffff', padding: '100px 32px' }}>
       <div className="container-wide max-w-4xl text-center" style={{ position: 'relative' }}>
-        {/* Heading entrance - slide up + stagger */}
+        {/* Heading entrance */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gsu-red">
+          <p style={{ fontFamily: 'var(--mono)', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(255, 255, 255, 0.7)', fontWeight: 600 }}>
             Member voices
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl">From the people who live it</h2>
+          <h2 style={{ fontFamily: 'var(--display)', fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 400, letterSpacing: '-0.03em', color: '#ffffff', marginTop: 12 }}>
+            From the people who live it.
+          </h2>
         </motion.div>
 
-        {/* Card stack */}
-        <div style={{ position: 'relative', marginTop: 40 }}>
-          {/* Offset accent card behind */}
-          <motion.div
-            aria-hidden
-            initial={{ opacity: 0, x: 0, y: 0, rotate: 0 }}
-            whileInView={{ opacity: 0.1, x: 14, y: 14, rotate: 1.5 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: 20,
-              background: 'var(--gsu-blue)',
-              zIndex: 0,
-            }}
-          />
-
-          {/* Main card */}
+        {/* Card container */}
+        <div style={{ position: 'relative', marginTop: 44 }}>
+          {/* Main Editorial Quote Card */}
           <div
-            className="rounded-2xl border border-gsu-light-gray p-8 sm:p-12"
+            className="p-8 sm:p-14"
             style={{
               position: 'relative',
               zIndex: 1,
-              background: 'var(--paper)',
+              background: '#ffffff',
+              borderRadius: 0,
               overflow: 'hidden',
-              minHeight: 320,
+              minHeight: 340,
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.35)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
-            {/* Giant decorative quote mark in the corner */}
-            <motion.div
+            {/* Giant decorative quote mark in background */}
+            <div
               aria-hidden
-              initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-              whileInView={{ opacity: 0.08, scale: 1, rotate: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 position: 'absolute',
-                top: -30,
-                left: 20,
-                fontFamily: 'var(--display)',
+                top: -20,
+                left: 24,
+                fontFamily: 'Georgia, serif',
                 fontSize: 220,
                 lineHeight: 1,
-                color: 'var(--gsu-blue)',
+                color: '#091024',
+                opacity: 0.06,
                 userSelect: 'none',
                 pointerEvents: 'none',
                 fontWeight: 700,
               }}
             >
               &ldquo;
-            </motion.div>
+            </div>
 
             {/* Sliding quote content */}
-            <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
               <AnimatePresence mode="wait" custom={dir}>
                 <motion.div
                   key={i}
                   custom={dir}
                   variants={{
-                    enter: (d: number) => ({ opacity: 0, x: d * 60 }),
+                    enter: (d: number) => ({ opacity: 0, x: d * 50 }),
                     center: { opacity: 1, x: 0 },
-                    exit: (d: number) => ({ opacity: 0, x: -d * 60 }),
+                    exit: (d: number) => ({ opacity: 0, x: -d * 50 }),
                   }}
                   initial="enter"
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <p className="text-xl italic text-gsu-blue-steel sm:text-2xl">
+                  {/* Quote text */}
+                  <p
+                    style={{
+                      fontFamily: 'Georgia, serif',
+                      fontSize: 'clamp(20px, 2.6vw, 30px)',
+                      color: '#091024',
+                      lineHeight: 1.45,
+                      fontWeight: 400,
+                      maxWidth: 720,
+                      margin: '0 auto 36px',
+                    }}
+                  >
                     &ldquo;{t.quote}&rdquo;
                   </p>
 
-                  <div className="mt-8 flex items-center justify-center gap-4">
-                    {/* Avatar with spring pop + rotate */}
+                  {/* Member info row */}
+                  <div className="flex items-center justify-center gap-4">
+                    {/* Square Avatar */}
                     <motion.img
                       key={`avatar-${i}`}
                       src={t.image}
                       alt={t.name}
-                      className="h-14 w-14 rounded-full object-cover ring-2 ring-gsu-blue"
-                      onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
-                      initial={{ scale: 0, rotate: -25 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 220,
-                        damping: 14,
-                        delay: 0.15,
+                      style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: 0,
+                        objectFit: 'cover',
                       }}
+                      onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.35, delay: 0.15 }}
                     />
-                    <motion.div
-                      className="text-left"
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.25 }}
-                    >
-                      <div className="font-semibold text-gsu-blue">{t.name}</div>
-                      <div className="text-sm text-gsu-dark-gray">{t.year}</div>
-                    </motion.div>
+                    <div className="text-left">
+                      <div style={{ fontWeight: 600, color: '#091024', fontSize: 16 }}>{t.name}</div>
+                      <div
+                        style={{
+                          fontSize: 12,
+                          color: '#64748b',
+                          fontFamily: 'var(--mono)',
+                          letterSpacing: '0.06em',
+                          textTransform: 'uppercase',
+                          marginTop: 2,
+                        }}
+                      >
+                        {t.year}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -143,31 +150,37 @@ export default function Testimonials() {
               aria-label="Previous testimonial"
               onClick={() => go(i - 1)}
               className="testimonial-arrow"
-              style={{ left: 12 }}
+              style={{ left: 16 }}
             >
-              ←
+              &larr;
             </button>
             <button
               aria-label="Next testimonial"
               onClick={() => go(i + 1)}
               className="testimonial-arrow"
-              style={{ right: 12 }}
+              style={{ right: 16 }}
             >
-              →
+              &rarr;
             </button>
           </div>
         </div>
 
         {/* Dots */}
-        <div className="mt-6 flex justify-center gap-2">
+        <div className="mt-8 flex justify-center gap-2">
           {testimonials.map((_, idx) => (
             <button
               key={idx}
               aria-label={`Go to testimonial ${idx + 1}`}
               onClick={() => go(idx)}
-              className={`h-2 rounded-full transition-all ${
-                idx === i ? 'w-8 bg-gsu-blue' : 'w-2 bg-gsu-med-gray hover:bg-gsu-dark-gray'
-              }`}
+              style={{
+                height: 4,
+                borderRadius: 999,
+                transition: 'all 0.3s',
+                width: idx === i ? 32 : 8,
+                background: idx === i ? '#ffffff' : 'rgba(255, 255, 255, 0.25)',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             />
           ))}
         </div>
@@ -178,30 +191,28 @@ export default function Testimonials() {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: white;
-          border: 1px solid var(--line);
-          color: var(--gsu-blue);
+          width: 44px;
+          height: 44px;
+          border-radius: 999px;
+          background: #f1f5f9;
+          border: none;
+          color: #091024;
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 400;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
           z-index: 5;
           transition: all 0.2s;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
         .testimonial-arrow:hover {
-          background: var(--gsu-blue);
-          color: white;
+          background: #091024;
+          color: #ffffff;
           transform: translateY(-50%) scale(1.08);
-          box-shadow: 0 8px 20px rgba(0,57,166,0.25);
         }
         @media (max-width: 640px) {
-          .testimonial-arrow { width: 34px; height: 34px; font-size: 16px; }
+          .testimonial-arrow { width: 36px; height: 36px; font-size: 16px; }
         }
       `}</style>
     </section>
