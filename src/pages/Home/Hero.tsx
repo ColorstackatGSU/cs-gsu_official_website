@@ -102,7 +102,7 @@ export default function Hero() {
             >
               {/* Enlarged, Important Looking Title */}
               <h1 className="hero-headline">
-                ColorStack <span className="hero-sub">at Georgia State University</span>
+                ColorStack <br></br><span className="hero-sub">- at Georgia State University -</span>
               </h1>
             </motion.div>
           </AnimatePresence>
