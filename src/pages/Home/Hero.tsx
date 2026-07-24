@@ -102,10 +102,7 @@ export default function Hero() {
             >
               {/* Enlarged, Important Looking Title */}
               <h1 className="hero-headline">
-                Welcome to{' '}
-                <span style={{ fontWeight: 400, color: '#ffffff' }}>
-                  ColorStack at GSU
-                </span>
+                ColorStack at Georgia State University
               </h1>
             </motion.div>
           </AnimatePresence>
