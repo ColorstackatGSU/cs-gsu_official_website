@@ -430,3 +430,10 @@
   }
 }
 
+/* ============ HERO TEXT FONT ============ */
+.hero-headline {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-variation-settings: "wdth" 100;
+}

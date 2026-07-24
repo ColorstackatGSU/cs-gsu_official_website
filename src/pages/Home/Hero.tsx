@@ -101,18 +101,7 @@ export default function Hero() {
               style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
               {/* Enlarged, Important Looking Title */}
-              <h1
-                style={{
-                  fontFamily: "'Noto Sans', sans-serif",
-                  fontSize: 'clamp(46px, 8.2vw, 98px)',
-                  fontWeight: 400,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.04,
-                  color: '#ffffff',
-                  textAlign: 'center',
-                  margin: 0,
-                }}
-              >
+              <h1 className="hero-headline">
                 Welcome to{' '}
                 <span style={{ fontWeight: 400, color: '#ffffff' }}>
                   ColorStack at GSU
