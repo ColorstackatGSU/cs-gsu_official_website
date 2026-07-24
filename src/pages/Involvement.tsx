@@ -55,23 +55,13 @@ function EventCard({ event, index }: { event: Event; index: number }) {
         display: 'grid',
         gridTemplateColumns: '1fr',
         background: 'var(--paper)',
-        border: '1px solid var(--line)',
-        borderRadius: 20,
+        border: 'none',
+        borderRadius: 0,
         overflow: 'hidden',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
-        transition: 'border-color 0.3s, box-shadow 0.3s',
+        boxShadow: 'none',
+        transition: 'all 0.3s',
       }}
       className="event-card"
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = 'var(--gsu-blue)';
-        (e.currentTarget as HTMLElement).style.boxShadow =
-          '0 28px 48px -20px rgba(0,57,166,0.3)';
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = 'var(--line)';
-        (e.currentTarget as HTMLElement).style.boxShadow =
-          '0 2px 12px rgba(0,0,0,0.04)';
-      }}
     >
       {/* Image */}
       <div className="event-card-img">
@@ -156,7 +146,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
               fontSize: 11,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--gsu-blue)',
+              color: '#ffffff',
             }}
           >
             {event.date}
@@ -169,10 +159,11 @@ function EventCard({ event, index }: { event: Event; index: number }) {
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 padding: '4px 10px',
-                background: 'rgba(0,57,166,0.08)',
-                color: 'var(--gsu-blue)',
+                background: 'rgba(255, 255, 255, 0.08)',
+                color: '#ffffff',
                 borderRadius: 4,
                 fontWeight: 600,
+                marginLeft: 8,
               }}
             >
               {event.tag}
@@ -385,7 +376,7 @@ export default function Involvement() {
           font-size: 13px;
           letter-spacing: 0.08em;
           padding: 10px 22px;
-          border-radius: 8px;
+          border-radius: 999px;
           border: 1px solid var(--line);
           background: none;
           cursor: pointer;
@@ -421,40 +412,24 @@ export default function Involvement() {
           style={{ position: 'absolute', inset: 0, opacity: 0.7 }}
           aria-hidden
         />
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            width: 700,
-            height: 700,
-            background:
-              'radial-gradient(circle, rgba(0,57,166,0.45), transparent 70%)',
-            top: -200,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            filter: 'blur(60px)',
-            pointerEvents: 'none',
-          }}
-        />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}
         >
-          <div
-            className="section-eyebrow"
+          <p
             style={{
-              color: 'var(--gsu-blue-bright)',
-              justifyContent: 'center',
-              display: 'flex',
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.6)',
+              marginBottom: 20,
             }}
           >
-            <span className="num" style={{ background: 'var(--gsu-blue-bright)' }}>
-              Events
-            </span>
-            What we&apos;ve been up to
-          </div>
+            Events &middot; What we&apos;ve been up to
+          </p>
           <h1
             style={{
               fontFamily: 'var(--display)',

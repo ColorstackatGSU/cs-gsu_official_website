@@ -35,7 +35,7 @@ export default function Testimonials() {
           style={{
             position: 'relative',
             background: '#ffffff',
-            borderRadius: 16,
+            borderRadius: 0,
             padding: 'clamp(32px, 5vw, 56px)',
             boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04)',
             border: '1px solid rgba(0, 0, 0, 0.06)',

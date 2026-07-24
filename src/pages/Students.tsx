@@ -209,14 +209,12 @@ function MemberCard({
     >
       <div
         style={{
-          borderRadius: 20,
+          borderRadius: 0,
           overflow: 'hidden',
-          border: `1px solid ${hovered ? 'var(--gsu-blue)' : 'var(--line)'}`,
+          border: 'none',
           transition: 'all 0.25s',
           transform: hovered ? 'translateY(-6px)' : 'none',
-          boxShadow: hovered
-            ? '0 28px 48px -20px rgba(0,57,166,0.3)'
-            : '0 2px 12px rgba(0,0,0,0.04)',
+          boxShadow: 'none',
           background: 'var(--paper)',
         }}
       >
@@ -393,7 +391,7 @@ export default function Students() {
           font-size: 13px;
           letter-spacing: 0.08em;
           padding: 10px 22px;
-          border-radius: 8px;
+          border-radius: 999px;
           border: 1px solid var(--line);
           background: none;
           cursor: pointer;
@@ -429,34 +427,19 @@ export default function Students() {
           style={{ position: 'absolute', inset: 0, opacity: 0.7 }}
           aria-hidden
         />
-        <div
-          style={{
-            position: 'absolute',
-            width: 600,
-            height: 600,
-            background: 'radial-gradient(circle, rgba(0,57,166,0.4), transparent 70%)',
-            top: -200,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            filter: 'blur(60px)',
-            pointerEvents: 'none',
-          }}
-          aria-hidden
-        />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div
-            className="section-eyebrow"
+          <p
             style={{
-              color: 'var(--gsu-blue-bright)',
-              justifyContent: 'center',
-              display: 'flex',
+              fontFamily: 'var(--mono)',
+              fontSize: 11,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.6)',
+              marginBottom: 20,
             }}
           >
-            <span className="num" style={{ background: 'var(--gsu-blue-bright)' }}>
-              Team
-            </span>
-            Executive Board
-          </div>
+            Team &middot; Executive Board
+          </p>
           <h1
             style={{
               fontFamily: 'var(--display)',

@@ -45,11 +45,7 @@ export default function VisualFooterBanner() {
           padding: 24,
         }}
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -90,7 +86,7 @@ export default function VisualFooterBanner() {
           >
             Join Us &rarr;
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
