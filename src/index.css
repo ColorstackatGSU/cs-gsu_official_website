@@ -436,4 +436,6 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-variation-settings: "wdth" 100;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1.1;
 }
