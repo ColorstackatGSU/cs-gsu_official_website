@@ -96,7 +96,18 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="section-eyebrow">Our Story</p>
+            <p
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.6)',
+                marginBottom: 20,
+              }}
+            >
+              Our Story
+            </p>
             <p
               style={{
                 fontSize: 'clamp(15px, 1.2vw, 17px)',
@@ -143,7 +154,18 @@ export default function About() {
             transition={{ duration: 0.55 }}
             style={{ marginBottom: 48 }}
           >
-            <p className="section-eyebrow">What We Offer</p>
+            <p
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.6)',
+                marginBottom: 20,
+              }}
+            >
+              What We Offer
+            </p>
             <h2
               style={{
                 fontFamily: 'var(--display)',
@@ -174,8 +196,8 @@ export default function About() {
                 variants={cardAnim}
                 style={{
                   background: 'var(--paper)',
-                  border: '1px solid var(--line)',
-                  borderRadius: 16,
+                  border: 'none',
+                  borderRadius: 0,
                   padding: '32px 28px',
                 }}
               >
@@ -207,15 +229,26 @@ export default function About() {
             transition={{ duration: 0.55 }}
             style={{
               background: 'var(--paper-warm)',
-              border: '1px solid var(--line)',
-              borderRadius: 20,
+              border: 'none',
+              borderRadius: 0,
               padding: 'clamp(28px, 5vw, 48px) clamp(20px, 5vw, 40px)',
               display: 'flex',
               flexDirection: 'column',
               gap: 20,
             }}
           >
-            <p className="section-eyebrow" style={{ marginBottom: 0 }}>National Organization</p>
+            <p
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.6)',
+                marginBottom: 0,
+              }}
+            >
+              National Organization
+            </p>
             <h2
               style={{
                 fontFamily: 'var(--display)',

@@ -50,7 +50,7 @@ export default function Navbar() {
             src="/images/colorstack-gsu-logo.png"
             alt="ColorStack GSU"
             className="nav-logo-img"
-            style={{ display: 'block', width: 32, height: 32, borderRadius: 8 }}
+            style={{ display: 'block', width: 32, height: 32, borderRadius: '50%' }}
           />
           <span
             className="nav-brand-text"

@@ -89,10 +89,16 @@ export const eboadYears: EBoardYear[] = [
         members: [
           { name: 'TBA', role: 'Partnership Director' },
           { name: 'TBA', role: 'Media Director' },
-          { name: 'TBA', role: 'Tech Director' },
+          {
+            name: 'Shelden Rattray',
+            role: 'Tech Director',
+            image: '/images/eboard/shelden.webp',
+            linkedin: 'https://www.linkedin.com/in/shelden-rattray/',
+            major: 'Computer Science',
+          },
           { name: 'TBA', role: 'Outreach Director' },
           { name: 'TBA', role: 'Operations Director' },
-          {name: 'TBA', role: 'Finance Director'},
+          { name: 'TBA', role: 'Finance Director' },
         ],
       },
     ],

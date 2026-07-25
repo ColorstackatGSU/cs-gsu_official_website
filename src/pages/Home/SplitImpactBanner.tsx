@@ -73,40 +73,12 @@ export default function SplitImpactBanner() {
             {/* Main Background Image */}
             <div style={{ borderRadius: 0, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.15)', aspectRatio: '1 / 1' }}>
               <img
-                src="/images/involvement-img2.jpg"
+                src="/images/events/atl-social-mixer.png"
                 alt="ColorStack GSU Leader"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  filter: 'grayscale(100%) contrast(1.1)',
-                  display: 'block',
-                }}
-              />
-            </div>
-
-            {/* Layered Inset Square Image */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: -24,
-                left: -24,
-                width: '45%',
-                aspectRatio: '1 / 1',
-                borderRadius: 0,
-                overflow: 'hidden',
-                border: '3px solid #091024',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
-              }}
-            >
-              <img
-                src="/images/events/peach-hacks.jpeg"
-                alt="PeachHacks"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  filter: 'grayscale(100%) contrast(1.1)',
                   display: 'block',
                 }}
               />

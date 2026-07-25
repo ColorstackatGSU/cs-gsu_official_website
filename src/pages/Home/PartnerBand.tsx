@@ -34,7 +34,7 @@ export default function PartnerBand() {
   return (
     <section
       style={{
-        background: 'linear-gradient(160deg, #0039A6 0%, #002a7a 100%)',
+        background: '#091024',
         color: '#ffffff',
         padding: '100px 32px',
       }}
@@ -184,9 +184,8 @@ export default function PartnerBand() {
               key={b.title}
               variants={item}
               style={{
-                background: 'rgba(255, 255, 255, 0.08)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: 12,
+                background: '#131c35',
+                borderRadius: 0,
                 padding: '22px 24px',
               }}
             >

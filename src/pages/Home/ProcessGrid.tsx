@@ -6,25 +6,25 @@ const steps = [
     num: '01',
     title: 'Connect',
     desc: 'Join our Slack & chapter network to build lasting peer relationships.',
-    image: '/images/events/atl-social-mixer.png',
+    image: '/images/67133ca88dea988c2acca64c_summit group photo.jpg',
   },
   {
     num: '02',
     title: 'Learn',
     desc: 'Technical workshops, mock interviews, and resume breakdowns.',
-    image: '/images/events/duolingo-panel.png',
+    image: '/images/620cee9e7c4ce00022bd325a_ColorStack home hero-min.jpg',
   },
   {
     num: '03',
     title: 'Grow',
     desc: '1-on-1 mentorship with industry engineers & senior student peers.',
-    image: '/images/events/peach-hacks.jpeg',
+    image: '/images/67c77e5e4c5aac70963df60e_ColorStack-Annual-Summit-D2-Chloe-Jackman-Photography-2024-272_websize.jpg',
   },
   {
     num: '04',
     title: 'Land',
     desc: 'Secure internships & full-time roles at top tech companies.',
-    image: '/images/homepage_img.jpg',
+    image: '/images/1.jpg',
   },
 ];
 
@@ -110,15 +110,16 @@ export default function ProcessGrid() {
                 flexDirection: 'column',
                 background: '#091024',
                 borderRadius: 0,
-                padding: 20,
+                padding: 32,
               }}
             >
               <div
                 style={{
-                  borderRadius: 0,
+                  marginBottom: 24,
+                  width: '100%',
+                  height: 180,
                   overflow: 'hidden',
-                  marginBottom: 16,
-                  aspectRatio: '4 / 3',
+                  background: '#1e293b',
                 }}
               >
                 <img
@@ -128,7 +129,6 @@ export default function ProcessGrid() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    display: 'block',
                   }}
                 />
               </div>

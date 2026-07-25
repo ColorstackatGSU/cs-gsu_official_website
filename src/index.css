@@ -389,7 +389,7 @@
     padding: 16px 28px;
     background: var(--gsu-blue);
     color: white;
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 0.2s;
     display: inline-flex;
     align-items: center;
@@ -411,7 +411,7 @@
     background: transparent;
     color: var(--ink);
     border: 1px solid var(--line-strong);
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 0.2s;
     display: inline-flex;
     align-items: center;
@@ -432,7 +432,7 @@
     padding: 16px 28px;
     background: #ffffff;
     color: var(--gsu-blue);
-    border-radius: 8px;
+    border-radius: 999px;
     transition: all 0.2s;
     display: inline-flex;
     align-items: center;
