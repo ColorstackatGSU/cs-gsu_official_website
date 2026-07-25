@@ -83,29 +83,6 @@ export default function SplitImpactBanner() {
                 }}
               />
             </div>
-
-            {/* Layered Quote Box */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: 24,
-                right: 24,
-                maxWidth: 240,
-                background: 'rgba(9, 16, 36, 0.92)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                padding: '16px 20px',
-                borderRadius: 0,
-                boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-              }}
-            >
-              <p style={{ fontSize: 11, color: '#cbd5e1', lineHeight: 1.4, margin: 0 }}>
-                100+ offers secured at Google, Microsoft, Meta, and top startups.
-              </p>
-              <span style={{ fontSize: 10, color: '#97CAEB', fontFamily: 'var(--mono)', display: 'block', marginTop: 6, fontWeight: 600 }}>
-                colorstackgsu.org
-              </span>
-            </div>
           </motion.div>
         </div>
       </div>
