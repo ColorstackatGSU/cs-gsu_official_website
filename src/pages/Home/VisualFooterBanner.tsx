@@ -19,7 +19,7 @@ export default function VisualFooterBanner() {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          filter: 'grayscale(100%) contrast(1.15)',
+          filter: 'grayscale(100%) contrast(1.15) blur(2px)',
           display: 'block',
         }}
       />

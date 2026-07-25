@@ -6,46 +6,25 @@ const steps = [
     num: '01',
     title: 'Connect',
     desc: 'Join our Slack & chapter network to build lasting peer relationships.',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
+    image: '/images/67133ca88dea988c2acca64c_summit group photo.jpg',
   },
   {
     num: '02',
     title: 'Learn',
     desc: 'Technical workshops, mock interviews, and resume breakdowns.',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-      </svg>
-    ),
+    image: '/images/620cee9e7c4ce00022bd325a_ColorStack home hero-min.jpg',
   },
   {
     num: '03',
     title: 'Grow',
     desc: '1-on-1 mentorship with industry engineers & senior student peers.',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
+    image: '/images/67c77e5e4c5aac70963df60e_ColorStack-Annual-Summit-D2-Chloe-Jackman-Photography-2024-272_websize.jpg',
   },
   {
     num: '04',
     title: 'Land',
     desc: 'Secure internships & full-time roles at top tech companies.',
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      </svg>
-    ),
+    image: '/images/1.jpg',
   },
 ];
 
@@ -137,12 +116,21 @@ export default function ProcessGrid() {
               <div
                 style={{
                   marginBottom: 24,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'flex-start',
+                  width: '100%',
+                  height: 180,
+                  overflow: 'hidden',
+                  background: '#1e293b',
                 }}
               >
-                {s.icon}
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
               </div>
               <h3 style={{ fontSize: 18, fontWeight: 600, color: '#ffffff', margin: '0 0 6px 0' }}>
                 {s.title}
