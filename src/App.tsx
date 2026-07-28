@@ -9,7 +9,6 @@ import ApplyLanding from './pages/Apply';
 import ApplyMember from './pages/Apply/Member';
 import ApplyEBoard from './pages/Apply/EBoard';
 import NotFound from './pages/NotFound';
-import MemberPortal from './pages/MemberPortal';
 
 export default function App() {
   return (
@@ -23,7 +22,6 @@ export default function App() {
         <Route path="apply" element={<ApplyLanding />} />
         <Route path="apply/member" element={<ApplyMember />} />
         <Route path="apply/e-board" element={<ApplyEBoard />} />
-        <Route path="portal" element={<MemberPortal />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
