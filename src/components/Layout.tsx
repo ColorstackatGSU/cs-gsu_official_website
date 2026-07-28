@@ -5,6 +5,7 @@ import Footer from './Footer';
 
 export default function Layout() {
   const { pathname } = useLocation();
+  const isPortal = pathname.startsWith('/portal');
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -29,11 +30,11 @@ export default function Layout() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--paper)' }}>
       <div className="grid-bg" aria-hidden />
-      <Navbar />
+      {!isPortal && <Navbar />}
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
-      <Footer />
+      {!isPortal && <Footer />}
     </div>
   );
 }
