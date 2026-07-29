@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 export default function VisualFooterBanner() {
   return (
     <section
+      className="visual-footer-banner"
       style={{
         position: 'relative',
         width: '100%',
@@ -45,6 +46,7 @@ export default function VisualFooterBanner() {
         }}
       >
         <div
+          className="visual-footer-banner-card"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -61,13 +63,14 @@ export default function VisualFooterBanner() {
             justifyContent: 'center',
           }}
         >
-          <span style={{ fontSize: 'clamp(13px, 1.5vw, 17px)', color: '#ffffff', fontWeight: 400 }}>
+          <span className="visual-footer-banner-copy" style={{ fontSize: 'clamp(13px, 1.5vw, 17px)', color: '#ffffff', fontWeight: 400 }}>
             Build your future in computing with{' '}
             <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#97CAEB' }}>
               ColorStack GSU.
             </span>
           </span>
           <Link
+            className="visual-footer-banner-cta"
             to="/apply/member"
             style={{
               padding: '11px 24px',

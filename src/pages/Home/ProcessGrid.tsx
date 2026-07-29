@@ -100,6 +100,7 @@ export default function ProcessGrid() {
         >
           {steps.map((s, i) => (
             <motion.div
+              className="process-step"
               key={s.title}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,14 +111,15 @@ export default function ProcessGrid() {
                 flexDirection: 'column',
                 background: '#091024',
                 borderRadius: 0,
-                padding: 32,
+                padding: 20,
               }}
             >
               <div
+                className="process-step-image"
                 style={{
-                  marginBottom: 24,
+                  marginBottom: 20,
                   width: '100%',
-                  height: 180,
+                  height: 220,
                   overflow: 'hidden',
                   background: '#1e293b',
                 }}

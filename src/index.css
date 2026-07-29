@@ -363,6 +363,10 @@
   .footer-grid { grid-template-columns: 1fr; }
   .get-involved-grid { grid-template-columns: 1fr !important; }
 
+  /* Give the How It Works photos more presence on narrow screens. */
+  .process-step { padding: 20px !important; }
+  .process-step-image { height: 240px !important; margin-bottom: 20px !important; }
+
   /* Footer bottom bar stacks */
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
@@ -505,4 +509,37 @@
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
   letter-spacing: 0.02em;
+}
+
+/* ============ MOBILE CTA BANNER ============ */
+.visual-footer-banner-card {
+  width: max-content;
+}
+
+@media (max-width: 600px) {
+  .visual-footer-banner {
+    height: 420px !important;
+  }
+
+  .visual-footer-banner-card {
+    width: min(100%, 340px) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+    padding: 24px 20px 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .visual-footer-banner-copy {
+    display: block;
+    font-size: 18px !important;
+    line-height: 1.3;
+    padding: 0 4px;
+  }
+
+  .visual-footer-banner-cta {
+    min-height: 48px;
+    justify-content: center;
+    width: 100%;
+  }
 }
