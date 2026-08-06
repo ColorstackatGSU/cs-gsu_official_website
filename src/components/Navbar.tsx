@@ -6,7 +6,7 @@ const links = [
   { to: '/about', label: 'About' },
   { to: '/involvement', label: 'Events' },
   { to: '/students', label: 'Team' },
-  { to: '/sponsors', label: 'Resources' },
+  { to: '/sponsors', label: 'Sponsors' },
 ];
 
 export default function Navbar() {

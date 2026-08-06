@@ -96,7 +96,7 @@ export default function PartnerBand() {
             }}
           >
             Partner with ColorStack at GSU to put your brand and open roles in front of driven Black
-            and Latinx computing students &mdash; through info sessions, recruiting events, and direct
+            and Latinx computing students through info sessions, recruiting events, and direct
             access to our member network.
           </p>
 

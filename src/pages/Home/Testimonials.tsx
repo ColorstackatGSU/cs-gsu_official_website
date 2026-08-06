@@ -136,7 +136,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Arrow buttons — positioned outside the card on desktop */}
+        {/* Arrow buttons, positioned outside the card on desktop */}
         <button
           aria-label="Previous testimonial"
           onClick={() => go(i - 1)}

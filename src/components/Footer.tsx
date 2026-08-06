@@ -5,7 +5,7 @@ const sitemap: [string, string][] = [
   ['/about', 'About'],
   ['/involvement', 'Events'],
   ['/students', 'Team'],
-  ['/sponsors', 'Resources'],
+  ['/sponsors', 'Sponsors'],
   ['/apply', 'Join Us'],
 ];
 

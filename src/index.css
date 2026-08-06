@@ -296,7 +296,7 @@
 .hero-text-wrap.with-dots { padding-bottom: 80px; }
 
 /* Time-elapsed fill that sweeps across the active carousel dot.
-   No border-radius — the parent pill clips it, giving a clean flat leading edge. */
+   No border-radius, the parent pill clips it, giving a clean flat leading edge. */
 .dot-progress {
   position: absolute;
   top: 0;
@@ -343,7 +343,7 @@
   .board-grid-pad     { padding: 56px 20px 72px; }
   .hero-text-wrap     { padding: 0 16px 28px; }
   .hero-text-wrap.with-dots { padding-bottom: 60px; }
-  /* Arrows are hidden on mobile — dots + tap are enough */
+  /* Arrows are hidden on mobile, dots + tap are enough */
   .carousel-arrow { display: none !important; }
 
   /* Hero scales down on small screens so nothing clips */
@@ -427,7 +427,7 @@
     color: var(--gsu-blue);
   }
 
-  /* Accent CTA — reads clearly on the solid GSU-blue interior hero bands */
+  /* Accent CTA, reads clearly on the solid GSU-blue interior hero bands */
   .btn-accent {
     font-family: var(--mono);
     font-size: 13px;

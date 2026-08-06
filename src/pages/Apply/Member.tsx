@@ -22,7 +22,7 @@ export default function ApplyMember() {
             frameBorder={0}
             marginHeight={0}
             marginWidth={0}
-            title="ColorStack at GSU — Membership Application"
+            title="ColorStack at GSU Membership Application"
             style={{ minHeight: 935, background: 'transparent' }}
             allowFullScreen
           >

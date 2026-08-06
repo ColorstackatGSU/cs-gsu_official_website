@@ -22,7 +22,7 @@ export default function ApplyEBoard() {
             frameBorder={0}
             marginHeight={0}
             marginWidth={0}
-            title="ColorStack at GSU — E-Board Application"
+            title="ColorStack at GSU E-Board Application"
             style={{ minHeight: 2014, background: 'transparent' }}
             allowFullScreen
           >

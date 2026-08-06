@@ -1,5 +1,5 @@
 // Banners for the autoscrolling hero carousel on the home page.
-// Add, remove, or reorder slides here — the carousel adapts automatically.
+// Add, remove, or reorder slides here. The carousel adapts automatically.
 // `image` paths are served from /public, so they start at /images/...
 
 export type HeroSlide = {

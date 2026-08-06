@@ -87,7 +87,12 @@ export const eboadYears: EBoardYear[] = [
       {
         title: 'Directors',
         members: [
-          { name: 'TBA', role: 'Partnership Director' },
+          {
+            name: 'Adeoluwa Olateru-Olagbegi',
+            role: 'Partnership Director',
+            image: '/images/eboard/Adeoluwa_Olateru-Olagbegi.png',
+            linkedin: 'https://www.linkedin.com/in/adeoluwa-olagbegi/',
+          },
           { name: 'TBA', role: 'Media Director' },
           {
             name: 'Shelden Rattray',
@@ -96,9 +101,24 @@ export const eboadYears: EBoardYear[] = [
             linkedin: 'https://www.linkedin.com/in/shelden-rattray/',
             major: 'Computer Science',
           },
-          { name: 'TBA', role: 'Outreach Director' },
-          { name: 'TBA', role: 'Operations Director' },
-          { name: 'TBA', role: 'Finance Director' },
+          {
+            name: 'Poorav Rawat',
+            role: 'Outreach Director',
+            image: '/images/eboard/Poorav_Rawat.jpg',
+            linkedin: 'https://www.linkedin.com/in/pooravrawat/',
+          },
+          {
+            name: 'Oluwayonuimi Okediji',
+            role: 'Operations Director',
+            image: '/images/eboard/Oluwayonuimi_Okediji.jpeg',
+            linkedin: 'https://www.linkedin.com/in/yonusimi/',
+          },
+          {
+            name: 'Ikenna Onyebuchi',
+            role: 'Finance Director',
+            image: '/images/eboard/Ikenna_Onyebuchi.jpg',
+            linkedin: 'https://www.linkedin.com/in/ikenna-onyebuchi/',
+          },
         ],
       },
     ],
