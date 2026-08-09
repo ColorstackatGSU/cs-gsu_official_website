@@ -33,7 +33,7 @@ export default function SplitImpactBanner() {
             >
               More than $10 million of tech offers secured{' '}
               <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 400, color: '#97CAEB' }}>
-                (ColorStack GSU supports your career path).
+                (ColorStack at GSU supports your career path).
               </span>
             </h2>
 
