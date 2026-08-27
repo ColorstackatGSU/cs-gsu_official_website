@@ -102,7 +102,19 @@ export default function Hero() {
             >
               {/* Enlarged, Important Looking Title */}
               <h1 className="hero-headline">ColorStack</h1>
-              <p className="hero-subtitle-text">at Georgia State University</p>
+              <div className="hero-gsu-lockup" style={{ gap: 8 }}>
+                <span className="hero-at" style={{ fontSize: 'clamp(14px, 1.8vw, 22px)' }}>at</span>
+                <img
+                  src="/images/gsu-logo-official.svg"
+                  alt="Georgia State University"
+                  style={{
+                    height: 'clamp(28px, 4vw, 44px)',
+                    width: 'auto',
+                    display: 'block',
+                    filter: 'brightness(0) invert(1)'
+                  }}
+                />
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

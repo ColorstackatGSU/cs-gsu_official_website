@@ -3,7 +3,32 @@ import { motion } from 'framer-motion';
 
 export default function EditorialIntro() {
   return (
-    <section style={{ background: '#091024', color: '#ffffff', padding: '100px 32px' }}>
+    <section style={{ position: 'relative', background: '#091024', color: '#ffffff', padding: '100px 32px', overflow: 'hidden' }}>
+      {/* Top Horizontal Grid Lines */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 36,
+          backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0px, rgba(255, 255, 255, 0.06) 1px, transparent 1px, transparent 12px)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Bottom Horizontal Grid Lines */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 36,
+          backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0px, rgba(255, 255, 255, 0.06) 1px, transparent 1px, transparent 12px)',
+          pointerEvents: 'none',
+        }}
+      />
       <div style={{ maxWidth: 1300, margin: '0 auto' }}>
         {/* Large Editorial Headline */}
         <motion.h2
@@ -53,13 +78,13 @@ export default function EditorialIntro() {
                 letterSpacing: '-0.02em',
               }}
             >
-              80+ Black and Latinx computing students connected across GSU.
+              We are officially kicking off the semester!
             </h3>
             <p style={{ fontSize: 16, color: '#94a3b8', lineHeight: 1.6, marginBottom: 28, fontWeight: 300 }}>
-              Transforming collegiate talent into software engineering leadership through workshops, mentorship, and career pipelines.
+              We are officially kicking off the semester! Meet the new executive board, learn about our upcoming workshops, panels, and networking events, and discover how ColorStack can support your journey into the tech industry.
             </p>
             <Link
-              to="/about"
+              to="/involvement"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -79,7 +104,7 @@ export default function EditorialIntro() {
               onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = '#ffffff')}
               onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = 'rgba(255, 255, 255, 0.4)')}
             >
-              Explore our impact &rarr;
+              See all events &rarr;
             </Link>
           </motion.div>
 
@@ -91,17 +116,28 @@ export default function EditorialIntro() {
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{ position: 'relative' }}
           >
-            <div style={{ borderRadius: 0, overflow: 'hidden', aspectRatio: '4 / 3' }}>
-              <img
-                src="/images/student_page_img.jpg"
-                alt="ColorStack GSU Students"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
-              />
+            <div
+              style={{
+                borderRadius: 0,
+                overflow: 'hidden',
+                border: '2.5px solid #97CAEB',
+                maxWidth: 440,
+                margin: '0 auto',
+              }}
+            >
+              <div style={{ overflow: 'hidden', position: 'relative' }}>
+                <img
+                  src="/images/events/kickoff-fall-2026.png"
+                  alt="ColorStack GSU Fall 2026 Kickoff Flyer"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: 'auto',
+                    clipPath: 'inset(10% 0 10% 0)',
+                    margin: '-10% 0',
+                  }}
+                />
+              </div>
             </div>
           </motion.div>
         </div>
