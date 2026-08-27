@@ -31,6 +31,15 @@ const steps = [
 export default function ProcessGrid() {
   return (
     <section style={{ background: '#ffffff', color: '#091024', padding: '100px 32px' }}>
+      <style>{`
+        .process-step-image img {
+          filter: grayscale(100%);
+          transition: filter 0.4s ease;
+        }
+        .process-step:hover .process-step-image img {
+          filter: grayscale(0%);
+        }
+      `}</style>
       <div style={{ maxWidth: 1300, margin: '0 auto' }}>
         {/* Top Header */}
         <div style={{ marginBottom: 48 }}>

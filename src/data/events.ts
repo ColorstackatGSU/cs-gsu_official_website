@@ -47,6 +47,16 @@ export const eventYears: EventYear[] = [
   },
   {
     label: '2026–2027',
-    events: [],
+    events: [
+      {
+        title: 'Fall 2026 Kickoff',
+        date: 'Aug 27, 2026',
+        semester: 'Fall 2026',
+        description:
+          'Kick off the new academic year with ColorStack at GSU! Meet the new executive board, learn about our upcoming workshops, panels, and networking events, and connect with fellow tech students.',
+        image: '/images/events/kickoff-fall-2026.png',
+        tag: 'Kickoff',
+      },
+    ],
   },
 ];
