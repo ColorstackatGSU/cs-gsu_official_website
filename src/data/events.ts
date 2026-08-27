@@ -50,7 +50,7 @@ export const eventYears: EventYear[] = [
     events: [
       {
         title: 'Fall 2026 Kickoff',
-        date: 'Aug 27, 2026',
+        date: 'Sep 9, 2026',
         semester: 'Fall 2026',
         description:
           'Kick off the new academic year with ColorStack at GSU! Meet the new executive board, learn about our upcoming workshops, panels, and networking events, and connect with fellow tech students.',
