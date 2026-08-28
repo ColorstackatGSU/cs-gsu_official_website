@@ -386,12 +386,12 @@ export default function Involvement() {
         }
         .year-tab:hover {
           opacity: 0.85;
-          border-color: var(--gsu-blue);
+          border-color: white;
         }
         .year-tab.active {
-          background: var(--gsu-blue);
-          border-color: var(--gsu-blue);
-          color: white;
+          background: white;
+          border-color: white;
+          color: var(--paper);
           opacity: 1;
         }
       `}</style>
@@ -441,7 +441,7 @@ export default function Involvement() {
             }}
           >
             Look what we&apos;ve{' '}
-            <span style={{ color: '#97CAEB' }}>
+            <span style={{ color: '#ffffff' }}>
               gotten into.
             </span>
           </h1>

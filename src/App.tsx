@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { MotionConfig } from 'framer-motion';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -14,7 +15,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="always">
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
@@ -32,6 +33,6 @@ export default function App() {
         </Route>
       </Routes>
       <Analytics />
-    </>
+    </MotionConfig>
   );
 }

@@ -27,11 +27,11 @@ export default function Navbar() {
       <nav
         className="nav-bar"
         style={{
-          padding: '8px 20px',
+          padding: '8px 12px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: 'rgba(255, 255, 255, 0.92)',
+          background: '#ffffff',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           border: 'none',

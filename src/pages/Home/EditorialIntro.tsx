@@ -120,7 +120,7 @@ export default function EditorialIntro() {
               style={{
                 borderRadius: 0,
                 overflow: 'hidden',
-                border: '2.5px solid #97CAEB',
+                border: '2.5px solid #ffffff',
                 maxWidth: 440,
                 margin: '0 auto',
               }}
