@@ -7,6 +7,7 @@ import About from './pages/About';
 import Involvement from './pages/Involvement';
 import Students from './pages/Students';
 import Sponsors from './pages/Sponsors';
+import Spiels from './pages/Spiels';
 import ApplyLanding from './pages/Apply';
 import ApplyMember from './pages/Apply/Member';
 import ApplyEBoard from './pages/Apply/EBoard';
@@ -22,6 +23,9 @@ export default function App() {
           <Route path="involvement" element={<Involvement />} />
           <Route path="students" element={<Students />} />
           <Route path="sponsors" element={<Sponsors />} />
+          <Route path="spiels" element={<Spiels />} />
+          {/* singular link works too */}
+          <Route path="spiel" element={<Spiels />} />
           <Route path="apply" element={<ApplyLanding />} />
           <Route path="apply/member" element={<ApplyMember />} />
           <Route path="apply/e-board" element={<ApplyEBoard />} />
