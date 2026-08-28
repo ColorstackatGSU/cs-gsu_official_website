@@ -71,9 +71,8 @@
 
 /* ============ SCROLL REVEAL ============ */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(.2,.6,.2,1), transform 0.8s cubic-bezier(.2,.6,.2,1);
+  opacity: 1;
+  transform: none;
 }
 .reveal.in {
   opacity: 1;
@@ -81,13 +80,8 @@
 }
 
 /* ============ PAGE FADE-IN ============ */
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: none; }
-}
 .fade-in-up {
-  opacity: 0;
-  animation: fade-in-up 0.6s cubic-bezier(.2,.6,.2,1) both;
+  opacity: 1;
 }
 .fade-delay-1 { animation-delay: 0.1s; }
 .fade-delay-2 { animation-delay: 0.2s; }
@@ -319,7 +313,7 @@
 .nav-brand-text { font-size: 14px; }
 
 @media (min-width: 768px) {
-  .nav-bar { padding: 8px 20px !important; }
+  .nav-bar { padding: 8px 12px !important; }
   .nav-logo-img { height: 32px; width: 32px; }
   .nav-brand-text { font-size: 14px; }
 }

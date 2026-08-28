@@ -401,12 +401,12 @@ export default function Students() {
         }
         .year-tab:hover {
           opacity: 0.85;
-          border-color: var(--gsu-blue);
+          border-color: white;
         }
         .year-tab.active {
-          background: var(--gsu-blue);
-          border-color: var(--gsu-blue);
-          color: white;
+          background: white;
+          border-color: white;
+          color: var(--paper);
           opacity: 1;
         }
       `}</style>
@@ -451,7 +451,7 @@ export default function Students() {
             }}
           >
             Meet the{' '}
-            <span style={{ color: '#97CAEB' }}>board.</span>
+            <span style={{ color: '#ffffff' }}>board.</span>
           </h1>
           <p
             style={{

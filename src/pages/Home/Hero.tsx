@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { heroSlides } from '../../data/heroSlides';
 
 const AUTOPLAY_MS = 4500;
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const reduceMotion = useReducedMotion();
   const count = heroSlides.length;
 
   const go = useCallback(
@@ -31,196 +29,189 @@ export default function Hero() {
       aria-roledescription="carousel"
       aria-label="ColorStack at GSU announcements"
     >
-      {/* Hero Image Block */}
       <div
         style={{
           position: 'relative',
           width: '100%',
-          height: '88vh',
-          minHeight: 640,
+          height: '92vh',
+          minHeight: 680,
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'flex-end',
+          paddingBottom: 'clamp(40px, 8vh, 80px)',
         }}
       >
         {/* Background Image */}
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={slide.id}
-            src={slide.image}
-            alt={slide.headline.join(' ')}
-            initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.05 }}
-            animate={{ opacity: 1, scale: reduceMotion ? 1 : 1.12 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: reduceMotion ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] },
-              scale: { duration: reduceMotion ? 0 : (AUTOPLAY_MS + 1500) / 1000, ease: 'linear' },
-            }}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: slide.objectPosition ?? 'center',
-              display: 'block',
-              filter: 'brightness(0.65) saturate(0.65)',
-            }}
-          />
-        </AnimatePresence>
+        <img
+          src={slide.image}
+          alt={slide.headline.join(' ')}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: slide.objectPosition ?? 'center',
+            display: 'block',
+            filter: 'brightness(0.35) saturate(0.65)',
+          }}
+        />
 
-        {/* Uniform Cool Blue Overlay (Sudden Cutoff at Bottom) */}
+        {/* Uniform Cool Blue Overlay */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'rgba(9, 16, 36, 0.55)',
+            background: 'linear-gradient(to right, rgba(9, 16, 36, 0.95) 0%, rgba(9, 16, 36, 0.7) 50%, rgba(9, 16, 36, 0.4) 100%)',
           }}
         />
 
-        {/* Center Region: Simplified & Prominent ColorStack Headline */}
+        {/* Left-Aligned Content Container */}
         <div
+          className="container-wide"
           style={{
             position: 'relative',
             zIndex: 5,
-            maxWidth: 1000,
-            textAlign: 'center',
-            padding: '0 24px',
-            transform: 'translateY(-20px)',
-          }}
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={slide.id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.5 }}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-            >
-              {/* Enlarged, Important Looking Title */}
-              <h1 className="hero-headline">ColorStack</h1>
-              <div className="hero-gsu-lockup" style={{ gap: 8 }}>
-                <span className="hero-at" style={{ fontSize: 'clamp(14px, 1.8vw, 22px)' }}>at</span>
-                <img
-                  src="/images/gsu-logo-official.svg"
-                  alt="Georgia State University"
-                  style={{
-                    height: 'clamp(28px, 4vw, 44px)',
-                    width: 'auto',
-                    display: 'block',
-                    filter: 'brightness(0) invert(1)'
-                  }}
-                />
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Bottom Region of Hero Image: Subtext & Action Buttons */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 40,
-            left: 0,
-            right: 0,
-            zIndex: 10,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            padding: '0 24px',
+            alignItems: 'flex-start',
+            textAlign: 'left',
           }}
         >
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            style={{
-              fontSize: 'clamp(14px, 1.2vw, 17px)',
-              color: '#ffffff',
-              lineHeight: 1.5,
-              maxWidth: 580,
-              margin: '0 auto 22px',
-              fontWeight: 400,
-            }}
-          >
-            {slide.subtitle}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            style={{
-              display: 'flex',
-              gap: 14,
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            <Link
-              to={slide.cta.to}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' }}>
+            {/* Title */}
+            <h1
               style={{
-                fontFamily: 'var(--mono)',
-                fontSize: 12,
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                padding: '15px 36px',
-                background: '#0039A6',
-                color: '#ffffff',
-                borderRadius: 999,
+                fontFamily: 'var(--display)',
                 fontWeight: 600,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 10,
-                transition: 'all 0.2s',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = '#1d56c9';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = '#0039A6';
-                (e.currentTarget as HTMLElement).style.transform = '';
+                fontSize: 'clamp(54px, 7vw, 110px)',
+                lineHeight: 1.0,
+                letterSpacing: '-0.04em',
+                margin: '0 0 10px',
+                color: '#ffffff',
               }}
             >
-              {slide.cta.label}
-            </Link>
-            {slide.secondaryCta && (
+              ColorStack
+            </h1>
+
+            {/* GSU Lockup */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                marginBottom: 32,
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'Georgia, serif',
+                  fontStyle: 'italic',
+                  fontSize: 'clamp(20px, 2.5vw, 32px)',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontWeight: 400,
+                }}
+              >
+                at
+              </span>
+              <img
+                src="/images/gsu-logo-official.svg"
+                alt="Georgia State University"
+                style={{
+                  height: 'clamp(32px, 4.5vw, 52px)',
+                  width: 'auto',
+                  display: 'block',
+                  filter: 'brightness(0) invert(1)',
+                }}
+              />
+            </div>
+
+            {/* Subtitle / Description */}
+            <p
+              style={{
+                fontSize: 'clamp(16px, 1.4vw, 22px)',
+                color: 'rgba(255, 255, 255, 0.85)',
+                lineHeight: 1.5,
+                maxWidth: 620,
+                margin: '0 0 32px',
+                fontWeight: 400,
+              }}
+            >
+              {slide.subtitle}
+            </p>
+
+
+
+            {/* CTAs */}
+            <div
+              style={{
+                display: 'flex',
+                gap: 16,
+                flexWrap: 'wrap',
+              }}
+            >
               <Link
-                to={slide.secondaryCta.to}
+                to={slide.cta.to}
                 style={{
                   fontFamily: 'var(--mono)',
                   fontSize: 12,
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
-                  padding: '15px 36px',
-                  background: 'transparent',
-                  color: 'white',
+                  padding: '16px 36px',
+                  background: '#0039A6',
+                  color: '#ffffff',
                   borderRadius: 999,
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 10,
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = '#ffffff';
+                  (e.currentTarget as HTMLElement).style.background = '#1d56c9';
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                  (e.currentTarget as HTMLElement).style.background = '#0039A6';
                   (e.currentTarget as HTMLElement).style.transform = '';
                 }}
               >
-                {slide.secondaryCta.label}
+                {slide.cta.label}
               </Link>
-            )}
-          </motion.div>
+              {slide.secondaryCta && (
+                <Link
+                  to={slide.secondaryCta.to}
+                  style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: 12,
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    padding: '16px 36px',
+                    background: 'transparent',
+                    color: 'white',
+                    borderRadius: 999,
+                    border: '1px solid rgba(255, 255, 255, 0.4)',
+                    fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.borderColor = '#ffffff';
+                    (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                    (e.currentTarget as HTMLElement).style.transform = '';
+                  }}
+                >
+                  {slide.secondaryCta.label}
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Carousel controls */}
@@ -240,11 +231,7 @@ export default function Hero() {
           textAlign: 'center',
         }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           style={{ maxWidth: 1040, margin: '0 auto' }}
         >
           <p
@@ -273,7 +260,7 @@ export default function Hero() {
           >
             "As a chartered ColorStack chapter at Georgia State University, we leverage Atlanta's thriving tech scene to create meaningful change in diversity across the industry."
           </h2>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
