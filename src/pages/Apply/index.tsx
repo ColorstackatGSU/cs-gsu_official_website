@@ -51,7 +51,7 @@ export default function ApplyLanding() {
                 Head to the member portal to upload your resume and complete your member profile.
               </p>
               <a
-                href="https://member.colorstackatgsu.com"
+                href="https://members.colorstackatgsu.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary mt-6 inline-flex w-full justify-center"
