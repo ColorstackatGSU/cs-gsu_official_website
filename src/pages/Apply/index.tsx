@@ -46,17 +46,18 @@ export default function ApplyLanding() {
             </Link>
 
             <div className="mt-6 border-t border-gsu-light-gray pt-6">
-              <h3 className="text-xl">Interested in leadership?</h3>
+              <h3 className="text-xl">Filled out the membership form?</h3>
               <p className="mt-3 text-sm text-gsu-blue-steel">
-                Applications for executive board positions are open. Help shape events, partnerships, and the
-                community that supports Black and Latinx technologists at GSU.
+                Head to the member portal to upload your resume and complete your member profile.
               </p>
-              <Link
-                to="/apply/e-board"
+              <a
+                href="https://member.colorstackatgsu.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary mt-6 inline-flex w-full justify-center"
               >
-                Apply for E-Board →
-              </Link>
+                Go to Member Portal →
+              </a>
             </div>
 
             <div className="mt-6 border-t border-gsu-light-gray pt-6">
