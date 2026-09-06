@@ -12,12 +12,15 @@ import Spiels from './pages/Spiels';
 import ApplyLanding from './pages/Apply';
 import ApplyMember from './pages/Apply/Member';
 import ApplyEBoard from './pages/Apply/EBoard';
+import Jeopardy, { Jeopardy2 } from './pages/Jeopardy';
 import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
     <MotionConfig reducedMotion="always">
       <Routes>
+        <Route path="jeopardy" element={<Jeopardy />} />
+        <Route path="jeopardy2" element={<Jeopardy2 />} />
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
