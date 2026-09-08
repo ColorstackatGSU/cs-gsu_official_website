@@ -9,21 +9,29 @@ const DEFAULT_TEAMS: Team[] = [
 
 const POINT_STEPS = [100, 200, 300, 400, 500];
 
-function loadTeams(storageKey: string): Team[] {
+function loadTeams(storageKey: string, defaultTeams: Team[] = DEFAULT_TEAMS): Team[] {
   try {
     const raw = localStorage.getItem(storageKey);
-    if (!raw) return DEFAULT_TEAMS;
+    if (!raw) return defaultTeams;
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-    return DEFAULT_TEAMS;
+    return defaultTeams;
   } catch {
-    return DEFAULT_TEAMS;
+    return defaultTeams;
   }
 }
 
-export default function Scoreboard({ storageKey }: { storageKey: string }) {
-  const [teams, setTeams] = useState<Team[]>(() => loadTeams(storageKey));
-  const [step, setStep] = useState(200);
+export default function Scoreboard({
+  storageKey,
+  fixedStep,
+  defaultTeams,
+}: {
+  storageKey: string;
+  fixedStep?: number;
+  defaultTeams?: Team[];
+}) {
+  const [teams, setTeams] = useState<Team[]>(() => loadTeams(storageKey, defaultTeams));
+  const [step, setStep] = useState(fixedStep ?? 200);
 
   useEffect(() => {
     try {
@@ -87,36 +95,40 @@ export default function Scoreboard({ storageKey }: { storageKey: string }) {
         </span>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-          <span
-            style={{
-              fontFamily: 'var(--mono)',
-              fontSize: 11,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.45)',
-            }}
-          >
-            Step
-          </span>
-          {POINT_STEPS.map((v) => (
-            <button
-              key={v}
-              type="button"
-              onClick={() => setStep(v)}
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: 11,
-                padding: '4px 10px',
-                borderRadius: 999,
-                border: '1px solid rgba(255,255,255,0.2)',
-                background: step === v ? '#0039A6' : 'transparent',
-                color: '#ffffff',
-                cursor: 'pointer',
-              }}
-            >
-              {v}
-            </button>
-          ))}
+          {!fixedStep && (
+            <>
+              <span
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: 11,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.45)',
+                }}
+              >
+                Step
+              </span>
+              {POINT_STEPS.map((v) => (
+                <button
+                  key={v}
+                  type="button"
+                  onClick={() => setStep(v)}
+                  style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: 11,
+                    padding: '4px 10px',
+                    borderRadius: 999,
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    background: step === v ? '#0039A6' : 'transparent',
+                    color: '#ffffff',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {v}
+                </button>
+              ))}
+            </>
+          )}
 
           <button
             type="button"

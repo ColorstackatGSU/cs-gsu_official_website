@@ -12,6 +12,7 @@ import ApplyLanding from './pages/Apply';
 import ApplyMember from './pages/Apply/Member';
 import ApplyEBoard from './pages/Apply/EBoard';
 import Jeopardy, { Jeopardy2 } from './pages/Jeopardy';
+import Lightning from './pages/Lightning';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -20,6 +21,8 @@ export default function App() {
       <Routes>
         <Route path="jeopardy" element={<Jeopardy />} />
         <Route path="jeopardy2" element={<Jeopardy2 />} />
+        <Route path="lightning" element={<Lightning />} />
+        <Route path="lighting" element={<Lightning />} />
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
