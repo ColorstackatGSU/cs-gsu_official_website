@@ -116,13 +116,28 @@ export default function EditorialIntro() {
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{ position: 'relative' }}
           >
-            <div
+            <a
+              href="https://pin.gsu.edu/event/12618217"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View on PIN"
               style={{
+                display: 'block',
                 borderRadius: 0,
                 overflow: 'hidden',
                 border: '2.5px solid #ffffff',
                 maxWidth: 440,
                 margin: '0 auto',
+                cursor: 'pointer',
+                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 30px rgba(0, 57, 166, 0.35)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.transform = 'none';
+                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
               }}
             >
               <div style={{ overflow: 'hidden', position: 'relative' }}>
@@ -138,7 +153,7 @@ export default function EditorialIntro() {
                   }}
                 />
               </div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>

@@ -8,6 +8,7 @@ export type Event = {
   image?: string;
   tag?: string;
   isUpcoming?: boolean;
+  link?: string;
 };
 
 export type EventYear = {
@@ -30,6 +31,7 @@ export const eventYears: EventYear[] = [
         image: '/images/events/kickoff-fall-2026.png',
         tag: 'Social',
         isUpcoming: true,
+        link: 'https://pin.gsu.edu/event/12618217',
       },
       {
         title: 'SHPE × ColorStack AI Idea-a-Thon',
@@ -40,6 +42,7 @@ export const eventYears: EventYear[] = [
         image: '/images/events/ai-ideathon.png',
         tag: 'Social',
         isUpcoming: true,
+        link: 'https://pin.gsu.edu/event/12716936',
       },
     ],
   },

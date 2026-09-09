@@ -64,22 +64,86 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       className="event-card"
     >
       {/* Image */}
-      <div className="event-card-img">
+      <div className="event-card-img" style={{ position: 'relative' }}>
         {event.image ? (
-          <motion.img
-            src={event.image}
-            alt={event.title}
-            initial={{ scale: 1.08 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              display: 'block',
-            }}
-          />
+          event.link ? (
+            <a
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={0}
+              aria-label={`View ${event.title} on PIN`}
+              style={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                cursor: 'pointer',
+              }}
+            >
+              <motion.img
+                src={event.image}
+                alt={event.title}
+                initial={{ scale: 1.08 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
+              <div
+                className="event-card-img-overlay"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'linear-gradient(to top, rgba(9, 16, 36, 0.85) 0%, rgba(9, 16, 36, 0.2) 50%, transparent 100%)',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'center',
+                  padding: '16px',
+                  opacity: 0,
+                  transition: 'opacity 0.25s ease',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: 11,
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: '#ffffff',
+                    background: 'var(--gsu-blue)',
+                    padding: '6px 14px',
+                    borderRadius: 999,
+                    fontWeight: 600,
+                  }}
+                >
+                  View on PIN ↗
+                </span>
+              </div>
+            </a>
+          ) : (
+            <motion.img
+              src={event.image}
+              alt={event.title}
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+            />
+          )
         ) : (
           <div
             style={{
@@ -180,7 +244,24 @@ function EventCard({ event, index }: { event: Event; index: number }) {
             lineHeight: 1.25,
           }}
         >
-          {event.title}
+          {event.link ? (
+            <a
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--gsu-sky)')}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'inherit')}
+            >
+              {event.title}
+            </a>
+          ) : (
+            event.title
+          )}
         </h3>
         <p
           style={{
@@ -378,6 +459,9 @@ export default function Involvement() {
           aspect-ratio: 4 / 5;
           overflow: hidden;
           background: var(--paper-warm);
+        }
+        .event-card:hover .event-card-img-overlay {
+          opacity: 1 !important;
         }
         @media (max-width: 640px) {
           .event-card {
