@@ -52,8 +52,8 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       viewport={{ once: true, amount: 0.25 }}
       whileHover={{ y: -8, transition: { duration: 0.25 } }}
       style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr',
+        display: 'flex',
+        flexDirection: 'column',
         background: 'var(--paper)',
         border: 'none',
         borderRadius: 0,
@@ -127,6 +127,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
           padding: '22px 24px 26px',
           display: 'flex',
           flexDirection: 'column',
+          flex: 1,
           textAlign: 'center',
           background: 'var(--paper)',
         }}
@@ -173,22 +174,22 @@ function EventCard({ event, index }: { event: Event; index: number }) {
         <h3
           style={{
             fontFamily: 'var(--display)',
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: 600,
             letterSpacing: 0,
-            lineHeight: 1.2,
+            lineHeight: 1.25,
           }}
         >
           {event.title}
         </h3>
         <p
           style={{
-            fontSize: 12,
-            lineHeight: 1.5,
-            opacity: 0.5,
-            margin: '6px 0 0',
+            fontSize: 13,
+            lineHeight: 1.55,
+            opacity: 0.6,
+            margin: '8px 0 0',
             display: '-webkit-box',
-            WebkitLineClamp: 2,
+            WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -197,14 +198,33 @@ function EventCard({ event, index }: { event: Event; index: number }) {
         </p>
         <div
           style={{
-            marginTop: 8,
+            marginTop: 'auto',
+            paddingTop: 12,
             fontFamily: 'var(--mono)',
-            fontSize: 12,
-            letterSpacing: '0.04em',
-            opacity: 0.35,
+            fontSize: 11,
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase',
+            opacity: 0.45,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+            flexWrap: 'wrap',
           }}
         >
-          {event.semester}
+          <span>{event.semester}</span>
+          {event.time && (
+            <>
+              <span aria-hidden style={{ opacity: 0.5 }}>&middot;</span>
+              <span>{event.time}</span>
+            </>
+          )}
+          {event.location && (
+            <>
+              <span aria-hidden style={{ opacity: 0.5 }}>&middot;</span>
+              <span>{event.location}</span>
+            </>
+          )}
         </div>
       </div>
     </motion.article>
@@ -213,7 +233,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
 
 /* ---------------- Empty year placeholder ---------------- */
 
-function EmptyYear() {
+function EmptyYear({ yearLabel }: { yearLabel: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -320,7 +340,7 @@ function EmptyYear() {
           lineHeight: 1.6,
         }}
       >
-        The 2026&ndash;2027 calendar is on its way. Check back soon, or join us
+        The {yearLabel} calendar is on its way. Check back soon, or join us
         on PIN to be the first to know.
       </motion.p>
     </motion.div>
@@ -330,69 +350,64 @@ function EmptyYear() {
 /* ---------------- Page ---------------- */
 
 export default function Involvement() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const activeYear = eventYears[activeIdx];
-  const eventCols = activeYear.events.length >= 4 ? 4 : 3;
+  const defaultIdx = Math.max(
+    0,
+    eventYears.findIndex((yr) => yr.isCurrent || yr.label.includes('2026'))
+  );
+  const [activeIdx, setActiveIdx] = useState(defaultIdx);
+  const activeYear = eventYears[activeIdx] ?? eventYears[0];
 
   return (
     <>
       <style>{`
+        .events-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 28px;
+          max-width: 1400px;
+          margin: 0 auto;
+          width: 100%;
+        }
         .event-card {
-          grid-template-columns: 1fr;
-          height: 100%;
+          flex: 0 1 300px;
+          width: 100%;
+          max-width: 320px;
         }
         .event-card-img {
           aspect-ratio: 4 / 5;
           overflow: hidden;
           background: var(--paper-warm);
         }
-        .events-list {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 28px;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        @media (min-width: 481px) {
-          .events-list {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            max-width: 600px;
-          }
-        }
-        @media (min-width: 769px) {
-          .events-list {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            max-width: 900px;
-          }
-        }
-        @media (min-width: 1025px) {
-          .events-list {
-            grid-template-columns: repeat(var(--event-cols, 4), minmax(0, 1fr));
-            max-width: 1200px;
+        @media (max-width: 640px) {
+          .event-card {
+            flex: 1 1 100%;
+            max-width: 350px;
           }
         }
         .year-tab {
           font-family: var(--mono);
           font-size: 13px;
           letter-spacing: 0.08em;
-          padding: 10px 22px;
+          padding: 10px 24px;
           border-radius: 999px;
           border: 1px solid var(--line);
-          background: none;
+          background: rgba(255, 255, 255, 0.03);
           cursor: pointer;
-          transition: all 0.2s;
-          color: inherit;
-          opacity: 0.55;
+          transition: all 0.2s ease;
+          color: rgba(255, 255, 255, 0.7);
         }
         .year-tab:hover {
-          opacity: 0.85;
-          border-color: white;
+          color: #ffffff;
+          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.07);
         }
         .year-tab.active {
-          background: white;
-          border-color: white;
+          background: #ffffff;
+          border-color: #ffffff;
           color: var(--paper);
-          opacity: 1;
+          font-weight: 600;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
       `}</style>
 
@@ -462,13 +477,13 @@ export default function Involvement() {
 
       {/* Events */}
       <section style={{ background: 'var(--paper-warm)', padding: '80px 24px 120px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           {/* Year tabs */}
           <div
             style={{
               display: 'flex',
               justifyContent: 'center',
-              gap: 10,
+              gap: 12,
               marginBottom: 56,
             }}
           >
@@ -493,16 +508,13 @@ export default function Involvement() {
               transition={{ duration: 0.4 }}
             >
               {activeYear.events.length > 0 ? (
-                <div
-                  className="events-list"
-                  style={{ '--event-cols': eventCols } as React.CSSProperties}
-                >
+                <div className="events-list">
                   {activeYear.events.map((e, i) => (
                     <EventCard key={e.title} event={e} index={i} />
                   ))}
                 </div>
               ) : (
-                <EmptyYear />
+                <EmptyYear yearLabel={activeYear.label} />
               )}
             </motion.div>
           </AnimatePresence>
