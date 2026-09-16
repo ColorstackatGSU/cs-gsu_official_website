@@ -45,6 +45,15 @@ export default function Sponsors() {
               </svg>
               <span className="font-bold tracking-wider text-sm uppercase" style={{ color: '#76B900' }}>NVIDIA</span>
             </div>
+            <div className="border border-gsu-med-gray bg-white/5 p-8 flex flex-col items-center justify-center w-64 h-36">
+              <img
+                src="/images/sponsors/us-soccer.png"
+                alt="U.S. Soccer"
+                className="w-16 h-16 mb-2 object-contain"
+                loading="lazy"
+              />
+              <span className="font-bold tracking-wider text-sm uppercase text-white">U.S. Soccer</span>
+            </div>
           </div>
         </div>
       </section>
