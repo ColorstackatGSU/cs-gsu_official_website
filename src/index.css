@@ -305,8 +305,56 @@
 @keyframes dotFill { from { width: 0; } to { width: 100%; } }
 
 /* Responsive form embeds (Google Forms etc.) */
-.form-embed-wrap { width: 100%; max-width: 680px; margin: 0 auto; }
-.form-embed { width: 100%; max-width: 640px; border: 0; display: block; margin: 0 auto; }
+/* Google serves these forms from its own origin, so the same-origin policy stops the page
+   reading how tall one is. Nothing sizes the frame automatically; the height is a number we
+   pick, and the only question is which way we would rather be wrong.
+
+   Too short and the frame grows its own scrollbar inside the page's, which is what makes
+   these embeds miserable on a phone: two scroll regions stacked, and the one under your
+   thumb is usually the wrong one. Too tall and there is blank space below the last button.
+   We take the blank space.
+
+   The height used to be a pixel number on the iframe element itself, which meant one value
+   for every screen. A phone needs MORE height than a desktop, not less, because fields and
+   their labels wrap — so it is a variable per breakpoint here, and each form sets its own
+   starting value. That is also why this is not the padding-bottom aspect-ratio trick that
+   gets recommended for embeds: that ties height to width, which is right for a video and
+   exactly backwards for a form. */
+.form-embed-wrap {
+  --form-embed-h: 1200px;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.form-embed {
+  width: 100%;
+  max-width: 640px;
+  height: var(--form-embed-h);
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Per form, because they are different lengths. Tuned to the tallest PAGE of each, since
+   both are split into sections. Retune on a real phone, not a narrowed window. */
+.form-embed-member { --form-embed-h: 2000px; }
+.form-embed-eboard { --form-embed-h: 2100px; }
+
+@media (max-width: 900px) {
+  .form-embed-member { --form-embed-h: 2200px; }
+  .form-embed-eboard { --form-embed-h: 2300px; }
+}
+
+@media (max-width: 640px) {
+  .form-embed-member { --form-embed-h: 2500px; }
+  .form-embed-eboard { --form-embed-h: 2600px; }
+}
+
+@media (max-width: 400px) {
+  .form-embed-member { --form-embed-h: 2750px; }
+  .form-embed-eboard { --form-embed-h: 2850px; }
+}
 
 /* ============ NAV ============ */
 .nav-logo-img { height: 36px; width: 36px; }
@@ -536,4 +584,35 @@
     justify-content: center;
     width: 100%;
   }
+}
+
+/* The "what happens next" block under an embedded form. The frame cannot report a
+   submission across origins, so this is always on the page rather than revealed by one. */
+.form-next {
+  width: 100%;
+  max-width: 680px;
+  margin: 32px auto 0;
+  padding: 26px;
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-next-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  opacity: 0.75;
+}
+
+.form-next-title { margin: 0 0 12px; font-size: 22px; line-height: 1.2; }
+
+.form-next-body { margin: 0 0 20px; font-size: 15.5px; line-height: 1.6; opacity: 0.9; }
+
+@media (max-width: 640px) {
+  .form-next { padding: 20px; margin-top: 26px; }
+  .form-next-title { font-size: 19px; }
+  .form-next-body { font-size: 14.5px; }
 }

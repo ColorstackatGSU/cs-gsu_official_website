@@ -13,17 +13,15 @@ export default function ApplyEBoard() {
       </section>
 
       <section className="form-section" style={{ padding: '60px 16px 80px' }}>
-        <div className="form-embed-wrap">
+        <div className="form-embed-wrap form-embed-eboard">
           <iframe
             className="form-embed"
             src="https://docs.google.com/forms/d/e/1FAIpQLScysyFeD_dgbZosYSTY9lvH51bwO2u89Z3Ebqw9cN5Rz5_zIg/viewform?embedded=true"
-            width="640"
-            height="2014"
             frameBorder={0}
             marginHeight={0}
             marginWidth={0}
             title="ColorStack at GSU E-Board Application"
-            style={{ minHeight: 2014, background: 'transparent' }}
+            style={{ background: 'transparent' }}
             allowFullScreen
           >
             Loading…
