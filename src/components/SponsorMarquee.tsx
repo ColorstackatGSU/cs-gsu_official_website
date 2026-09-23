@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 export type SponsorLogo = {
   /** Path to the logo image, or omit to render `svg` instead. */
   src?: string;
@@ -12,24 +14,54 @@ export type SponsorLogo = {
 
 type SponsorMarqueeProps = {
   logos: SponsorLogo[];
-  /** Seconds for one full pass of the track. Lower is faster. */
+  /** Seconds one copy of the list takes to cross. Lower is faster. */
   speed?: number;
 };
 
 export default function SponsorMarquee({ logos, speed = 40 }: SponsorMarqueeProps) {
-  // The track holds two identical copies of the list and slides exactly half its
-  // width, so the second copy lands where the first began and the loop never seams.
-  const track = [...logos, ...logos];
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const setRef = useRef<HTMLDivElement>(null);
+  // How many times the list is repeated. The track slides exactly -50%, so one
+  // half must be wider than the viewport or the tail leaves a gap on the right.
+  const [copies, setCopies] = useState(2);
+
+  useEffect(() => {
+    const measure = () => {
+      const wrap = wrapRef.current;
+      const set = setRef.current;
+      if (!wrap || !set) return;
+
+      const setWidth = set.getBoundingClientRect().width / copies;
+      if (setWidth <= 0) return;
+
+      // Each half needs to cover the viewport, so half the copies must span it.
+      const needed = Math.ceil(wrap.getBoundingClientRect().width / setWidth) + 1;
+      // Keep the count even so the two halves stay identical.
+      const next = Math.max(2, needed * 2);
+      if (next !== copies) setCopies(next);
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (wrapRef.current) observer.observe(wrapRef.current);
+    return () => observer.disconnect();
+  }, [copies, logos]);
+
+  const track = Array.from({ length: copies }, () => logos).flat();
 
   return (
     <div
       className="sponsor-marquee relative w-full overflow-hidden py-2"
       role="region"
       aria-label="Our sponsors"
+      ref={wrapRef}
     >
       <div
         className="sponsor-marquee-track flex w-max items-center gap-6 sm:gap-8"
-        style={{ animationDuration: `${speed}s` }}
+        // One -50% pass covers half the copies, so scale the duration with them
+        // to hold the scroll at a constant pixel speed on any screen width.
+        style={{ animationDuration: `${(speed * copies) / 2}s` }}
+        ref={setRef}
       >
         {track.map((logo, i) => (
           <SponsorTile
