@@ -190,6 +190,47 @@
   margin-left: 60px;
 }
 
+/* ============ SPONSOR MARQUEE ============ */
+/* Fades the logos out at both edges instead of cutting them off hard. */
+.sponsor-marquee {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 96px,
+    #000 calc(100% - 96px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 96px,
+    #000 calc(100% - 96px),
+    transparent
+  );
+}
+.sponsor-marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+/* Dark tile matching the site theme, so logos sit on the page rather than on cards. */
+.sponsor-tile {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.sponsor-tile:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(151, 202, 235, 0.45);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-marquee-track {
+    animation: none;
+  }
+  .sponsor-marquee {
+    overflow-x: auto;
+  }
+}
+
 /* ============ SECTION EYEBROW ============ */
 .section-eyebrow {
   font-family: var(--mono);

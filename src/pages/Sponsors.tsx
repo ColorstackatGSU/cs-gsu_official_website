@@ -1,4 +1,20 @@
+import SponsorMarquee, { type SponsorLogo } from '../components/SponsorMarquee';
+
 const PACKET_URL = '/assets/Sponsorship-Packet.pdf';
+
+const SPONSORS: SponsorLogo[] = [
+  { alt: 'NVIDIA', src: '/images/sponsors/nvidia.png', href: 'https://www.nvidia.com' },
+  { alt: 'Amazon Web Services', src: '/images/sponsors/aws.png', href: 'https://aws.amazon.com' },
+  { alt: 'PrizePicks', src: '/images/sponsors/prizepicks.png', href: 'https://www.prizepicks.com' },
+  { alt: 'Equifax', src: '/images/sponsors/equifax.png', href: 'https://www.equifax.com' },
+  // Tall crest rather than a wide wordmark, so it needs more height to read at the same size.
+  {
+    alt: 'U.S. Soccer',
+    src: '/images/sponsors/us-soccer.png',
+    href: 'https://www.ussoccer.com',
+    sizeClassName: 'max-h-[72px] sm:max-h-20',
+  },
+];
 
 export default function Sponsors() {
   return (
@@ -38,43 +54,9 @@ export default function Sponsors() {
       <section className="py-20" style={{ background: 'var(--paper-warm)' }}>
         <div className="container-wide text-center">
           <h2 className="text-2xl text-white font-bold fade-in-up fade-delay-1">Our current partners</h2>
-          <div className="mt-12 flex flex-wrap items-start justify-center gap-x-16 gap-y-12 fade-in-up fade-delay-2">
-            <div className="flex w-52 flex-col items-center">
-              {/* Marks are sized by visual area rather than bounding box, so an
-                  airy or portrait logo gets more height than a dense filled one
-                  and they all read as the same size. */}
-              <div className="flex h-36 items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#76B900" className="h-[132px] w-auto" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M1.635 7.146S3.08 5.012 5.97 4.791v-.774C2.77 4.273 0 6.983 0 6.983s1.57 4.536 5.97 4.952v-.824c-3.23-.406-4.335-3.965-4.335-3.965M5.97 9.475v.753c-2.44-.435-3.118-2.972-3.118-2.972S4.023 5.958 5.97 5.747v.828h-.004c-1.021-.123-1.82.83-1.82.83s.448 1.607 1.824 2.07M6 2l-.03 2.017A7 7 0 0 1 6.252 4c3.637-.123 6.007 2.983 6.007 2.983s-2.722 3.31-5.557 3.31q-.39-.002-.732-.065v.883q.292.039.61.04c2.638 0 4.546-1.348 6.394-2.943.307.246 1.561.842 1.819 1.104-1.757 1.47-5.852 2.657-8.173 2.657a7 7 0 0 1-.65-.034V14H16l.03-12zm-.03 3.747v-.956a6 6 0 0 1 .282-.015c2.616-.082 4.332 2.248 4.332 2.248S8.73 9.598 6.743 9.598c-.286 0-.542-.046-.773-.123v-2.9c1.018.123 1.223.572 1.835 1.593L9.167 7.02s-.994-1.304-2.67-1.304a5 5 0 0 0-.527.031"/>
-                </svg>
-              </div>
-              <span className="mt-4 font-bold tracking-wider text-sm uppercase" style={{ color: '#76B900' }}>NVIDIA</span>
-            </div>
-            <div className="flex w-52 flex-col items-center">
-              <div className="flex h-36 items-center justify-center">
-                <img
-                  src="/images/sponsors/us-soccer.png"
-                  alt="U.S. Soccer"
-                  className="h-[132px] w-auto object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <span className="mt-4 font-bold tracking-wider text-sm uppercase text-white">U.S. Soccer</span>
-            </div>
-            <div className="flex w-52 flex-col items-center">
-              <div className="flex h-36 items-center justify-center">
-                {/* Solid filled block, so it carries more ink per pixel than the
-                    others and is scaled back to stay balanced. */}
-                <img
-                  src="/images/sponsors/equifax.png"
-                  alt="Equifax"
-                  className="h-[106px] w-auto object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <span className="mt-4 font-bold tracking-wider text-sm uppercase text-white">Equifax</span>
-            </div>
-          </div>
+        </div>
+        <div className="mt-10 fade-in-up fade-delay-2">
+          <SponsorMarquee logos={SPONSORS} speed={40} />
         </div>
       </section>
     </>
