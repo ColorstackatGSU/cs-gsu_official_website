@@ -77,17 +77,17 @@ export const eventYears: EventYear[] = [
         isUpcoming: true,
         link: '', 
       },
-      // {
-      //   title: 'ColorStack X NVIDIA',
-      //   date: 'Oct 8, 2026',
-      //   semester: 'Fall 2026',
-      //   description:
-      //     'Explore the future of technology and hear from an NVIDIA engineering leader about the innovation shaping our industry. Learn about opportunities and resume best practices.',
-      //   image: '/images/events/colorstackxnvidia_placeholder.png',
-      //   tag: 'Social',
-      //   isUpcoming: true,
-      //   link: 'https://pin.gsu.edu/event/12793269', 
-      // }
+      {
+        title: 'ColorStack X NVIDIA',
+        date: 'Oct 8, 2026',
+        semester: 'Fall 2026',
+        description:
+          'Explore the future of technology and hear from an NVIDIA engineering leader about the innovation shaping our industry. Learn about opportunities and resume best practices.',
+        image: '/images/events/colorstackgsu_nvidia.png',
+        tag: 'Social',
+        isUpcoming: true,
+        link: 'https://pin.gsu.edu/event/12793269', 
+      }
     ],
   },
   {
