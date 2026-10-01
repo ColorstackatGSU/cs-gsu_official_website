@@ -74,8 +74,8 @@ export const eventYears: EventYear[] = [
           'A semester-long, team-based competition. Teams of 3-4 tackle 5 milestones, rack up points pn the leaderboard, and finish with a Capstone Hackathon',
         image: '/images/events/tech_league_3.jpg',
         tag: 'Social',
-        isUpcoming: true,
-        link: '', 
+        isUpcoming: false,
+        link: 'https://pin.gsu.edu/event/12815571', 
       },
       {
         title: 'ColorStack X NVIDIA',
