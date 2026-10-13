@@ -12,6 +12,7 @@ const sitemap: [string, string][] = [
 const connectLinks: [string, string][] = [
   ['https://www.instagram.com/colorstackatgsu/', 'Instagram ↗'],
   ['https://www.linkedin.com/company/colorstack-gsu/', 'LinkedIn ↗'],
+  ['https://members.colorstackatgsu.com/', 'Member Portal ↗'],
   ['https://discord.gg/RdSeNwMjr4', 'Discord ↗'],
   ['mailto:official@colorstackatgsu.com', 'Email ↗'],
 ];
