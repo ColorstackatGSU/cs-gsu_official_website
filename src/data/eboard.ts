@@ -1,7 +1,6 @@
 export type EBoardMember = {
   name: string;
   role: string;
-  email?: string;
   linkedin?: string;
   instagram?: string;
   image?: string;
@@ -124,7 +123,3 @@ export const eboadYears: EBoardYear[] = [
     ],
   },
 ];
-
-// Legacy flat export kept for backward compat
-export type { EBoardMember as default };
-export const eboard = eboadYears[0].groups.flatMap((g) => g.members);
